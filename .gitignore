@@ -1,0 +1,26 @@
+# local project planning
+*.md
+!README.md
+!**/README.md
+
+
+# local environment and secrets
+/.venv/
+/.env
+
+# Python and notebooks
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# local experiment state and large model files
+/mlruns/
+*.safetensors
+*.gguf
+*.pt
+*.pth
+
+# macos
+.DS_Store

@@ -17,6 +17,7 @@ __pycache__/
 
 # local experiment state and large model files
 /mlruns/
+/artifacts/
 *.safetensors
 *.gguf
 *.pt

@@ -22,7 +22,7 @@ Private grievance portals, real personal details, and automatic complaint submis
 
 ## Current state
 
-The repository and working rules are initialized. Dataset construction, baseline implementation, model selection, training, evaluation, and the local demo have not started, so there are no model results to report yet.
+The repository and working rules are initialized. The first model-basics workflow is in [`notebooks/model_basics.ipynb`](notebooks/model_basics.ipynb) and contains one recorded Colab GPU smoke run with raw outputs and MLflow metadata. Dataset construction, baseline comparison, training, evaluation, and the local demo are still pending, so no task-quality result is reported yet.
 
 ## Scope
 

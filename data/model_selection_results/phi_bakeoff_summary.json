@@ -1,0 +1,57 @@
+{
+  "results": [
+    {
+      "model_name": "microsoft/Phi-4-mini-instruct",
+      "model_revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+      "prompt_mode": "zero_shot",
+      "device": "cuda",
+      "decoding": {
+        "do_sample": false,
+        "max_new_tokens": 192
+      },
+      "batch_size": 4,
+      "mean_latency_seconds_per_case": 1.88951,
+      "gpu_memory_mb": 3065.49560546875,
+      "package_versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.49.0",
+        "mlflow": "3.15.1"
+      },
+      "scores": {
+        "schema_validity_rate": 0.0,
+        "service_domain_macro_f1": 0.0,
+        "issue_type_macro_f1": 0.0,
+        "missing_information_f1": 0.0,
+        "hallucinated_field_rate": 0.0
+      },
+      "mlflow_run_id": "efe2c988588c47898ea2c8fa58c9bfde"
+    },
+    {
+      "model_name": "microsoft/Phi-4-mini-instruct",
+      "model_revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+      "prompt_mode": "static_few_shot",
+      "device": "cuda",
+      "decoding": {
+        "do_sample": false,
+        "max_new_tokens": 192
+      },
+      "batch_size": 4,
+      "mean_latency_seconds_per_case": 2.18865,
+      "gpu_memory_mb": 4106.716796875,
+      "package_versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.49.0",
+        "mlflow": "3.15.1"
+      },
+      "scores": {
+        "schema_validity_rate": 0.4,
+        "service_domain_macro_f1": 0.48484848484848486,
+        "issue_type_macro_f1": 0.19920634920634922,
+        "missing_information_f1": 0.5079365079365079,
+        "hallucinated_field_rate": 0.14285714285714285
+      },
+      "mlflow_run_id": "6408981b62ba43c39a5f2688bec2c871"
+    }
+  ],
+  "setup_failures": []
+}

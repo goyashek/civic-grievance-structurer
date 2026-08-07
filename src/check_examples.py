@@ -11,7 +11,7 @@ else:
 EXAMPLES_PATH = Path(__file__).resolve().parents[1] / "data/gold_examples.jsonl"
 
 REQUIRED_ROW_FIELDS = {"case_id", "surface_id", "split", "source_type", "style", "complaint", "gold"}
-def load_examples(path: Path = EXAMPLES_PATH) -> list[dict]:
+def load_examples(path: Path = EXAMPLES_PATH, expected_count: int = 5) -> list[dict]:
     rows = []
     for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
         if not line.strip():
@@ -23,7 +23,7 @@ def load_examples(path: Path = EXAMPLES_PATH) -> list[dict]:
             raise SchemaError(f"line {line_number}: empty complaint")
         validate_gold(row["gold"])
         rows.append(row)
-    assert len(rows) == 5, f"expected five examples, found {len(rows)}"
+    assert len(rows) == expected_count, f"expected {expected_count} examples, found {len(rows)}"
     assert len({row["case_id"] for row in rows}) == len(rows)
     assert len({row["surface_id"] for row in rows}) == len(rows)
     return rows

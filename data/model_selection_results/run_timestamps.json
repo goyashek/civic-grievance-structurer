@@ -1,0 +1,72 @@
+{
+  "experiment": "civicstruct-model-bakeoff",
+  "timezone": "UTC",
+  "runs": [
+    {
+      "run_id": "d9aa9802f38248768df2b64d916316e8",
+      "run_name": "Qwen3-4B-Instruct-2507-zero_shot",
+      "model_name": "Qwen/Qwen3-4B-Instruct-2507",
+      "prompt_mode": "zero_shot",
+      "start_time_ms": 1786098367578,
+      "end_time_ms": 1786098367870,
+      "duration_ms": 292,
+      "start_time_utc": "2026-08-07T10:26:07.578Z",
+      "end_time_utc": "2026-08-07T10:26:07.870Z"
+    },
+    {
+      "run_id": "efe2c988588c47898ea2c8fa58c9bfde",
+      "run_name": "phi-4-mini-zero_shot",
+      "model_name": "microsoft/Phi-4-mini-instruct",
+      "prompt_mode": "zero_shot",
+      "start_time_ms": 1786098369586,
+      "end_time_ms": 1786098369905,
+      "duration_ms": 319,
+      "start_time_utc": "2026-08-07T10:26:09.586Z",
+      "end_time_utc": "2026-08-07T10:26:09.905Z"
+    },
+    {
+      "run_id": "a7d834beea0b4fac81645c80cbaa8664",
+      "run_name": "SmolLM3-3B-zero_shot",
+      "model_name": "HuggingFaceTB/SmolLM3-3B",
+      "prompt_mode": "zero_shot",
+      "start_time_ms": 1786098824462,
+      "end_time_ms": 1786098824778,
+      "duration_ms": 316,
+      "start_time_utc": "2026-08-07T10:33:44.462Z",
+      "end_time_utc": "2026-08-07T10:33:44.778Z"
+    },
+    {
+      "run_id": "503d248fa1e040f7bb6cde2f5222f8c0",
+      "run_name": "Qwen3-4B-Instruct-2507-static_few_shot",
+      "model_name": "Qwen/Qwen3-4B-Instruct-2507",
+      "prompt_mode": "static_few_shot",
+      "start_time_ms": 1786098531898,
+      "end_time_ms": 1786098532194,
+      "duration_ms": 296,
+      "start_time_utc": "2026-08-07T10:28:51.898Z",
+      "end_time_utc": "2026-08-07T10:28:52.194Z"
+    },
+    {
+      "run_id": "6408981b62ba43c39a5f2688bec2c871",
+      "run_name": "phi-4-mini-static_few_shot",
+      "model_name": "microsoft/Phi-4-mini-instruct",
+      "prompt_mode": "static_few_shot",
+      "start_time_ms": 1786098457722,
+      "end_time_ms": 1786098458016,
+      "duration_ms": 294,
+      "start_time_utc": "2026-08-07T10:27:37.722Z",
+      "end_time_utc": "2026-08-07T10:27:38.016Z"
+    },
+    {
+      "run_id": "13ace1e35bad4f528529ca42348f0418",
+      "run_name": "SmolLM3-3B-static_few_shot",
+      "model_name": "HuggingFaceTB/SmolLM3-3B",
+      "prompt_mode": "static_few_shot",
+      "start_time_ms": 1786098935557,
+      "end_time_ms": 1786098935874,
+      "duration_ms": 317,
+      "start_time_utc": "2026-08-07T10:35:35.557Z",
+      "end_time_utc": "2026-08-07T10:35:35.874Z"
+    }
+  ]
+}

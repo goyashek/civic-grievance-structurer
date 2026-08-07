@@ -1,0 +1,14 @@
+artifact_uri: file:./data/model_selection_results/mlruns/254376245326181755/d9aa9802f38248768df2b64d916316e8/artifacts
+end_time: 1786098367870
+entry_point_name: ''
+experiment_id: '254376245326181755'
+lifecycle_stage: active
+run_id: d9aa9802f38248768df2b64d916316e8
+run_name: Qwen3-4B-Instruct-2507-zero_shot
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1786098367578
+status: 3
+tags: []
+user_id: root

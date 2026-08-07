@@ -1,0 +1,25 @@
+{
+  "model_name": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "prompt_mode": "zero_shot",
+  "device": "cuda",
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 192
+  },
+  "batch_size": 4,
+  "mean_latency_seconds_per_case": 3.6690599999999995,
+  "gpu_memory_mb": 4604.89013671875,
+  "package_versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.10.1",
+    "mlflow": "3.15.1"
+  },
+  "scores": {
+    "schema_validity_rate": 0.0,
+    "service_domain_macro_f1": 0.0,
+    "issue_type_macro_f1": 0.0,
+    "missing_information_f1": 0.0,
+    "hallucinated_field_rate": 0.0
+  }
+}

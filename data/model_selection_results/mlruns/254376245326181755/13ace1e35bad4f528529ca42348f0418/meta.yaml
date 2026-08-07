@@ -1,0 +1,14 @@
+artifact_uri: file:./data/model_selection_results/mlruns/254376245326181755/13ace1e35bad4f528529ca42348f0418/artifacts
+end_time: 1786098935874
+entry_point_name: ''
+experiment_id: '254376245326181755'
+lifecycle_stage: active
+run_id: 13ace1e35bad4f528529ca42348f0418
+run_name: SmolLM3-3B-static_few_shot
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1786098935557
+status: 3
+tags: []
+user_id: root

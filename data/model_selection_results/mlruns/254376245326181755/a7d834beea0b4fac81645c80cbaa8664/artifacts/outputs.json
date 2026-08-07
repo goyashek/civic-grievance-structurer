@@ -1,0 +1,242 @@
+[
+  {
+    "case_id": "selection-case-001",
+    "response": "```json\n{\n  \"service_domain\": \"Public Transport\",\n  \"issue_type\": \"Service Delay\",\n  \"location\": \"Green Park Gate 3\",\n  \"event_date_or_time\": \"Monday, 2023-10-09\",\n  \"amount_inr\": 0,\n  \"service_identifier\": \"Route 14\",\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The bus service for Route 14 has been delayed at the bus stop outside Green Park Gate 3 since Monday morning. The user has waited twice today without receiving service. The issue is urgent and requires prompt attention.\"\n}\n```",
+    "latency_seconds": 3.0974,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-002",
+    "response": "```json\n{\n  \"service_domain\": \"Public Transport\",\n  \"issue_type\": \"Service Disruption\",\n  \"location\": \"Sector 9 Market\",\n  \"event_date_or_time\": \"This Morning\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": \"Please provide the route number of the feeder bus.\",\n  \"formal_summary\": \"The feeder bus did not show up near Sector 9 market this morning. The route number is missing.\"\n}\n```",
+    "latency_seconds": 3.0974,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-003",
+    "response": "```json\n{\n  \"service_domain\": \"Public Services\",\n  \"issue_type\": \"Display Malfunction\",\n  \"location\": \"Central Square Bus Shelter\",\n  \"event_date_or_time\": \"2023-04-15\",\n  \"amount_inr\": 0,\n  \"service_identifier\": \"Display Blank\",\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The digital display at Central Square bus shelter has been blank for three days, causing passengers to be unable to view arrival information. This issue requires immediate attention to ensure the safety and convenience of passengers.\"\n}\n```",
+    "latency_seconds": 3.0974,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-004",
+    "response": "```json\n{\n  \"service_domain\": \"Public Services\",\n  \"issue_type\": \"Safety Concern\",\n  \"location\": \"River Road station footbridge\",\n  \"event_date_or_time\": \"Tonight\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": \"Please provide the exact time of the issue and the number of people affected.\",\n  \"formal_summary\": \"A loose handrail is hanging from the footbridge at River Road station. People are using the bridge, posing a safety concern.\"\n}\n```",
+    "latency_seconds": 3.0974,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-005",
+    "response": "```json\n{\n  \"service_domain\": \"Public Transport\",\n  \"issue_type\": \"Conducting Passenger\",\n  \"location\": \"Old Court, Bus Stop\",\n  \"event_date_or_time\": \"Yesterday afternoon\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": null,\n  \"formal_summary\": \"The conductor on bus 32 engaged in inappropriate behavior by shouting at passengers and refusing to issue a ticket near Old Court on a bus stop during the afternoon. This conduct is unacceptable and violates the principles of good service.\"\n}\n```",
+    "latency_seconds": 3.1819,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-006",
+    "response": "```json\n{\n  \"service_domain\": \"Water Supply\",\n  \"issue_type\": \"Water Supply Disruption\",\n  \"location\": \"Tower B, Lotus Residency\",\n  \"event_date_or_time\": \"Last night\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"There has been no water in Tower B of Lotus Residency since last night. All the taps are dry.\"\n}\n```",
+    "latency_seconds": 3.1819,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-007",
+    "response": "```json\n{\n  \"service_domain\": \"Water Services\",\n  \"issue_type\": \"Water Supply\",\n  \"location\": \"Ward 6 Clinic\",\n  \"event_date_or_time\": \"Tuesday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The public tap beside Ward 6 clinic has been leaking continuously since Tuesday, causing a wet pavement. The issue requires immediate attention to prevent further damage and ensure public safety.\"\n}\n```",
+    "latency_seconds": 3.1819,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-008",
+    "response": "```json\n{\n  \"service_domain\": \"Water Services\",\n  \"issue_type\": \"Billing Error\",\n  \"location\": \"Account W-7782\",\n  \"event_date_or_time\": \"July 2024\",\n  \"amount_inr\": 1860,\n  \"service_identifier\": \"Water Bill\",\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The water bill for Account W-7782 in July 2024 shows an amount of Rs 1,860, despite the meter reading indicating only 420 litres of water usage. This discrepancy suggests a potential billing error that needs to be addressed promptly.\"\n}\n```",
+    "latency_seconds": 3.1819,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-009",
+    "response": "```json\n{\n  \"service_domain\": \"Water Supply\",\n  \"issue_type\": \"Water Quality\",\n  \"location\": \"Hillview Playground\",\n  \"event_date_or_time\": \"This morning\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The water from the hand pump at Hillview playground was reported to have a sewage-like smell this morning, with children still using it. This indicates a potential water quality issue that requires immediate attention.\"\n}\n```",
+    "latency_seconds": 3.3431,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-010",
+    "response": "```json\n{\n  \"service_domain\": \"Water Supply\",\n  \"issue_type\": \"Service Delay\",\n  \"location\": \"Rose Colony\",\n  \"event_date_or_time\": \"Today\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": \"Booking number\",\n  \"formal_summary\": \"The water tanker for Rose Colony failed to arrive today, and the message did not provide a booking number.\"\n}\n```",
+    "latency_seconds": 3.3431,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-011",
+    "response": "```json\n{\n  \"service_domain\": \"Waste Management\",\n  \"issue_type\": \"Service Disruption\",\n  \"location\": \"House Lane, New Town\",\n  \"event_date_or_time\": \"Not specified\",\n  \"amount_inr\": \"Not applicable\",\n  \"service_identifier\": \"Not applicable\",\n  \"urgency\": \"High\",\n  \"missing_information\": \"Please provide the exact date and time of the issue, the amount in INR, and any service identifier.\",\n  \"formal_summary\": \"Garbage has not been collected from House Lane in New Town for four days, resulting in bags piling up outside the homes. Urgent action is required to address this issue.\"\n}\n```",
+    "latency_seconds": 3.3431,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-012",
+    "response": "```json\n{\n  \"service_domain\": \"Community Services\",\n  \"issue_type\": \"Safety Concern\",\n  \"location\": \"Maple Apartments\",\n  \"event_date_or_time\": \"Not specified\",\n  \"amount_inr\": \"Not applicable\",\n  \"service_identifier\": \"Not applicable\",\n  \"urgency\": \"High\",\n  \"missing_information\": \"Event date or time, service identifier, amount in INR\",\n  \"formal_summary\": \"The lid of the community waste bin outside Maple Apartments is broken, causing glass to stick out, posing a safety concern.\"\n}\n```",
+    "latency_seconds": 3.3431,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-013",
+    "response": "```json\n{\n  \"service_domain\": \"Public Services\",\n  \"issue_type\": \"Environmental Issue\",\n  \"location\": \"Station Lane, near the primary school\",\n  \"event_date_or_time\": \"Yesterday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"A drain behind the primary school on Station Lane is overflowing into the road after yesterday's rain. This is a high-urgency environmental issue that requires immediate attention.\"\n}\n```",
+    "latency_seconds": 3.0925,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-014",
+    "response": "```json\n{\n  \"service_domain\": \"Waste Management\",\n  \"issue_type\": \"Service Failure\",\n  \"location\": \"Lane behind the clinic\",\n  \"event_date_or_time\": \"Friday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": \"Please provide the service identifier and the amount in INR.\",\n  \"formal_summary\": \"The waste collection service failed to collect the waste from the lane behind the clinic on Friday. The collection worker left a pile of waste beside the lane instead of taking it away. The issue is urgent and requires immediate attention.\"\n}\n```",
+    "latency_seconds": 3.0925,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-015",
+    "response": "```json\n{\n  \"service_domain\": \"Bulky-Waste Collection\",\n  \"issue_type\": \"Missing Receipt\",\n  \"location\": \"18 Park Street\",\n  \"event_date_or_time\": \"Payment Date\",\n  \"amount_inr\": 250,\n  \"service_identifier\": \"Scheduled Bulky-Waste Pickup\",\n  \"urgency\": \"Low\",\n  \"missing_information\": \"Receipt Reference Number\",\n  \"formal_summary\": \"The user paid Rs 250 for a scheduled bulky-waste pickup at 18 Park Street, but the receipt does not show a reference number. The missing information is the receipt reference number.\"\n}\n```",
+    "latency_seconds": 3.0925,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-016",
+    "response": "```json\n{\n  \"service_domain\": \"Streetlight Maintenance\",\n  \"issue_type\": \"Service Disruption\",\n  \"location\": \"22 Cedar Avenue\",\n  \"event_date_or_time\": \"This week\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The streetlight outside 22 Cedar Avenue has been off every night this week, causing visibility issues at the corner. The issue requires prompt attention to ensure public safety.\"\n}\n```",
+    "latency_seconds": 3.0925,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-017",
+    "response": "```json\n{\n  \"service_domain\": \"Transportation\",\n  \"issue_type\": \"Road Condition\",\n  \"location\": \"Market Road, near the post office\",\n  \"event_date_or_time\": \"Yesterday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"A deep pothole has opened in front of the post office on Market Road, causing damage to a bicycle yesterday. The road condition is considered urgent and requires immediate attention.\"\n}\n```",
+    "latency_seconds": 2.8207,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-018",
+    "response": "```json\n{\n  \"service_domain\": \"Traffic Signals\",\n  \"issue_type\": \"Traffic Signal Issue\",\n  \"location\": \"East Gate Crossing\",\n  \"event_date_or_time\": \"Current Date\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": null,\n  \"formal_summary\": \"The traffic signal at the East Gate Crossing is currently showing green in both directions.\"\n}\n```",
+    "latency_seconds": 2.8207,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-019",
+    "response": "```json\n{\n  \"service_domain\": \"Transportation\",\n  \"issue_type\": \"Infrastructure Damage\",\n  \"location\": \"Canal Road\",\n  \"event_date_or_time\": \"Not specified\",\n  \"amount_inr\": \"Not applicable\",\n  \"service_identifier\": \"Not applicable\",\n  \"urgency\": \"High\",\n  \"missing_information\": \"House number is not available as there are no buildings.\",\n  \"formal_summary\": \"The footpath has collapsed beside Canal Road, and the house number cannot be provided due to the absence of buildings in the area.\"\n}\n```",
+    "latency_seconds": 2.8207,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-020",
+    "response": "```json\n{\n  \"service_domain\": \"Public Services\",\n  \"issue_type\": \"Barricade Blockage\",\n  \"location\": \"Sunrise School\",\n  \"event_date_or_time\": \"Wednesday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The roadwork crew dug up the lane outside Sunrise School on Wednesday and left the barricades blocking the only entrance.\"\n}\n```",
+    "latency_seconds": 2.8207,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-021",
+    "response": "```json\n{\n  \"service_domain\": \"Electricity\",\n  \"issue_type\": \"Power Outage\",\n  \"location\": \"Building 4, Lakeview Estate\",\n  \"event_date_or_time\": \"2023-10-15T14:00:00Z\",\n  \"amount_inr\": 0,\n  \"service_identifier\": \"E-4419\",\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"Power has been out in Building 4, Lakeview Estate since 2 pm. The complaint number is E-4419.\"\n}\n```",
+    "latency_seconds": 3.6949,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-022",
+    "response": "```json\n{\n  \"service_domain\": \"Utilities\",\n  \"issue_type\": \"Safety Concern\",\n  \"location\": \"7 Palm Street\",\n  \"event_date_or_time\": \"2023-10-15T23:00:00Z\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The meter box outside 7 Palm Street is sparking and the cover is hanging open. This poses a safety risk. Please keep people away.\"\n}\n```",
+    "latency_seconds": 3.6949,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-023",
+    "response": "```json\n{\n  \"service_domain\": \"Electricity\",\n  \"issue_type\": \"Billing Error\",\n  \"location\": \"Unknown\",\n  \"event_date_or_time\": \"August\",\n  \"amount_inr\": 6420,\n  \"service_identifier\": \"Meter ID M-9031\",\n  \"urgency\": \"High\",\n  \"missing_information\": \"Location of the shop, specific usage during the month, and the reason for the billing discrepancy.\",\n  \"formal_summary\": \"The electricity bill for August, dated to the shop, shows a total amount of Rs 6,420. However, the shop was closed for most of the month, and the meter ID M-9031 is printed on the bill. The billing discrepancy needs to be investigated and resolved promptly.\"\n}\n```",
+    "latency_seconds": 3.6949,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-024",
+    "response": "```json\n{\n  \"service_domain\": \"Utilities\",\n  \"issue_type\": \"Service Disruption\",\n  \"location\": \"Football Ground Area\",\n  \"event_date_or_time\": \"2023-10-05\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The transformer adjacent to the football ground has been malfunctioning, emitting a loud clicking sound and causing the lights to flicker since last night. This disruption is causing inconvenience and potential safety risks. Immediate attention is required to resolve the issue.\"\n}\n```",
+    "latency_seconds": 3.6949,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-025",
+    "response": "```json\n{\n  \"service_domain\": \"Electricity\",\n  \"issue_type\": \"Service Disruption\",\n  \"location\": \"Station Road\",\n  \"event_date_or_time\": \"Today\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": \"Please provide the specific reason for the refusal and the expected resolution.\",\n  \"formal_summary\": \"The helpdesk officer at the electricity office on Station Road refused to accept my outage form this morning. Please provide the specific reason for the refusal and the expected resolution.\"\n}\n```",
+    "latency_seconds": 2.9683,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-026",
+    "response": "```json\n{\n  \"service_domain\": \"Ration Card\",\n  \"issue_type\": \"Delayed Service\",\n  \"location\": \"District Office\",\n  \"event_date_or_time\": \"2023-04-01\",\n  \"amount_inr\": 0,\n  \"service_identifier\": \"R-11804\",\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The Ration Card renewal application number R-11804 has not been processed for six weeks at the District Office. The delay is causing inconvenience and urgency is high.\"\n}\n```",
+    "latency_seconds": 2.9683,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-027",
+    "response": "```json\n{\n  \"service_domain\": \"Ward Office 3\",\n  \"issue_type\": \"Birth Certificate Error\",\n  \"location\": \"Ward Office 3\",\n  \"event_date_or_time\": \"Last Friday\",\n  \"amount_inr\": null,\n  \"service_identifier\": \"Birth Certificate\",\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The birth certificate issued by Ward Office 3 has an incorrect spelling of the child's surname. The error was identified on the document and the issue is urgent as it affects the child's identity.\"\n}\n```",
+    "latency_seconds": 2.9683,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-028",
+    "response": "```json\n{\n  \"service_domain\": \"Pension Services\",\n  \"issue_type\": \"Service Discrepancy\",\n  \"location\": \"Civic Centre\",\n  \"event_date_or_time\": \"2023-04-05\",\n  \"amount_inr\": 0,\n  \"service_identifier\": \"Pension Claim\",\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"form_summary\": \"The clerk at the pension counter in Civic Centre told me to return next month instead of checking my submitted form today.\"\n}\n```",
+    "latency_seconds": 2.9683,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-029",
+    "response": "```json\n{\n  \"service_domain\": \"Online Certificate Portal\",\n  \"issue_type\": \"Billing Error\",\n  \"location\": \"Online Certificate Portal\",\n  \"event_date_or_time\": \"3 August\",\n  \"amount_inr\": 75,\n  \"service_identifier\": \"RC-550\",\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The online certificate portal charged Rs 75 twice for a residence certificate request submitted on 3 August. The service identifier is RC-550. This is a billing error that requires immediate attention.\"\n}\n```",
+    "latency_seconds": 3.5302,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-030",
+    "response": "```json\n{\n  \"service_domain\": \"Disability Assistance\",\n  \"issue_type\": \"Service Disruption\",\n  \"location\": \"Old Municipal Building\",\n  \"event_date_or_time\": \"This week\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": \"Please provide the exact dates and times when the service was disrupted, the name of the person responsible, and any specific details about the impact on service availability.\",\n  \"formal_summary\": \"The disability assistance desk at the old municipal building has been closed every afternoon this week, with no notice posted. This is a significant disruption to the service, and immediate action is required to restore normal service operations.\"\n}\n```",
+    "latency_seconds": 3.5302,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-031",
+    "response": "```json\n{\n  \"service_domain\": \"Public Services\",\n  \"issue_type\": \"Access to Facilities\",\n  \"location\": \"East side, near the tea stall\",\n  \"event_date_or_time\": \"Today\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The public toilet located on the east side, near the tea stall, is currently out of service due to a lack of water and soap. This issue is urgent and requires immediate attention.\"\n}\n```",
+    "latency_seconds": 3.5302,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-032",
+    "response": "```json\n{\n  \"service_domain\": \"Utilities\",\n  \"issue_type\": \"Safety\",\n  \"location\": \"Community Hall Road\",\n  \"event_date_or_time\": \"Current date/time\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"A fallen branch is currently touching the wires beside Community Hall Road, posing a safety risk to people walking below. Immediate action is required to address this issue.\"\n}\n```",
+    "latency_seconds": 3.5302,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-033",
+    "response": "```json\n{\n  \"service_domain\": \"Public Services\",\n  \"issue_type\": \"Missing Infrastructure\",\n  \"location\": \"Rose Lane and 4th Avenue\",\n  \"event_date_or_time\": \"Last month\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The street sign at the junction of Rose Lane and 4th Avenue has been missing since last month, causing confusion for visitors who keep taking the wrong turn.\"\n}\n```",
+    "latency_seconds": 2.9294,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-034",
+    "response": "```json\n{\n  \"service_domain\": \"Water Supply\",\n  \"issue_type\": \"Low Water Pressure\",\n  \"location\": \"Block A, Ashiana Homes, 3rd Floor\",\n  \"event_date_or_time\": \"6 June\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": \"Meter number\",\n  \"formal_summary\": \"The water pressure on the third floor of Block A, Ashiana Homes has been very low since 6 June. The building number is clear but the meter number is missing.\"\n}\n```",
+    "latency_seconds": 2.9294,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-035",
+    "response": "```json\n{\n  \"service_domain\": \"Public Transport\",\n  \"issue_type\": \"Service Disruption\",\n  \"location\": \"North Terminal\",\n  \"event_date_or_time\": \"Yesterday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": \"Please provide the service identifier and the amount in INR.\",\n  \"formal_summary\": \"The bus pass machine at North Terminal failed to dispense the card yesterday, and the counter staff was unhelpful in resolving the issue.\"\n}\n```",
+    "latency_seconds": 2.9294,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-036",
+    "response": "```json\n{\n  \"service_domain\": \"Community Centre\",\n  \"issue_type\": \"Equipment Failure\",\n  \"location\": \"Sector 12, Community Centre\",\n  \"event_date_or_time\": \"Monday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The community centre elevator in Sector 12 has stopped working since Monday. Elderly residents are using the stairs. Please address this issue promptly to ensure accessibility for all residents.\"\n}\n```",
+    "latency_seconds": 2.9294,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-037",
+    "response": "```json\n{\n  \"service_domain\": \"Library Services\",\n  \"issue_type\": \"Overdue Fee\",\n  \"location\": \"College Road\",\n  \"event_date_or_time\": \"1 August\",\n  \"amount_inr\": 100,\n  \"service_identifier\": \"Library Overdue Fee\",\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The library on College Road has incorrectly marked my returned book as overdue on 1 August, despite using the return box. This has resulted in an overdue fee of 100 INR. The issue is urgent and requires immediate resolution.\"\n}\n```",
+    "latency_seconds": 3.1266,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-038",
+    "response": "```json\n{\n  \"service_domain\": \"Community Hall Booking\",\n  \"issue_type\": \"Refund\",\n  \"location\": \"9 Lake View Road\",\n  \"event_date_or_time\": \"2023-10-15\",\n  \"amount_inr\": 500,\n  \"service_identifier\": \"Cancelled Booking\",\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The community hall booking page charged Rs 500 for a cancelled booking at 9 Lake View Road, but no refund has appeared. The issue requires immediate attention to ensure the customer receives a refund for the amount paid.\"\n}\n```",
+    "latency_seconds": 3.1266,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-039",
+    "response": "```json\n{\n  \"service_domain\": \"Public Safety\",\n  \"issue_type\": \"Safety Concern\",\n  \"location\": \"Near West Bus Depot\",\n  \"event_date_or_time\": \"Last two nights\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"High\",\n  \"missing_information\": null,\n  \"formal_summary\": \"The smoke alarm in the public shelter near West Bus Depot has been beeping for two nights, indicating a potential safety hazard. Inspection is urgently required to ensure the safety of the public.\"\n}\n```",
+    "latency_seconds": 3.1266,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-040",
+    "response": "```json\n{\n  \"service_domain\": \"Municipal Sports Ground\",\n  \"issue_type\": \"Booking Confirmation\",\n  \"location\": \"Ring Road\",\n  \"event_date_or_time\": \"Last Wednesday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": \"Please provide the booking number or any other relevant details.\",\n  \"formal_summary\": \"The municipal sports ground booking office on Ring Road has not confirmed the request from last Wednesday, and no booking number has been provided.\"\n}\n```",
+    "latency_seconds": 3.1266,
+    "batch_size": 4
+  }
+]

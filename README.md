@@ -22,7 +22,17 @@ Private grievance portals, real personal details, and automatic complaint submis
 
 ## Current state
 
-The repository and working rules are initialized. The first model-basics workflow is in [`notebooks/model_basics.ipynb`](notebooks/model_basics.ipynb) and contains one recorded Colab GPU smoke run with raw outputs and MLflow metadata. Dataset construction, baseline comparison, training, evaluation, and the local demo are still pending, so no task-quality result is reported yet.
+The repository and working rules are initialized. The two model-selection notebooks contain the recovered executed Colab runs for Qwen, SmolLM3, and Phi. On the 40-case development bake-off, SmolLM3 fixed few-shot was selected as the base because it gave the strongest overall structured output with lower peak memory than the other strongest candidate. The final test set has not been opened.
+
+## Recorded experiments
+
+The saved responses, summaries, timestamps, and complete MLflow file store are in [`data/model_selection_results/`](data/model_selection_results/README.md). From the repository root, the saved experiment can be opened with:
+
+```bash
+mlflow ui --backend-store-uri data/model_selection_results/mlruns
+```
+
+The runnable notebooks are [`model_bakeoff.ipynb`](notebooks/model_bakeoff.ipynb), [`model_bakeoff_phi.ipynb`](notebooks/model_bakeoff_phi.ipynb), and the earlier smoke check [`model_basics.ipynb`](notebooks/model_basics.ipynb). These are development results, not final test-set quality claims.
 
 ## Scope
 

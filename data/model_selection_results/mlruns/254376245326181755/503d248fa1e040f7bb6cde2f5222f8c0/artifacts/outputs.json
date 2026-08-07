@@ -1,0 +1,242 @@
+[
+  {
+    "case_id": "selection-case-001",
+    "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"outside Green Park Gate 3\",\"event_date_or_time\":\"since Monday morning\",\"amount_inr\":null,\"service_identifier\":\"Route 14\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Route 14 has not arrived at the bus stop outside Green Park Gate 3 since Monday morning.\"}",
+    "latency_seconds": 3.8307,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-002",
+    "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"near Sector 9 market\",\"event_date_or_time\":\"this morning\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"route_number\"],\"formal_summary\":\"The feeder bus did not arrive near Sector 9 market this morning.\"}",
+    "latency_seconds": 3.8307,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-003",
+    "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"infrastructure_failure\",\"location\":\"Central Square bus shelter\",\"event_date_or_time\":\"three days ago\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The digital display at the Central Square bus shelter has been blank for three days, preventing passengers from viewing arrival information.\"}",
+    "latency_seconds": 3.8307,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-004",
+    "response": "{\"service_domain\":\"public_transport_infrastructure\",\"issue_type\":\"safety_hazard\",\"location\":\"footbridge at River Road station\",\"event_date_or_time\":\"tonight\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"A loose handrail is hanging from the footbridge at River Road station, posing a safety hazard to users.\"}",
+    "latency_seconds": 3.8307,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-005",
+    "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"staff_behavior_or_service_disruption\",\"location\":\"near Old Court\",\"event_date_or_time\":\"yesterday afternoon\",\"amount_inr\":null,\"service_identifier\":\"bus 32\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The conductor on bus 32 shouted at passengers and refused to issue a ticket near Old Court yesterday afternoon.\"}",
+    "latency_seconds": 4.1779,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-006",
+    "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Tower B, Lotus Residency\",\"event_date_or_time\":\"since last night\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"Water supply has stopped in Tower B, Lotus Residency since last night, with all taps dry.\"}",
+    "latency_seconds": 4.1779,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-007",
+    "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"leak_or_damage\",\"location\":\"beside Ward 6 clinic\",\"event_date_or_time\":\"since Tuesday\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A public tap beside Ward 6 clinic has been leaking continuously since Tuesday, causing wet pavement.\"}",
+    "latency_seconds": 4.1779,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-008",
+    "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":null,\"event_date_or_time\":\"July\",\"amount_inr\":1860,\"service_identifier\":\"W-7782\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"meter_reading_confirmation\"],\"formal_summary\":\"The July water bill shows a charge of Rs 1,860 despite a meter reading of 420 litres.\"}",
+    "latency_seconds": 4.1779,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-009",
+    "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"contamination_or_unsanitary_condition\",\"location\":\"Hillview playground\",\"event_date_or_time\":\"this morning\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"The water from the hand pump at Hillview playground smelled of sewage this morning, and children were still using it.\"}",
+    "latency_seconds": 3.9016,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-010",
+    "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Rose Colony\",\"event_date_or_time\":\"today\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"booking_number\"],\"formal_summary\":\"The water tanker promised for Rose Colony did not arrive today, and no booking number was provided.\"}",
+    "latency_seconds": 3.9016,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-011",
+    "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"House Lane, New Town\",\"event_date_or_time\":\"four days ago\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Garbage collection has not taken place in House Lane, New Town for four days, resulting in accumulated waste.\"}",
+    "latency_seconds": 3.9016,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-012",
+    "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"damage_or_hazard\",\"location\":\"outside Maple Apartments\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"event_date_or_time\"],\"formal_summary\":\"The lid of the community waste bin outside Maple Apartments is broken with glass sticking out.\"}",
+    "latency_seconds": 3.9016,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-013",
+    "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"overflow_or_clogging\",\"location\":\"behind the primary school on Station Lane\",\"event_date_or_time\":\"after yesterday's rain\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"A drain behind the primary school on Station Lane is overflowing into the road following yesterday's rain.\"}",
+    "latency_seconds": 4.0963,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-014",
+    "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"behind the clinic\",\"event_date_or_time\":\"Friday\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_lane_name\"],\"formal_summary\":\"The collection worker left a pile of waste beside the lane behind the clinic instead of collecting it on Friday.\"}",
+    "latency_seconds": 4.0963,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-015",
+    "response": "{\"service_domain\":\"waste_management\",\"issue_type\":\"payment_or_receipt_issue\",\"location\":\"18 Park Street\",\"event_date_or_time\":null,\"amount_inr\":250,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"reference_number\"],\"formal_summary\":\"A payment of Rs 250 for bulky-waste pickup at 18 Park Street was made, but the receipt lacks a reference number.\"}",
+    "latency_seconds": 4.0963,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-016",
+    "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"outside 22 Cedar Avenue\",\"event_date_or_time\":\"this week\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The streetlight outside 22 Cedar Avenue has been off every night this week, creating a safety hazard.\"}",
+    "latency_seconds": 4.0963,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-017",
+    "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"surface_damage_or_hazard\",\"location\":\"front of the post office on Market Road\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"A deep pothole has opened in front of the post office on Market Road and damaged a bicycle.\"}",
+    "latency_seconds": 3.9359,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-018",
+    "response": "{\"service_domain\":\"traffic_management\",\"issue_type\":\"malfunction_or_abnormal_operation\",\"location\":\"near East Gate\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"immediate\",\"missing_information\":[\"none\"],\"formal_summary\":\"The traffic signal at the crossing near East Gate is showing green in both directions, which is an abnormal or malfunctioning state.\"}",
+    "latency_seconds": 3.9359,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-019",
+    "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"structural_damage_or_hazard\",\"location\":\"beside Canal Road\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"house_number\"],\"formal_summary\":\"The footpath has collapsed beside Canal Road, posing a safety hazard.\"}",
+    "latency_seconds": 3.9359,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-020",
+    "response": "{\"service_domain\":\"road_maintenance\",\"issue_type\":\"incomplete_or_unremedied_work\",\"location\":\"outside Sunrise School\",\"event_date_or_time\":\"Wednesday\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Roadwork crew dug up the lane outside Sunrise School on Wednesday and left barricades blocking the only entrance.\"}",
+    "latency_seconds": 3.9359,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-021",
+    "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Building 4, Lakeview Estate\",\"event_date_or_time\":\"since 2 pm\",\"amount_inr\":null,\"service_identifier\":\"E-4419\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"Power has been out in Building 4, Lakeview Estate since 2 pm.\"}",
+    "latency_seconds": 4.2808,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-022",
+    "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"safety_hazard\",\"location\":\"outside 7 Palm Street\",\"event_date_or_time\":\"tonight\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"The meter box outside 7 Palm Street is sparking and the cover is hanging open, posing a safety hazard.\"}",
+    "latency_seconds": 4.2808,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-023",
+    "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":null,\"event_date_or_time\":\"August\",\"amount_inr\":6420,\"service_identifier\":\"M-9031\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"supporting_evidence\"],\"formal_summary\":\"The August electricity bill shows a charge of Rs 6,420, despite the shop being closed for most of the month.\"}",
+    "latency_seconds": 4.2808,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-024",
+    "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"equipment_failure_or_anomaly\",\"location\":\"beside the football ground\",\"event_date_or_time\":\"since last night\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"A transformer beside the football ground has been making a loud clicking sound and causing lights to flicker since last night.\"}",
+    "latency_seconds": 4.2808,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-025",
+    "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"service_rejection_or_refusal\",\"location\":\"electricity office on Station Road\",\"event_date_or_time\":\"this morning\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A helpdesk officer at the electricity office on Station Road refused to accept the outage form this morning.\"}",
+    "latency_seconds": 3.9701,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-026",
+    "response": "{\"service_domain\":\"food_security\",\"issue_type\":\"processing_delay\",\"location\":\"district office\",\"event_date_or_time\":\"six weeks ago\",\"amount_inr\":null,\"service_identifier\":\"R-11804\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Ration card renewal application (R-11804) has not been processed at the district office for six weeks.\"}",
+    "latency_seconds": 3.9701,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-027",
+    "response": "{\"service_domain\":\"government_documents\",\"issue_type\":\"data_error_or_inaccuracy\",\"location\":\"Ward Office 3\",\"event_date_or_time\":\"last Friday\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"correct_spelling_of_surname\"],\"formal_summary\":\"The birth certificate issued by Ward Office 3 last Friday contains an incorrect spelling of the child's surname.\"}",
+    "latency_seconds": 3.9701,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-028",
+    "response": "{\"service_domain\":\"pension_services\",\"issue_type\":\"delay_in_service_or_unresolved_query\",\"location\":\"Civic Centre\",\"event_date_or_time\":\"today\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"name_of_clerk\",\"form_details_submitted\"],\"formal_summary\":\"The pension clerk at Civic Centre advised the individual to return next month instead of processing the submitted form today.\"}",
+    "latency_seconds": 3.9701,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-029",
+    "response": "{\"service_domain\":\"online_services\",\"issue_type\":\"unauthorized_charging\",\"location\":null,\"event_date_or_time\":\"3 August\",\"amount_inr\":75,\"service_identifier\":\"RC-550\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The online certificate portal charged Rs 75 twice for a residence certificate request submitted on 3 August, with receipt RC-550 displayed.\"}",
+    "latency_seconds": 4.228,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-030",
+    "response": "{\"service_domain\":\"disability_services\",\"issue_type\":\"service_unavailability\",\"location\":\"old municipal building\",\"event_date_or_time\":\"this week\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"notice_posting_details\"],\"formal_summary\":\"The disability assistance desk at the old municipal building has been closed every afternoon this week without prior notice.\"}",
+    "latency_seconds": 4.228,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-031",
+    "response": "{\"service_domain\":\"public_facilities\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"beside the railway overbridge, east side, near the tea stall\",\"event_date_or_time\":\"this morning\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The public toilet beside the railway overbridge on the east side, near the tea stall, has no water or soap.\"}",
+    "latency_seconds": 4.228,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-032",
+    "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"beside Community Hall Road\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"A fallen branch is touching the wires beside Community Hall Road and poses an immediate safety hazard to pedestrians.\"}",
+    "latency_seconds": 4.228,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-033",
+    "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"missing_or_defective_infrastructure\",\"location\":\"junction of Rose Lane and 4th Avenue\",\"event_date_or_time\":\"since last month\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The street sign at the junction of Rose Lane and 4th Avenue has been missing since last month, leading to wrong turns by visitors.\"}",
+    "latency_seconds": 4.2845,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-034",
+    "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_deficiency\",\"location\":\"third floor, Block A, Ashiana Homes\",\"event_date_or_time\":\"since 6 June\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"meter number\"],\"formal_summary\":\"Water pressure has been very low on the third floor of Block A, Ashiana Homes since 6 June.\"}",
+    "latency_seconds": 4.2845,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-035",
+    "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"service_failure_or_user_error\",\"location\":\"North Terminal\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The bus pass machine at North Terminal failed to process a card and counter staff were unable to assist.\"}",
+    "latency_seconds": 4.2845,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-036",
+    "response": "{\"service_domain\":\"public_facilities\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"community centre, Sector 12\",\"event_date_or_time\":\"since Monday\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"The elevator at the community centre in Sector 12 has stopped working since Monday, affecting elderly residents who are now using the stairs.\"}",
+    "latency_seconds": 4.2845,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-037",
+    "response": "{\"service_domain\":\"public_library\",\"issue_type\":\"record_error_or_miscommunication\",\"location\":\"College Road\",\"event_date_or_time\":\"1 August\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"book_details\",\"return_box_confirmation\"],\"formal_summary\":\"A returned book was incorrectly marked as overdue on 1 August at the public library on College Road, despite use of the return box.\"}",
+    "latency_seconds": 4.2255,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-038",
+    "response": "{\"service_domain\":\"community_services\",\"issue_type\":\"refund_or_payment_discrepancy\",\"location\":\"9 Lake View Road\",\"event_date_or_time\":null,\"amount_inr\":500,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"event_date_or_time\"],\"formal_summary\":\"A booking at the community hall at 9 Lake View Road was cancelled, yet a charge of Rs 500 was applied with no refund.\"}",
+    "latency_seconds": 4.2255,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-039",
+    "response": "{\"service_domain\":\"public_safety_and_infrastructure\",\"issue_type\":\"malfunctioning_hazard\",\"location\":\"public shelter near West Bus Depot\",\"event_date_or_time\":\"two nights\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"The smoke alarm at the public shelter near West Bus Depot has been beeping for two nights and has not been inspected.\"}",
+    "latency_seconds": 4.2255,
+    "batch_size": 4
+  },
+  {
+    "case_id": "selection-case-040",
+    "response": "{\"service_domain\":\"municipal_services\",\"issue_type\":\"non_response_to_request\",\"location\":\"municipal sports ground booking office on Ring Road\",\"event_date_or_time\":\"last Wednesday\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"booking_number\"],\"formal_summary\":\"The municipal sports ground booking office on Ring Road has not confirmed a booking request made last Wednesday.\"}",
+    "latency_seconds": 4.2255,
+    "batch_size": 4
+  }
+]

@@ -1,0 +1,14 @@
+artifact_uri: file:./data/model_selection_results/mlruns/368061941130695870/6408981b62ba43c39a5f2688bec2c871/artifacts
+end_time: 1786098458016
+entry_point_name: ''
+experiment_id: '368061941130695870'
+lifecycle_stage: active
+run_id: 6408981b62ba43c39a5f2688bec2c871
+run_name: phi-4-mini-static_few_shot
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1786098457722
+status: 3
+tags: []
+user_id: root

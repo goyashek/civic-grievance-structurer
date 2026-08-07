@@ -1,0 +1,9 @@
+artifact_location: file:./data/model_selection_results/mlruns/368061941130695870
+creation_time: 1786098151440
+effective_trace_archival_retention: null
+experiment_id: '368061941130695870'
+last_update_time: 1786098151440
+lifecycle_stage: active
+name: civicstruct-model-bakeoff
+trace_location: null
+workspace: default

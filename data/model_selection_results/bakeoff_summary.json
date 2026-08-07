@@ -1,0 +1,109 @@
+{
+  "results": [
+    {
+      "model_name": "Qwen/Qwen3-4B-Instruct-2507",
+      "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "prompt_mode": "zero_shot",
+      "device": "cuda",
+      "decoding": {
+        "do_sample": false,
+        "max_new_tokens": 192
+      },
+      "batch_size": 4,
+      "mean_latency_seconds_per_case": 3.6690599999999995,
+      "gpu_memory_mb": 4604.89013671875,
+      "package_versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "5.10.1",
+        "mlflow": "3.15.1"
+      },
+      "scores": {
+        "schema_validity_rate": 0.0,
+        "service_domain_macro_f1": 0.0,
+        "issue_type_macro_f1": 0.0,
+        "missing_information_f1": 0.0,
+        "hallucinated_field_rate": 0.0
+      },
+      "mlflow_run_id": "d9aa9802f38248768df2b64d916316e8"
+    },
+    {
+      "model_name": "Qwen/Qwen3-4B-Instruct-2507",
+      "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "prompt_mode": "static_few_shot",
+      "device": "cuda",
+      "decoding": {
+        "do_sample": false,
+        "max_new_tokens": 192
+      },
+      "batch_size": 4,
+      "mean_latency_seconds_per_case": 4.09313,
+      "gpu_memory_mb": 5771.10009765625,
+      "package_versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "5.10.1",
+        "mlflow": "3.15.1"
+      },
+      "scores": {
+        "schema_validity_rate": 0.175,
+        "service_domain_macro_f1": 0.2675736961451247,
+        "issue_type_macro_f1": 0.1998397435897436,
+        "missing_information_f1": 0.3018867924528302,
+        "hallucinated_field_rate": 0.17647058823529413
+      },
+      "mlflow_run_id": "503d248fa1e040f7bb6cde2f5222f8c0"
+    },
+    {
+      "model_name": "HuggingFaceTB/SmolLM3-3B",
+      "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+      "prompt_mode": "zero_shot",
+      "device": "cuda",
+      "decoding": {
+        "do_sample": false,
+        "max_new_tokens": 192
+      },
+      "batch_size": 4,
+      "mean_latency_seconds_per_case": 3.1785,
+      "gpu_memory_mb": 2058.50732421875,
+      "package_versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "5.10.1",
+        "mlflow": "3.15.1"
+      },
+      "scores": {
+        "schema_validity_rate": 0.0,
+        "service_domain_macro_f1": 0.0,
+        "issue_type_macro_f1": 0.0,
+        "missing_information_f1": 0.0,
+        "hallucinated_field_rate": 0.0
+      },
+      "mlflow_run_id": "a7d834beea0b4fac81645c80cbaa8664"
+    },
+    {
+      "model_name": "HuggingFaceTB/SmolLM3-3B",
+      "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+      "prompt_mode": "static_few_shot",
+      "device": "cuda",
+      "decoding": {
+        "do_sample": false,
+        "max_new_tokens": 192
+      },
+      "batch_size": 4,
+      "mean_latency_seconds_per_case": 2.76103,
+      "gpu_memory_mb": 2667.6953125,
+      "package_versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "5.10.1",
+        "mlflow": "3.15.1"
+      },
+      "scores": {
+        "schema_validity_rate": 0.425,
+        "service_domain_macro_f1": 0.48333333333333334,
+        "issue_type_macro_f1": 0.22142857142857142,
+        "missing_information_f1": 0.5625,
+        "hallucinated_field_rate": 0.05555555555555555
+      },
+      "mlflow_run_id": "13ace1e35bad4f528529ca42348f0418"
+    }
+  ],
+  "setup_failures": []
+}

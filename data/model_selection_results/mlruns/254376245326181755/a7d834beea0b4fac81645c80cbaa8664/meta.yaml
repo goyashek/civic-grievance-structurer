@@ -1,0 +1,14 @@
+artifact_uri: file:./data/model_selection_results/mlruns/254376245326181755/a7d834beea0b4fac81645c80cbaa8664/artifacts
+end_time: 1786098824778
+entry_point_name: ''
+experiment_id: '254376245326181755'
+lifecycle_stage: active
+run_id: a7d834beea0b4fac81645c80cbaa8664
+run_name: SmolLM3-3B-zero_shot
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1786098824462
+status: 3
+tags: []
+user_id: root

@@ -23,6 +23,12 @@ class ExamplesContractTest(unittest.TestCase):
         with self.assertRaises(SchemaError):
             validate_gold(gold)
 
+    def test_missing_labels_are_unique_and_ordered(self):
+        gold = deepcopy(load_examples()[0]["gold"])
+        gold["missing_information"] = ["amount", "exact_location"]
+        with self.assertRaises(SchemaError):
+            validate_gold(gold)
+
 
 if __name__ == "__main__":
     unittest.main()

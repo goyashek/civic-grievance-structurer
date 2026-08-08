@@ -2,6 +2,7 @@
 *.md
 !README.md
 !**/README.md
+!docs/annotation_guide.md
 
 
 # local environment and secrets

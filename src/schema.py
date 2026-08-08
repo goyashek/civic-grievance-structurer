@@ -2,6 +2,8 @@
 
 from typing import Any
 
+SCHEMA_VERSION = "1.0"
+
 
 class SchemaError(ValueError):
     """Raised when a structured grievance output violates the contract."""
@@ -56,6 +58,16 @@ ALLOWED_MISSING = frozenset(
         "none",
     }
 )
+MISSING_INFORMATION_ORDER = (
+    "exact_location",
+    "date_or_time",
+    "service_identifier",
+    "transaction_or_reference_id",
+    "amount",
+    "supporting_evidence",
+    "affected_person_or_group",
+    "none",
+)
 
 
 def validate_gold(gold: dict[str, Any]) -> None:
@@ -75,6 +87,11 @@ def validate_gold(gold: dict[str, Any]) -> None:
         raise SchemaError("missing_information must be a non-empty list")
     if not set(missing) <= ALLOWED_MISSING:
         raise SchemaError("unknown missing-information label")
+    if len(missing) != len(set(missing)):
+        raise SchemaError("missing_information cannot contain duplicates")
+    missing_order = {label: index for index, label in enumerate(MISSING_INFORMATION_ORDER)}
+    if missing != sorted(missing, key=missing_order.__getitem__):
+        raise SchemaError("missing_information must use the shared label order")
     if "none" in missing and missing != ["none"]:
         raise SchemaError("none cannot be combined with another missing label")
 

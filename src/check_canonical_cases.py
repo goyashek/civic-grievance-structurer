@@ -1,4 +1,4 @@
-"""Validate the first manually written canonical-case batch."""
+"""Validate the manually written train and validation canonical cases."""
 
 import json
 from collections import Counter
@@ -37,7 +37,10 @@ MISSING_ORDER = (
 )
 
 
-def load_canonical_cases(path: Path = CANONICAL_PATH, expected_count: int = 70) -> list[dict]:
+EXPECTED_SPLIT_COUNTS = {"train": 120, "validation": 25}
+
+
+def load_canonical_cases(path: Path = CANONICAL_PATH, expected_count: int = 145) -> list[dict]:
     rows = []
     for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
         if not line.strip():
@@ -45,8 +48,8 @@ def load_canonical_cases(path: Path = CANONICAL_PATH, expected_count: int = 70) 
         row = json.loads(line)
         if set(row) != ROW_FIELDS:
             raise ValueError(f"line {line_number}: wrong row fields")
-        if row["split"] != "train" or row["source_type"] != "manual_canonical":
-            raise ValueError(f"line {line_number}: batch must be manual training data")
+        if row["split"] not in EXPECTED_SPLIT_COUNTS or row["source_type"] != "manual_canonical":
+            raise ValueError(f"line {line_number}: row must be manual train or validation data")
         if row["service_domain"] not in ALLOWED_DOMAINS:
             raise ValueError(f"line {line_number}: unknown service domain")
         if row["issue_type"] not in ALLOWED_ISSUES:
@@ -90,6 +93,9 @@ def load_canonical_cases(path: Path = CANONICAL_PATH, expected_count: int = 70) 
         raise AssertionError(f"expected {expected_count} canonical cases, found {len(rows)}")
     if len({row["case_id"] for row in rows}) != len(rows):
         raise AssertionError("canonical case IDs must be unique")
+    split_counts = Counter(row["split"] for row in rows)
+    if dict(split_counts) != EXPECTED_SPLIT_COUNTS:
+        raise AssertionError(f"expected split counts {EXPECTED_SPLIT_COUNTS}, found {dict(split_counts)}")
     if {row["service_domain"] for row in rows} != set(ALLOWED_DOMAINS):
         raise AssertionError("the batch must cover every service domain")
     if {row["issue_type"] for row in rows} != set(ALLOWED_ISSUES):
@@ -131,6 +137,7 @@ if __name__ == "__main__":
     rows = load_canonical_cases()
     validate_coverage(rows)
     print(f"validated {len(rows)} canonical cases")
+    print(f"splits: {dict(sorted(Counter(row['split'] for row in rows).items()))}")
     for field in ("service_domain", "issue_type", "urgency"):
         print(f"{field}: {dict(sorted(Counter(row[field] for row in rows).items()))}")
     print(

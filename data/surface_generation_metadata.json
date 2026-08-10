@@ -1,0 +1,44 @@
+{
+  "input": "data/canonical_cases.jsonl",
+  "output": "data/surface_variants.jsonl",
+  "prompt_version": "surface-variant-v1",
+  "generation_method": "constrained assistant draft from canonical summaries",
+  "generator_model": "current assistant session; no external API model revision recorded",
+  "decoding": {
+    "temperature": null,
+    "seed": null
+  },
+  "gold_source": "canonical row copied by the builder",
+  "source_type_counts": {
+    "manual_surface": 35,
+    "llm_assisted_surface": 615
+  },
+  "split_counts": {
+    "train": 600,
+    "validation": 50
+  },
+  "style_counts": {
+    "train": {
+      "formal_english": 120,
+      "informal_english": 120,
+      "concise_english": 120,
+      "spelling_noise": 120,
+      "hinglish_roman": 120
+    },
+    "validation": {
+      "formal_english": 25,
+      "informal_english": 25
+    }
+  },
+  "checks": {
+    "schema_and_canonical_gold_alignment": "passed",
+    "builder_text_alignment": "passed",
+    "split_inheritance": "passed",
+    "exact_duplicate_check": "passed",
+    "cross_split_near_duplicate_check": "passed",
+    "manual_validation_review": "passed: all 50 validation rows reviewed",
+    "training_sample_review": "passed: one formal row reviewed for each of 120 training cases",
+    "dataset_freeze": "frozen_train_validation_v1",
+    "audit_manifest": "data/surface_audit_manifest.json"
+  }
+}

@@ -24,6 +24,39 @@ The repository's `src/schema.py` is the dependency-free implementation of this
 contract. Pydantic is not needed while the output is a flat JSON object with
 fixed labels and scalar values.
 
+## surface-variant review
+
+Canonical rows define the truth. A language model may help draft surface
+wording, but it does not choose the gold labels. The generation input contains
+one canonical case and a requested style. The small generation record should
+look like this:
+
+```json
+{
+  "case_id": "canonical-071",
+  "style": "informal_english",
+  "complaint": "Route 31 did not show up at Lotus Gate stop at 8:15 Monday."
+}
+```
+
+The pipeline copies `gold` from the matching canonical row. Do not accept a
+model-generated gold object when it disagrees with the canonical facts. Record
+the generator model, prompt version, decoding settings, and generation result
+when the assisted workflow is used. Keep the 35 manually written rows marked
+as manual and the 615 assistant-drafted rows marked as assisted.
+
+Review each validation variant and the planned test rows. Review at least 20
+percent of training variants. Reject or correct a variant when it:
+
+- adds a person, cause, amount, date, location, identifier, or promised action;
+- removes a fact or intentional omission from the canonical case;
+- changes the service domain, issue type, urgency, or missing-information list;
+- uses spelling noise or Roman-script Hinglish that changes the meaning; or
+- copies another complaint closely enough to weaken the split audit.
+
+Strict JSON and schema validation catch useful format errors, but they cannot
+prove semantic preservation. Human review remains part of the data contract.
+
 ## scalar fields
 
 Use `null` when a scalar fact is not stated. Do not use an empty string,

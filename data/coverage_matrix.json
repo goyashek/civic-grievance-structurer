@@ -1,12 +1,16 @@
 {
   "batch": {
     "path": "data/canonical_cases.jsonl",
-    "count": 70,
-    "split": "train",
+    "count": 145,
+    "split": "train+validation",
+    "split_counts": {
+      "train": 120,
+      "validation": 25
+    },
     "source_type": "manual_canonical",
     "case_flags": {
-      "hard_negative": 5,
-      "ambiguous_but_defensible": 6
+      "ambiguous_but_defensible": 14,
+      "hard_negative": 16
     }
   },
   "planned_splits": {
@@ -25,38 +29,38 @@
   },
   "written_batch_counts": {
     "service_domain": {
-      "electricity": 10,
-      "other": 11,
-      "public_transport": 10,
-      "roads_and_streetlights": 10,
-      "sanitation_and_waste": 10,
-      "water_supply": 10,
-      "welfare_or_document_service": 9
+      "electricity": 21,
+      "other": 23,
+      "public_transport": 20,
+      "roads_and_streetlights": 21,
+      "sanitation_and_waste": 20,
+      "water_supply": 20,
+      "welfare_or_document_service": 20
     },
     "issue_type": {
-      "damaged_infrastructure": 10,
-      "delay_or_non_arrival": 8,
-      "other": 9,
-      "overcharging_or_payment_problem": 7,
-      "record_or_document_error": 4,
-      "safety_or_health_hazard": 9,
-      "service_outage_or_non_delivery": 16,
-      "staff_conduct": 7
+      "damaged_infrastructure": 18,
+      "delay_or_non_arrival": 15,
+      "other": 15,
+      "overcharging_or_payment_problem": 16,
+      "record_or_document_error": 13,
+      "safety_or_health_hazard": 20,
+      "service_outage_or_non_delivery": 31,
+      "staff_conduct": 17
     },
     "urgency": {
-      "routine": 49,
-      "safety_critical": 9,
-      "time_sensitive": 12
+      "routine": 95,
+      "safety_critical": 20,
+      "time_sensitive": 30
     },
     "intentionally_missing_fields": {
-      "affected_person_or_group": 1,
-      "amount": 1,
-      "date_or_time": 1,
-      "exact_location": 6,
-      "none": 56,
-      "service_identifier": 2,
-      "supporting_evidence": 7,
-      "transaction_or_reference_id": 4
+      "affected_person_or_group": 3,
+      "amount": 5,
+      "date_or_time": 9,
+      "exact_location": 16,
+      "none": 95,
+      "service_identifier": 11,
+      "supporting_evidence": 16,
+      "transaction_or_reference_id": 13
     }
   },
   "planned_surface_styles": {

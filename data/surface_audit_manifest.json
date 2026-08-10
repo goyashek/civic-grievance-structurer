@@ -1,0 +1,42 @@
+{
+  "dataset_version": "frozen_train_validation_v1",
+  "status": "frozen_train_validation_only",
+  "frozen_at": "2026-08-10",
+  "final_test_status": "not_written",
+  "canonical_counts": {
+    "train": 120,
+    "validation": 25,
+    "test": 0
+  },
+  "surface_counts": {
+    "train": 600,
+    "validation": 50,
+    "test": 0
+  },
+  "source_type_counts": {
+    "manual_surface": 35,
+    "llm_assisted_surface": 615
+  },
+  "review": {
+    "validation_rows_reviewed": 50,
+    "training_rows_reviewed": 120,
+    "training_selection": "one formal_english row for every training case",
+    "manual_starter_rows": 35,
+    "review_basis": "canonical gold alignment, fact preservation, intentional omissions, and style output",
+    "review_result": "no obvious fact drift found in the reviewed rows"
+  },
+  "checks": {
+    "canonical_schema": "passed",
+    "surface_schema": "passed",
+    "split_inheritance": "passed",
+    "exact_duplicates": "passed",
+    "cross_split_near_duplicates": "passed",
+    "coverage_matrix": "passed"
+  },
+  "sha256": {
+    "data/canonical_cases.jsonl": "298992c8e9202bc994c6198fc957abe7e1b6627540dd1eee6f27553a476d1d12",
+    "data/surface_variants.jsonl": "9f0da3221716b85ee521d0df2794659e1bc7f9960074bfd70704eb9b805e0892",
+    "data/coverage_matrix.json": "62d95d90de0e1b94156132fb8fa26fe550b2c38873ca57f03140f6893acc2407",
+    "data/surface_generation_metadata.json": "177e8d32e6e96081f553ecfae86d6cab796e53f1f442eec030724e41a41da7c0"
+  }
+}

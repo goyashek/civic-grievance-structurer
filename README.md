@@ -47,7 +47,7 @@ synthetic benchmark, not on real civic complaint portals.
 
 ## Current state
 
-The repository and working rules are initialized. The two model-selection notebooks contain the recovered executed Colab runs for Qwen, SmolLM3, and Phi. On the 40-case development bake-off, SmolLM3 fixed few-shot was selected as the base because it gave the strongest overall structured output with lower peak memory than the other strongest candidate. Those saved bake-off metrics used the original strict evaluator, so the final evaluator will report format failure and semantic quality separately. The final test set has not been opened.
+The repository and working rules are initialized. The two model-selection notebooks contain the recovered executed Colab runs for Qwen, SmolLM3, and Phi. On the 40-case development bake-off, SmolLM3 fixed few-shot was selected as the base because it gave the strongest overall structured output with lower peak memory than the other strongest candidate. Those saved bake-off metrics used the original strict evaluator. The shared evaluator now keeps strict, conditional, and repaired scores separate, and its definitions are frozen in [`docs/evaluation_contract.md`](docs/evaluation_contract.md). The final test set has not been opened.
 
 ## Recorded experiments
 

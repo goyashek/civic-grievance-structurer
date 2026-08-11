@@ -4,6 +4,7 @@
 !**/README.md
 !docs/annotation_guide.md
 !docs/dataset_card.md
+!docs/evaluation_contract.md
 
 
 # local environment and secrets

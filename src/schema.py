@@ -1,5 +1,7 @@
 """Shared labels and validation for structured grievance outputs."""
 
+import math
+
 from typing import Any
 
 SCHEMA_VERSION = "1.0"
@@ -98,10 +100,15 @@ def validate_gold(gold: dict[str, Any]) -> None:
     for field in ("location", "event_date_or_time", "service_identifier"):
         if gold[field] is not None and not isinstance(gold[field], str):
             raise SchemaError(f"{field} must be a string or null")
+        if isinstance(gold[field], str) and not gold[field].strip():
+            raise SchemaError(f"{field} cannot be empty")
 
     amount = gold["amount_inr"]
     if amount is not None and (
-        isinstance(amount, bool) or not isinstance(amount, (int, float)) or amount < 0
+        isinstance(amount, bool)
+        or not isinstance(amount, (int, float))
+        or not math.isfinite(amount)
+        or amount < 0
     ):
         raise SchemaError("amount_inr must be a non-negative number or null")
     if not isinstance(gold["formal_summary"], str) or not gold["formal_summary"].strip():

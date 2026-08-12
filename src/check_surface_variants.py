@@ -7,11 +7,9 @@ from collections import Counter
 from pathlib import Path
 
 if __package__:
-    from .build_surface_variants import draft_complaint
     from .check_canonical_cases import load_canonical_cases
     from .schema import validate_gold
 else:
-    from build_surface_variants import draft_complaint
     from check_canonical_cases import load_canonical_cases
     from schema import validate_gold
 
@@ -19,11 +17,11 @@ else:
 SURFACE_PATH = Path(__file__).resolve().parents[1] / "data/surface_variants.jsonl"
 ROW_FIELDS = {"surface_id", "case_id", "split", "source_type", "style", "complaint", "gold"}
 ALLOWED_STYLES = {
-    "train": {"formal_english", "informal_english", "concise_english", "spelling_noise", "hinglish_roman"},
+    "train": {"formal_english"},
     "validation": {"formal_english", "informal_english"},
 }
-ALLOWED_SOURCE_TYPES = {"manual_surface", "llm_assisted_surface"}
-EXPECTED_SPLIT_COUNTS = {"train": 600, "validation": 50}
+ALLOWED_SOURCE_TYPES = {"manual_surface", "canonical_summary_surface", "template_surface"}
+EXPECTED_SPLIT_COUNTS = {"train": 120, "validation": 50}
 EXPECTED_STYLE_COUNTS = {"train": 120, "validation": 25}
 NEAR_DUPLICATE_THRESHOLD = 0.96
 
@@ -66,12 +64,6 @@ def load_surface_variants(path: Path = SURFACE_PATH) -> list[dict]:
             raise ValueError(f"line {line_number}: style is not allowed for the split")
         if not isinstance(row["complaint"], str) or not row["complaint"].strip():
             raise ValueError(f"line {line_number}: complaint must be non-empty")
-        if row["source_type"] == "llm_assisted_surface":
-            expected_complaint = draft_complaint(
-                canonical[row["case_id"]]["clean_formal_summary"], row["style"]
-            )
-            if row["complaint"] != expected_complaint:
-                raise ValueError(f"line {line_number}: assistant-drafted wording drifted from the builder")
         validate_gold(row["gold"])
         if row["gold"] != expected_gold(canonical[row["case_id"]]):
             raise ValueError(f"line {line_number}: gold does not match the canonical case")
@@ -108,7 +100,7 @@ def check_duplicates(rows: list[dict]) -> None:
 
     train = [row for row in rows if row["split"] == "train"]
     validation = [row for row in rows if row["split"] == "validation"]
-    # ponytail: O(n²) is enough for 600 x 50 split comparisons; use an index if this grows.
+    # ponytail: O(n²) is enough for 120 x 50 comparisons; use an index if this grows.
     for left in train:
         for right in validation:
             score = difflib.SequenceMatcher(

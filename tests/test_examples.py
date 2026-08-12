@@ -29,6 +29,20 @@ class ExamplesContractTest(unittest.TestCase):
         with self.assertRaises(SchemaError):
             validate_gold(gold)
 
+    def test_empty_scalar_is_rejected(self):
+        gold = deepcopy(load_examples()[0]["gold"])
+        gold["location"] = "  "
+        with self.assertRaises(SchemaError):
+            validate_gold(gold)
+
+    def test_non_finite_amount_is_rejected(self):
+        for amount in (float("nan"), float("inf"), float("-inf")):
+            with self.subTest(amount=amount):
+                gold = deepcopy(load_examples()[0]["gold"])
+                gold["amount_inr"] = amount
+                with self.assertRaises(SchemaError):
+                    validate_gold(gold)
+
 
 if __name__ == "__main__":
     unittest.main()

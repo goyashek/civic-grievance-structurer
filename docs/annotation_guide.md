@@ -2,7 +2,7 @@
 
 ## purpose
 
-This guide defines schema version 1.0 for fictional public-service complaints.
+This guide defines schema version 1.0 for public-service complaints.
 Annotators record only facts stated in the complaint. They do not infer a
 department, location, amount, date, or affected group from context.
 
@@ -26,10 +26,9 @@ fixed labels and scalar values.
 
 ## surface-variant review
 
-Canonical rows define the truth. A language model may help draft surface
-wording, but it does not choose the gold labels. The generation input contains
-one canonical case and a requested style. The small generation record should
-look like this:
+Canonical rows define the truth for controlled complaints. A surface row keeps
+the canonical case ID and copies its checked gold object. A minimal record
+looks like this:
 
 ```json
 {
@@ -39,11 +38,9 @@ look like this:
 }
 ```
 
-The pipeline copies `gold` from the matching canonical row. Do not accept a
-model-generated gold object when it disagrees with the canonical facts. Record
-the generator model, prompt version, decoding settings, and generation result
-when the assisted workflow is used. Keep the 35 manually written rows marked
-as manual and the 615 assistant-drafted rows marked as assisted.
+Do not count mechanical template rewrites as independent training evidence.
+Label each row by how its wording was actually made, such as
+`manual_surface`, `canonical_summary_surface`, or `template_surface`.
 
 Review each validation variant and the planned test rows. Review at least 20
 percent of training variants. Reject or correct a variant when it:
@@ -56,6 +53,19 @@ percent of training variants. Reject or correct a variant when it:
 
 Strict JSON and schema validation catch useful format errors, but they cannot
 prove semantic preservation. Human review remains part of the data contract.
+
+## licensed public rows
+
+Licensed public text may enter the training slice only after a source and
+privacy audit. Discard rows containing names, phone numbers, email addresses,
+URLs, account-like identifiers, or sensitive personal details. Do not retain
+request IDs, exact addresses, coordinates, postcodes, or street-level source
+fields. Generalize location to ward or community area, mark `exact_location`
+as missing, and record a hash of the source row for traceability.
+
+Public labels are project annotations. They are not official labels from the
+source portal. Every retained public row requires manual review of the text,
+field mapping, summary, and privacy transformation.
 
 ## scalar fields
 

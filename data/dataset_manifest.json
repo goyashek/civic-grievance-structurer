@@ -1,0 +1,29 @@
+{
+  "dataset_version": "frozen_full_v2",
+  "frozen_at": "2026-08-12",
+  "counts": {
+    "controlled_training": 120,
+    "licensed_public_training": 40,
+    "effective_training": 160,
+    "validation": 50,
+    "internal_test": 50,
+    "external_evaluation": 20
+  },
+  "review": {
+    "controlled_training_reviewed": 120,
+    "licensed_public_training_reviewed": 40,
+    "validation_reviewed": 50,
+    "internal_test_reviewed": 50,
+    "external_evaluation_reviewed": 20
+  },
+  "test_boundary": "complaints and gold labels are frozen; predictions remain unopened until the system freeze",
+  "sha256": {
+    "data/canonical_cases.jsonl": "298992c8e9202bc994c6198fc957abe7e1b6627540dd1eee6f27553a476d1d12",
+    "data/surface_variants.jsonl": "17cd64671be4af5d1b5c52a5927996fa2f793151e7483824c955f1983fccccda",
+    "data/public_training_examples.jsonl": "c86cfbca59d33f76e99b665008524282e56aa062c2ece15bbbfee3d042f3471a",
+    "data/test_cases.jsonl": "2ef7c0585a7ac1607e1dfd6dcc3d66937ec353025d8325c52329e50003797229",
+    "data/external_civic_eval.jsonl": "b726f980720989edeafdccbf8a4aabd8742f14a1be5a66cff419e7b6a6e2bf0a",
+    "data/coverage_matrix.json": "d0d4b12219c1b98a72d8b0bb30a223c426d62029fbaec025741d6277169c4637",
+    "data/public_data_manifest.json": "7ba860b55f1a4d22776c40a92eff0e4821aa6fa49f74f7167c2ce22b430de270"
+  }
+}

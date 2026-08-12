@@ -1,6 +1,7 @@
 """Validate the manually written train and validation canonical cases."""
 
 import json
+import math
 from collections import Counter
 from pathlib import Path
 
@@ -62,8 +63,15 @@ def load_canonical_cases(path: Path = CANONICAL_PATH, expected_count: int = 145)
         for field in ("location", "event_date_or_time", "service_identifier"):
             if facts[field] is not None and not isinstance(facts[field], str):
                 raise ValueError(f"line {line_number}: {field} must be a string or null")
+            if isinstance(facts[field], str) and not facts[field].strip():
+                raise ValueError(f"line {line_number}: {field} cannot be empty")
         amount = facts["amount_inr"]
-        if amount is not None and (isinstance(amount, bool) or not isinstance(amount, (int, float)) or amount < 0):
+        if amount is not None and (
+            isinstance(amount, bool)
+            or not isinstance(amount, (int, float))
+            or not math.isfinite(amount)
+            or amount < 0
+        ):
             raise ValueError(f"line {line_number}: amount_inr must be a non-negative number or null")
         missing = row["intentionally_missing_fields"]
         if not isinstance(missing, list) or not missing or not set(missing) <= ALLOWED_MISSING:

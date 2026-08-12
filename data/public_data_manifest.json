@@ -1,0 +1,54 @@
+{
+  "version": "public-data-v1",
+  "curated_at": "2026-08-12",
+  "derived_row_counts": {
+    "public_training": 40,
+    "external_evaluation": 20
+  },
+  "sources": {
+    "opencity_ichangemycity": {
+      "role": "training only",
+      "title": "I Change My City Complaints Log - 2019 - 2022",
+      "dataset_url": "https://data.opencity.in/dataset/i-change-my-city-data",
+      "resource_url": "https://data.opencity.in/dataset/i-change-my-city-data/resource/a60abf5c-3a15-4967-af32-c3074248580f/view/7ee2d933-3a7c-45d2-8f06-654e07daa1f7",
+      "license": "CC BY-SA 2.0, as declared on the source resource",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "attribution": "Janaagraha iCMyC; source resource credits Vivek Mathew and Haji Shariefullah",
+      "accessed_at": "2026-08-12",
+      "raw_rows_audited": 16071,
+      "raw_sha256": "e3d48ec6ccc0d4192d6218fb1b6da32fb7a6aeecd6a0328b287cebf64d75429e"
+    },
+    "sandiego_get_it_done": {
+      "role": "external evaluation only",
+      "title": "Get It Done service requests",
+      "dataset_url": "https://data.sandiego.gov/datasets/get-it-done-reports/",
+      "resource_url": "https://seshat.datasd.org/get_it_done_reports/get_it_done_requests_open_datasd.csv",
+      "license": "Open Data Commons Public Domain Dedication and License, as linked by the source",
+      "license_url": "https://opendefinition.org/licenses/odc-pddl/",
+      "attribution": "City of San Diego Get It Done",
+      "accessed_at": "2026-08-12",
+      "raw_rows_audited": 81429,
+      "raw_sha256": "bb989fa427da8792baa7719de34e17f3dc2005bda77e97e5134b2aa5fca68227"
+    }
+  },
+  "transformations": [
+    "discarded rows containing detected email addresses, phone numbers, URLs, names, account-like identifiers, or unclear text",
+    "removed source request IDs, exact addresses, coordinates, postcodes, and other street-level fields",
+    "kept only a ward or community-area location and marked exact_location as missing",
+    "lightly edited spelling, repetition, and location wording without adding complaint facts",
+    "manually assigned labels and checked every retained complaint against schema version 1.0"
+  ],
+  "privacy_review": {
+    "public_training_rows_reviewed": 40,
+    "external_evaluation_rows_reviewed": 20,
+    "direct_identifiers_retained": false,
+    "raw_files_committed": false,
+    "raw_storage": "temporary local audit only; removed after curation"
+  },
+  "limitations": [
+    "the public training slice covers electricity, roads and streetlights, sanitation and waste, and water supply only",
+    "the external slice covers roads, streetlights, drainage, and waste only",
+    "the source category mapping is a manual project annotation, not an official label supplied by either source",
+    "the derived wording is not a verbatim archive of the source record"
+  ]
+}

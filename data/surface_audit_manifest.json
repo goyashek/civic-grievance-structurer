@@ -1,42 +1,58 @@
 {
-  "dataset_version": "frozen_train_validation_v1",
-  "status": "frozen_train_validation_only",
-  "frozen_at": "2026-08-10",
-  "final_test_status": "not_written",
+  "dataset_version": "corrected_train_validation_v2",
+  "status": "superseded_by_frozen_full_v2",
+  "corrected_at": "2026-08-12",
+  "final_test_status": "written_audited_and_unopened",
   "canonical_counts": {
-    "train": 120,
+    "controlled_train": 120,
     "validation": 25,
-    "test": 0
+    "test": 50
   },
   "surface_counts": {
-    "train": 600,
+    "controlled_train": 120,
+    "licensed_public_train": 40,
+    "effective_train": 160,
     "validation": 50,
-    "test": 0
+    "test": 50,
+    "external_evaluation": 20
   },
-  "source_type_counts": {
-    "manual_surface": 35,
-    "llm_assisted_surface": 615
+  "controlled_source_type_counts": {
+    "manual_surface": 15,
+    "canonical_summary_surface": 135,
+    "template_surface": 20
   },
   "review": {
     "validation_rows_reviewed": 50,
-    "training_rows_reviewed": 120,
-    "training_selection": "one formal_english row for every training case",
-    "manual_starter_rows": 35,
-    "review_basis": "canonical gold alignment, fact preservation, intentional omissions, and style output",
-    "review_result": "no obvious fact drift found in the reviewed rows"
+    "controlled_training_rows_reviewed": 120,
+    "public_training_rows_reviewed": 40,
+    "external_evaluation_rows_reviewed": 20,
+    "internal_test_rows_reviewed": 50,
+    "review_basis": "schema alignment, factual grounding, source mapping, privacy transformation, and split role",
+    "review_result": "passed for the retained rows"
+  },
+  "correction": {
+    "previous_version": "frozen_train_validation_v1",
+    "previous_freeze_retracted": true,
+    "removed_controlled_training_rows": 480,
+    "reason": "mechanical styles were incorrectly counted as independent assistant-drafted training examples"
   },
   "checks": {
     "canonical_schema": "passed",
-    "surface_schema": "passed",
+    "controlled_surface_schema": "passed",
+    "public_slice_schema": "passed",
     "split_inheritance": "passed",
     "exact_duplicates": "passed",
     "cross_split_near_duplicates": "passed",
-    "coverage_matrix": "passed"
+    "coverage_matrix": "passed",
+    "direct_identifier_screen": "passed"
   },
   "sha256": {
     "data/canonical_cases.jsonl": "298992c8e9202bc994c6198fc957abe7e1b6627540dd1eee6f27553a476d1d12",
-    "data/surface_variants.jsonl": "9f0da3221716b85ee521d0df2794659e1bc7f9960074bfd70704eb9b805e0892",
-    "data/coverage_matrix.json": "62d95d90de0e1b94156132fb8fa26fe550b2c38873ca57f03140f6893acc2407",
-    "data/surface_generation_metadata.json": "177e8d32e6e96081f553ecfae86d6cab796e53f1f442eec030724e41a41da7c0"
+    "data/surface_variants.jsonl": "17cd64671be4af5d1b5c52a5927996fa2f793151e7483824c955f1983fccccda",
+    "data/public_training_examples.jsonl": "c86cfbca59d33f76e99b665008524282e56aa062c2ece15bbbfee3d042f3471a",
+    "data/external_civic_eval.jsonl": "b726f980720989edeafdccbf8a4aabd8742f14a1be5a66cff419e7b6a6e2bf0a",
+    "data/coverage_matrix.json": "986c4ebf619d78e13d9652f8f8c2cd2476115b0717dffe66720f7344de8211c4",
+    "data/surface_generation_metadata.json": "e0db989d572c630d9926edbe69fe26fe2b624a6155b77ba62a27dea09877175d",
+    "data/public_data_manifest.json": "7ba860b55f1a4d22776c40a92eff0e4821aa6fa49f74f7167c2ce22b430de270"
   }
 }

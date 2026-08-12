@@ -16,7 +16,9 @@
   "planned_splits": {
     "train": {
       "canonical_cases": 120,
-      "surface_rows": 600
+      "controlled_surface_rows": 120,
+      "licensed_public_rows": 40,
+      "total_training_rows": 160
     },
     "validation": {
       "canonical_cases": 25,
@@ -24,7 +26,12 @@
     },
     "test": {
       "canonical_cases": 50,
-      "surface_rows": 50
+      "surface_rows": 50,
+      "status": "written_audited_and_frozen"
+    },
+    "external_evaluation": {
+      "canonical_cases": 20,
+      "surface_rows": 20
     }
   },
   "written_batch_counts": {
@@ -63,15 +70,38 @@
       "transaction_or_reference_id": 13
     }
   },
+  "written_test_counts": {
+    "count": 50,
+    "service_domain": {
+      "electricity": 7,
+      "other": 7,
+      "public_transport": 8,
+      "roads_and_streetlights": 7,
+      "sanitation_and_waste": 7,
+      "water_supply": 7,
+      "welfare_or_document_service": 7
+    },
+    "issue_type": {
+      "damaged_infrastructure": 6,
+      "delay_or_non_arrival": 6,
+      "other": 2,
+      "overcharging_or_payment_problem": 7,
+      "record_or_document_error": 7,
+      "safety_or_health_hazard": 7,
+      "service_outage_or_non_delivery": 8,
+      "staff_conduct": 7
+    },
+    "urgency": {
+      "routine": 35,
+      "safety_critical": 7,
+      "time_sensitive": 8
+    }
+  },
   "planned_surface_styles": {
-    "train": [
-      "formal_english",
-      "informal_english",
-      "concise_english",
-      "spelling_noise",
-      "hinglish_roman"
-    ],
+    "train_controlled": ["formal_english"],
+    "train_public": ["public_english"],
     "validation": ["formal_english", "informal_english"],
-    "test": ["independent_manual_rewrite"]
+    "test": ["independent_manual_rewrite"],
+    "external_evaluation": ["public_english"]
   }
 }

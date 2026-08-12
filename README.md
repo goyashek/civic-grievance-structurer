@@ -16,38 +16,36 @@ The planned comparison includes deterministic rules, zero-shot prompting, static
 
 ## Data boundary
 
-The project will use fictional, controlled grievance cases with manual review. Canonical cases will be split before paraphrases are created so that variants of the same complaint cannot cross training, validation, and test sets. Retrieval will use training examples only and will select at most one surface variant from each canonical case.
+The controlled benchmark uses fictional grievance cases with manual review. Canonical cases are split before surface wording is created so that related complaints cannot cross training, validation, and test sets. A small licensed public training slice adds real writing patterns, while a separate public transfer slice stays outside model selection. Retrieval uses training examples only and selects at most one row from each case.
 
 Private grievance portals, real personal details, and automatic complaint submission are outside the project.
 
 ## Data construction
 
-I use a two-layer synthetic dataset. I write the canonical cases and their gold
-labels first. These rows define the facts, issue labels, urgency, and
-intentionally missing information. They are the source of truth.
+I first write the controlled canonical cases and their gold labels. These rows
+define the facts, issue labels, urgency, and intentionally missing information.
+The retained controlled surface set has one training complaint per canonical
+case and two validation complaints per case. I removed four mechanical
+training rewrites per case because they inflated the dataset from 120 to 600
+rows without adding enough independent language variation.
 
-For training and validation surface variants, I use a reasoning-capable
-language model as a constrained wording assistant. The prompt provides one
-canonical case and requests a formal, informal, concise, spelling-noise, or
-Roman-script Hinglish complaint in structured JSON. The assistant drafts the
-complaint wording, not the labels. The pipeline copies the gold output from
-the canonical case and validates the result against schema version 1.0.
+The current training pool contains 120 controlled complaints and 40 manually
+mapped, deidentified complaints derived from OpenCity's IChangeMyCity data.
+Every public row is reduced to ward-level location, has direct identifiers and
+street-level fields removed, and is labeled against schema version 1.0. The
+20-row San Diego Get It Done slice is reserved for external transfer testing.
+Raw public downloads are not stored in the repository. Source links, licenses,
+hashes, transformations, and review counts are recorded in
+[`data/public_data_manifest.json`](data/public_data_manifest.json).
 
-Strict JSON helps catch formatting errors, but it does not prove that the
-wording preserved the facts. The builder checks schema validity, canonical gold
-alignment, split inheritance, and exact or near-duplicate leakage. I reviewed
-all 50 validation rows and one formal variant for each of the 120 training
-cases. The current surface file has 650 rows: 35 manually written rows and 615
-assistant-drafted rows. The generation record and audit manifest contain the
-prompt version, method, source counts, file hashes, and review status.
-
-The final test complaints will be independently written rather than copied
-from training variants. Results will describe performance on this controlled
-synthetic benchmark, not on real civic complaint portals.
+The 50 final controlled test complaints were independently written, checked,
+and frozen before model training. Their predictions remain unopened. Internal
+test results and the narrower external transfer result will be reported
+separately.
 
 ## Current state
 
-The repository and working rules are initialized. The two model-selection notebooks contain the recovered executed Colab runs for Qwen, SmolLM3, and Phi. On the 40-case development bake-off, SmolLM3 fixed few-shot was selected as the base because it gave the strongest overall structured output with lower peak memory than the other strongest candidate. Those saved bake-off metrics used the original strict evaluator. The shared evaluator now keeps strict, conditional, and repaired scores separate, and its definitions are frozen in [`docs/evaluation_contract.md`](docs/evaluation_contract.md). The final test set has not been opened.
+The repository and working rules are initialized. The two model-selection notebooks contain the recovered executed Colab runs for Qwen, SmolLM3, and Phi. On the 40-case development bake-off, SmolLM3 fixed few-shot was selected as the base because it gave the strongest overall structured output with lower peak memory than the other strongest candidate. Those saved bake-off metrics used the original strict evaluator. The shared evaluator now keeps strict, conditional, and repaired scores separate, and its definitions are frozen in [`docs/evaluation_contract.md`](docs/evaluation_contract.md). The final test set is written and frozen, but no system has generated predictions for it.
 
 ## Recorded experiments
 

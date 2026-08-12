@@ -4,6 +4,7 @@ from copy import deepcopy
 
 from src.check_examples import load_examples
 from src.evaluate import evaluate_outputs
+from src.report_validation import categorize_failure, wilson_interval
 
 
 class SharedMetricsTest(unittest.TestCase):
@@ -68,6 +69,32 @@ class SharedMetricsTest(unittest.TestCase):
         self.assertEqual(
             set(report["repaired"]["end_to_end_field_metrics"].values()), {1.0}
         )
+
+
+class FailureReportTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.gold = load_examples()[0]["gold"]
+
+    def test_clean_output_has_no_failure_category(self):
+        self.assertEqual(categorize_failure(self.gold, json.dumps(self.gold)), [])
+
+    def test_categories_name_the_actual_problem(self):
+        self.assertEqual(categorize_failure(self.gold, "not JSON"), ["invalid_json"])
+        wrong = deepcopy(self.gold)
+        wrong["urgency"] = "safety_critical"
+        wrong["service_identifier"] = None
+        wrong["amount_inr"] = 250
+        self.assertEqual(
+            categorize_failure(self.gold, json.dumps(wrong)),
+            ["wrong_urgency", "invented_fact", "dropped_fact"],
+        )
+
+    def test_wilson_interval_brackets_a_perfect_rate(self):
+        low, high = wilson_interval(50, 50)
+        self.assertEqual(high, 1.0)
+        self.assertLess(low, 1.0)
+        self.assertGreater(low, 0.9)
 
 
 if __name__ == "__main__":

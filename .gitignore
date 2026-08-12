@@ -28,3 +28,6 @@ __pycache__/
 
 # macos
 .DS_Store
+
+# local executed notebook references
+notebooks/.local/

@@ -1,0 +1,14 @@
+artifact_uri: file:./data/validation_results/mlruns/938992448272233680/b8ce5a49a1bd43f99f30e3b182e7fe22/artifacts
+end_time: 1786550186872
+entry_point_name: ''
+experiment_id: '938992448272233680'
+lifecycle_stage: active
+run_id: b8ce5a49a1bd43f99f30e3b182e7fe22
+run_name: smollm3-qlora-validation
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1786550186859
+status: 3
+tags: []
+user_id: root

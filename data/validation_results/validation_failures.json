@@ -1,0 +1,1857 @@
+[
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-121-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-121-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-122-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-122-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-123-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-123-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-124-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_issue_type": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-124-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_issue_type": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-125-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-125-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-126-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_issue_type": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-126-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_issue_type": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-127-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-127-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-128-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-128-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-129-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-129-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-130-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-130-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-131-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-131-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-132-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-132-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-133-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-133-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-134-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-134-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-135-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-135-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-136-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-136-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-137-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-137-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-138-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-138-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-139-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-139-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-140-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-140-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-141-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-141-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 3,
+      "missing_information_mismatch": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-142-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 4,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-142-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 4,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-143-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-143-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-144-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-144-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-145-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_issue_type": 1
+    }
+  },
+  {
+    "system": "deterministic_rules",
+    "surface_id": "canonical-145-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 2,
+      "missing_information_mismatch": 1,
+      "wrong_issue_type": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-121-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-121-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-122-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-122-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-123-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-123-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-124-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-124-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-125-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-125-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-126-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-126-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-127-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-127-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-128-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-128-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-129-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-129-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-130-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-130-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-131-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-131-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-132-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-132-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-133-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-133-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-134-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-134-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-135-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-135-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-136-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-136-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-137-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-137-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-138-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-138-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-139-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-139-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-140-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-140-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-141-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-141-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-142-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-142-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-143-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-143-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-144-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-144-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-145-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "zero_shot",
+    "surface_id": "canonical-145-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-122-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-122-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 2,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-123-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-123-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-124-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "invented_fact": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-124-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "invented_fact": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-125-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-125-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-126-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_fact_value": 1,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-126-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-127-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_fact_value": 1,
+      "wrong_issue_type": 1,
+      "wrong_service_domain": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-127-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_fact_value": 1,
+      "wrong_issue_type": 1,
+      "wrong_service_domain": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-128-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-128-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-129-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 2,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-129-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 2,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-130-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "missing_information_mismatch": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-130-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-131-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invented_fact": 1,
+      "wrong_issue_type": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-131-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invented_fact": 1,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-132-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-132-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-133-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-133-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-134-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 2
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-134-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 2
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-135-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 2,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-135-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 2,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-136-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-136-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-138-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invented_fact": 1,
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-138-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invented_fact": 1,
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-139-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-139-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-140-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-140-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-141-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-141-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-142-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-142-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-143-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invented_fact": 1,
+      "wrong_issue_type": 1,
+      "wrong_service_domain": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-143-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invented_fact": 1,
+      "wrong_issue_type": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-144-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-144-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-145-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_issue_type": 1,
+      "wrong_service_domain": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "static_few_shot",
+    "surface_id": "canonical-145-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-122-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 2
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-124-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "invented_fact": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-124-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-125-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_issue_type": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-126-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-126-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-127-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-127-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "missing_information_mismatch": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-128-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-128-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "missing_information_mismatch": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-129-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-129-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-133-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-133-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 1,
+      "wrong_service_domain": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-135-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 2
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-135-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-136-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-136-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-137-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-138-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invented_fact": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-138-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invented_fact": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-139-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-140-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-140-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-141-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-141-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-142-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-143-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-143-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invalid_json": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-144-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "retrieved_few_shot",
+    "surface_id": "canonical-144-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-121-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-122-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-122-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-123-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-123-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-124-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-124-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-125-formal-english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-125-informal-english",
+    "style": "informal_english",
+    "categories": {
+      "schema_invalid": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-126-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-126-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-127-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 3,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-127-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 3,
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-128-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-128-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_issue_type": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-129-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-129-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-132-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "invented_fact": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-132-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "invented_fact": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-133-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-133-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-134-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-134-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-135-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-135-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-136-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-139-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-139-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-141-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-141-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-143-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-143-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-144-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "wrong_fact_value": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-144-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "wrong_fact_value": 1,
+      "wrong_service_domain": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-145-formal_english",
+    "style": "formal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_fact_value": 1,
+      "wrong_issue_type": 1,
+      "wrong_service_domain": 1,
+      "wrong_urgency": 1
+    }
+  },
+  {
+    "system": "qlora",
+    "surface_id": "canonical-145-informal_english",
+    "style": "informal_english",
+    "categories": {
+      "dropped_fact": 1,
+      "wrong_issue_type": 1,
+      "wrong_service_domain": 1,
+      "wrong_urgency": 1
+    }
+  }
+]

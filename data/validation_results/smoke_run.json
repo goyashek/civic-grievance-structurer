@@ -1,0 +1,57 @@
+{
+  "steps": 6,
+  "losses": [
+    0.5637710690498352,
+    0.23015564680099487,
+    0.10279547423124313,
+    0.319186270236969,
+    0.12363345175981522,
+    0.07578067481517792
+  ],
+  "masked_tokens": 315,
+  "trained_tokens": 82,
+  "trainable_parameters": 30228480,
+  "total_parameters": 1699186688,
+  "trainable_percent": 1.778996987999002,
+  "metrics": {
+    "train_runtime": 12.3941,
+    "train_samples_per_second": 0.968,
+    "train_steps_per_second": 0.484,
+    "total_flos": 80060642893824.0,
+    "train_loss": 0.23588709781567255
+  },
+  "reload_check": {
+    "before": [
+      {
+        "surface_id": "canonical-121-formal-english",
+        "case_id": "canonical-121",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"delay_or_non_arrival\",\n  \"location\": \"Hilltop stop\",\n  \"event_date_or_time\": \"Tuesday, 8:40\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\"],\n  \"formal_summary\": \"Route 44 did not arrive at Hilltop stop at Tuesday, 8:40.\"\n}\n```",
+        "latency_seconds": 2.744652359749992,
+        "prompt_tokens": 320
+      },
+      {
+        "surface_id": "canonical-121-informal-english",
+        "case_id": "canonical-121",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"delay_or_non_arrival\",\n  \"location\": \"Hilltop\",\n  \"event_date_or_time\": \"Tuesday, 8:40\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\"],\n  \"formal_summary\": \"Route 44 did not stop at the Hilltop stop at the specified time.\"\n}\n```",
+        "latency_seconds": 2.744652359749992,
+        "prompt_tokens": 318
+      }
+    ],
+    "after": [
+      {
+        "surface_id": "canonical-121-formal-english",
+        "case_id": "canonical-121",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"Hilltop stop\",\"event_date_or_time\":\"8:40 on Tuesday\",\"amount_inr\":null,\"service_identifier\":\"Route 44\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"Route 44 did not arrive at Hilltop stop at 8:40 on Tuesday.\"}",
+        "latency_seconds": 5.847440811000013,
+        "prompt_tokens": 320
+      },
+      {
+        "surface_id": "canonical-121-informal-english",
+        "case_id": "canonical-121",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Hilltop stop\",\"event_date_or_time\":\"8:40 Tuesday\",\"amount_inr\":null,\"service_identifier\":\"Route 44\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"Route 44 never came to Hilltop stop at 8:40 Tuesday.\"}",
+        "latency_seconds": 5.847440811000013,
+        "prompt_tokens": 318
+      }
+    ]
+  }
+}

@@ -45,17 +45,40 @@ separately.
 
 ## Current state
 
-The repository and working rules are initialized. The two model-selection notebooks contain the recovered executed Colab runs for Qwen, SmolLM3, and Phi. On the 40-case development bake-off, SmolLM3 fixed few-shot was selected as the base because it gave the strongest overall structured output with lower peak memory than the other strongest candidate. Those saved bake-off metrics used the original strict evaluator. The shared evaluator now keeps strict, conditional, and repaired scores separate, and its definitions are frozen in [`docs/evaluation_contract.md`](docs/evaluation_contract.md). The final test set is written and frozen, but no system has generated predictions for it.
+The repository and working rules are initialized. The two model-selection notebooks contain the recovered executed Colab runs for Qwen, SmolLM3, and Phi. On the 40-case development bake-off, SmolLM3 fixed few-shot was selected as the base because it gave the strongest overall structured output with lower peak memory than the other strongest candidate. Those saved bake-off metrics used the original strict evaluator. The shared evaluator now keeps strict, conditional, and repaired scores separate, and its definitions are frozen in [`docs/evaluation_contract.md`](docs/evaluation_contract.md).
+
+All five planned systems have now been measured on the 50 validation complaints, and one QLoRA adapter has been trained and reloaded. The final test set is written and frozen, but no system has generated predictions for it, and the external transfer slice is also unopened.
+
+## Validation results
+
+Field scores below are end to end, so an unparsable or schema-invalid response scores zero. Schema validity carries a 95 percent Wilson interval because 50 rows cannot separate close numbers.
+
+| system | schema valid | domain F1 | issue F1 | missing-info F1 | halluc. rate | prompt tokens |
+|---|---|---|---|---|---|---|
+| deterministic rules | 1.00 (0.93 to 1.00) | 0.883 | 0.895 | 0.027 | n/a | 0 |
+| zero-shot | 0.00 (0.00 to 0.07) | 0.000 | 0.000 | 0.000 | n/a | 322 |
+| static few-shot | 0.74 (0.60 to 0.84) | 0.605 | 0.459 | 0.420 | 0.316 | 640 |
+| retrieved few-shot | 0.88 (0.76 to 0.94) | 0.856 | 0.870 | 0.884 | 0.138 | 662 |
+| QLoRA | 0.98 (0.90 to 1.00) | 0.816 | 0.829 | 0.936 | 0.248 | 322 |
+
+Fine-tuning bought format reliability, the missing-information field, and half the prompt length, since the adapter needs no demonstrations. Retrieval still reads stated facts more carefully and invents fewer of them. Keyword rules land close to the learned systems on service domain and issue type, which says more about the controlled complaints than about the models, and they fail completely on missing information because they never reason about absence. The full tables, the formal against informal breakdown, the failure categories, and the run settings are in [`data/validation_results/README.md`](data/validation_results/README.md).
 
 ## Recorded experiments
 
-The saved responses, summaries, timestamps, and complete MLflow file store are in [`data/model_selection_results/`](data/model_selection_results/README.md). From the repository root, the saved experiment can be opened with:
+The saved responses, summaries, timestamps, and complete MLflow file store for model selection are in [`data/model_selection_results/`](data/model_selection_results/README.md). The validation responses, failure records, training record, and MLflow store are in [`data/validation_results/`](data/validation_results/README.md). From the repository root, either saved experiment can be opened with:
 
 ```bash
 mlflow ui --backend-store-uri data/model_selection_results/mlruns
+mlflow ui --backend-store-uri data/validation_results/mlruns
 ```
 
-The runnable notebooks are [`model_bakeoff.ipynb`](notebooks/model_bakeoff.ipynb), [`model_bakeoff_phi.ipynb`](notebooks/model_bakeoff_phi.ipynb), and the earlier smoke check [`model_basics.ipynb`](notebooks/model_basics.ipynb). These are development results, not final test-set quality claims.
+Recompute the validation tables from the saved predictions with:
+
+```bash
+python3 -m src.report_validation
+```
+
+The runnable notebooks are [`validation_qlora.ipynb`](notebooks/validation_qlora.ipynb) for the baselines and the adapter, [`model_bakeoff.ipynb`](notebooks/model_bakeoff.ipynb) and [`model_bakeoff_phi.ipynb`](notebooks/model_bakeoff_phi.ipynb) for model selection, and the earlier smoke check [`model_basics.ipynb`](notebooks/model_basics.ipynb). These are development results, not final test-set quality claims.
 
 ## Scope
 

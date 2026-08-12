@@ -1,0 +1,9 @@
+artifact_location: file:./data/validation_results/mlruns/938992448272233680
+creation_time: 1786547097429
+effective_trace_archival_retention: null
+experiment_id: '938992448272233680'
+last_update_time: 1786547097429
+lifecycle_stage: active
+name: civicstruct-validation
+trace_location: null
+workspace: default

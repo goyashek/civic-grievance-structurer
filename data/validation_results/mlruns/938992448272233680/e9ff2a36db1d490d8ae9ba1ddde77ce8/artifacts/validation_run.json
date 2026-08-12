@@ -1,0 +1,424 @@
+{
+  "method": "static_few_shot",
+  "model_name": "HuggingFaceTB/SmolLM3-3B",
+  "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 256
+  },
+  "mean_latency_seconds": 1.8496957014200028,
+  "mean_prompt_tokens": 639.78,
+  "demonstration_count": 3,
+  "scores": {
+    "evaluation_version": "1.0",
+    "total_outputs": 50,
+    "strict": {
+      "json_parse_count": 50,
+      "invalid_json_count": 0,
+      "schema_invalid_count": 13,
+      "schema_valid_count": 37,
+      "schema_validity_rate": 0.74,
+      "end_to_end_field_metrics": {
+        "service_domain_macro_f1": 0.6054421768707483,
+        "issue_type_macro_f1": 0.45866038723181585,
+        "urgency_macro_f1": 0.49382716049382713,
+        "missing_information_macro_f1": 0.4203703703703704,
+        "location_normalized_match": 0.46,
+        "event_date_or_time_normalized_match": 0.66,
+        "amount_inr_exact_match": 0.74,
+        "service_identifier_exact_match": 0.36
+      },
+      "hallucinated_non_null_fields": {
+        "count": 30,
+        "predicted_non_null_count": 95,
+        "rate": 0.3157894736842105
+      }
+    },
+    "conditional_valid": {
+      "denominator": 37,
+      "field_metrics": {
+        "service_domain_macro_f1": 0.7005866314136991,
+        "issue_type_macro_f1": 0.647047619047619,
+        "urgency_macro_f1": 0.5462184873949579,
+        "missing_information_macro_f1": 0.8657407407407407,
+        "location_normalized_match": 0.6216216216216216,
+        "event_date_or_time_normalized_match": 0.8918918918918919,
+        "amount_inr_exact_match": 1.0,
+        "service_identifier_exact_match": 0.4864864864864865
+      }
+    },
+    "repaired": {
+      "repairable_count": 0,
+      "repairable_json_rate": 0.0,
+      "schema_valid_count": 37,
+      "schema_validity_rate": 0.74,
+      "end_to_end_field_metrics": {
+        "service_domain_macro_f1": 0.6054421768707483,
+        "issue_type_macro_f1": 0.45866038723181585,
+        "urgency_macro_f1": 0.49382716049382713,
+        "missing_information_macro_f1": 0.4203703703703704,
+        "location_normalized_match": 0.46,
+        "event_date_or_time_normalized_match": 0.66,
+        "amount_inr_exact_match": 0.74,
+        "service_identifier_exact_match": 0.36
+      },
+      "hallucinated_non_null_fields": {
+        "count": 30,
+        "predicted_non_null_count": 95,
+        "rate": 0.3157894736842105
+      }
+    }
+  },
+  "outputs": [
+    {
+      "surface_id": "canonical-121-formal-english",
+      "case_id": "canonical-121",
+      "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"Hilltop stop\",\"event_date_or_time\":\"8:40 Tuesday\",\"amount_inr\":null,\"service_identifier\":\"route 44\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Route 44 did not arrive at Hilltop stop at 8:40 on Tuesday.\"}",
+      "latency_seconds": 1.7040371907500003,
+      "prompt_tokens": 638
+    },
+    {
+      "surface_id": "canonical-121-informal-english",
+      "case_id": "canonical-121",
+      "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"Hilltop stop\",\"event_date_or_time\":\"8:40 Tuesday\",\"amount_inr\":null,\"service_identifier\":\"route 44\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Route 44 never came to Hilltop stop at 8:40 Tuesday.\"}",
+      "latency_seconds": 1.7040371907500003,
+      "prompt_tokens": 636
+    },
+    {
+      "surface_id": "canonical-122-formal-english",
+      "case_id": "canonical-122",
+      "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"near Ward 6 clinic\",\"event_date_or_time\":\"this afternoon\",\"amount_inr\":null,\"service_identifier\":\"public tap 9\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Water from public tap 9 near Ward 6 clinic was unsafe this afternoon.\"}",
+      "latency_seconds": 1.7040371907500003,
+      "prompt_tokens": 636
+    },
+    {
+      "surface_id": "canonical-122-informal-english",
+      "case_id": "canonical-122",
+      "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"tap 9 by Ward 6 clinic\",\"event_date_or_time\":\"this afternoon\",\"amount_inr\":null,\"service_identifier\":\"tap 9\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The water at tap 9 by Ward 6 clinic was not safe this afternoon.\"}",
+      "latency_seconds": 1.7040371907500003,
+      "prompt_tokens": 637
+    },
+    {
+      "surface_id": "canonical-123-formal-english",
+      "case_id": "canonical-123",
+      "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":\"today\",\"amount_inr\":null,\"service_identifier\":\"waste bin 18\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Waste bin 18 is damaged today, but its location was not provided.\"}",
+      "latency_seconds": 1.6833871354999985,
+      "prompt_tokens": 636
+    },
+    {
+      "surface_id": "canonical-123-informal-english",
+      "case_id": "canonical-123",
+      "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":\"today\",\"amount_inr\":null,\"service_identifier\":\"bin 18\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Bin 18 is broken today, and I have not said where it is.\"}",
+      "latency_seconds": 1.6833871354999985,
+      "prompt_tokens": 636
+    },
+    {
+      "surface_id": "canonical-124-formal-english",
+      "case_id": "canonical-124",
+      "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Orchid Lane\",\"event_date_or_time\":\"since last night\",\"amount_inr\":null,\"service_identifier\":\"streetlights on Orchid Lane\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The streetlights on Orchid Lane have not worked since last night.\"}",
+      "latency_seconds": 1.6833871354999985,
+      "prompt_tokens": 634
+    },
+    {
+      "surface_id": "canonical-124-informal-english",
+      "case_id": "canonical-124",
+      "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Orchid Lane\",\"event_date_or_time\":\"since last night\",\"amount_inr\":null,\"service_identifier\":\"streetlights\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Orchid Lane's streetlights have been out since last night.\"}",
+      "latency_seconds": 1.6833871354999985,
+      "prompt_tokens": 634
+    },
+    {
+      "surface_id": "canonical-125-formal-english",
+      "case_id": "canonical-125",
+      "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"record_or_document_error\",\"location\":\"Lakeview Apartments meter E-431\",\"event_date_or_time\":\"June\",\"amount_inr\":null,\"service_identifier\":\"electricity bill\",\"urgency\":\"routine\",\"missing_information\":[\"amount\",\"reference\",\"evidence\"],\"formal_summary\":\"The June electricity bill for meter E-431 at Lakeview Apartments is disputed, but the amount, reference, and evidence are missing.\"}",
+      "latency_seconds": 2.064584974000013,
+      "prompt_tokens": 647
+    },
+    {
+      "surface_id": "canonical-125-informal-english",
+      "case_id": "canonical-125",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"meter E-431\",\"urgency\":\"routine\",\"missing_information\":[\"exact_amount\",\"transaction_or_reference_id\",\"supporting_evidence\"],\"formal_summary\":\"I dispute the June bill for meter E-431 at Lakeview Apartments, but I do not have the amount, reference, or proof here.\"}",
+      "latency_seconds": 2.064584974000013,
+      "prompt_tokens": 649
+    },
+    {
+      "surface_id": "canonical-126-formal_english",
+      "case_id": "canonical-126",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"since Monday\",\"amount_inr\":null,\"service_identifier\":\"H-72\",\"urgency\":\"routine\",\"missing_information\":[\"affected_person_or_group\"],\"formal_summary\":\"Household support request H-72 has had no status update on the South Ward benefit portal since Monday, but the affected household or group is not stated.\"}",
+      "latency_seconds": 2.064584974000013,
+      "prompt_tokens": 651
+    },
+    {
+      "surface_id": "canonical-126-informal_english",
+      "case_id": "canonical-126",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"since Monday\",\"amount_inr\":null,\"service_identifier\":\"household support request H-72\",\"urgency\":\"routine\",\"missing_information\":[\"affected_person_or_group\"],\"formal_summary\":\"Household support request H-72 has had no status update on the South Ward benefit portal since Monday, but the affected household or group is not stated.\"}",
+      "latency_seconds": 2.064584974000013,
+      "prompt_tokens": 653
+    },
+    {
+      "surface_id": "canonical-127-formal_english",
+      "case_id": "canonical-127",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"by Thursday\",\"amount_inr\":null,\"service_identifier\":\"A-18 booking confirmation\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Confirmation for booking A-18 on the Civic auditorium portal did not arrive by Thursday.\"}",
+      "latency_seconds": 1.6785268129999906,
+      "prompt_tokens": 638
+    },
+    {
+      "surface_id": "canonical-127-informal_english",
+      "case_id": "canonical-127",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"by Thursday\",\"amount_inr\":null,\"service_identifier\":\"A-18 booking confirmation\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Confirmation for booking A-18 on the Civic auditorium portal did not arrive by Thursday.\"}",
+      "latency_seconds": 1.6785268129999906,
+      "prompt_tokens": 641
+    },
+    {
+      "surface_id": "canonical-128-formal_english",
+      "case_id": "canonical-128",
+      "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"staff_conduct\",\"location\":null,\"event_date_or_time\":\"this morning\",\"amount_inr\":null,\"service_identifier\":\"bus 7\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The door of bus 7 opened while it was moving this morning.\"}",
+      "latency_seconds": 1.6785268129999906,
+      "prompt_tokens": 641
+    },
+    {
+      "surface_id": "canonical-128-informal_english",
+      "case_id": "canonical-128",
+      "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"staff_conduct\",\"location\":null,\"event_date_or_time\":\"this morning\",\"amount_inr\":null,\"service_identifier\":\"bus 7\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The door of bus 7 opened while it was moving this morning, but the location is not stated.\"}",
+      "latency_seconds": 1.6785268129999906,
+      "prompt_tokens": 644
+    },
+    {
+      "surface_id": "canonical-129-formal_english",
+      "case_id": "canonical-129",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"ticket counter 3 in Central station\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":null,\"service_identifier\":\"staff rudeness\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A worker at ticket counter 3 in Central station spoke rudely to a passenger yesterday.\"}",
+      "latency_seconds": 1.7868547667499968,
+      "prompt_tokens": 638
+    },
+    {
+      "surface_id": "canonical-129-informal_english",
+      "case_id": "canonical-129",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"ticket counter 3 in Central station\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":null,\"service_identifier\":\"staff rudeness\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A worker at ticket counter 3 in Central station spoke rudely to a passenger yesterday.\"}",
+      "latency_seconds": 1.7868547667499968,
+      "prompt_tokens": 641
+    },
+    {
+      "surface_id": "canonical-130-formal_english",
+      "case_id": "canonical-130",
+      "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Meadow Colony\",\"event_date_or_time\":\"for four days\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Water supply has been unavailable in Meadow Colony for four days.\"}",
+      "latency_seconds": 1.7868547667499968,
+      "prompt_tokens": 639
+    },
+    {
+      "surface_id": "canonical-130-informal_english",
+      "case_id": "canonical-130",
+      "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Meadow Colony\",\"event_date_or_time\":\"for four days\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"Water supply has been unavailable in Meadow Colony for four days.\"}",
+      "latency_seconds": 1.7868547667499968,
+      "prompt_tokens": 642
+    },
+    {
+      "surface_id": "canonical-131-formal_english",
+      "case_id": "canonical-131",
+      "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Canal Road\",\"event_date_or_time\":\"since Monday\",\"amount_inr\":null,\"service_identifier\":\"water pipe leak\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A water pipe on Canal Road has been leaking since Monday.\"}",
+      "latency_seconds": 2.0359665025000027,
+      "prompt_tokens": 632
+    },
+    {
+      "surface_id": "canonical-131-informal_english",
+      "case_id": "canonical-131",
+      "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Canal Road\",\"event_date_or_time\":\"since Monday\",\"amount_inr\":null,\"service_identifier\":\"water pipe leak\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"A water pipe on Canal Road has been leaking since Monday.\"}",
+      "latency_seconds": 2.0359665025000027,
+      "prompt_tokens": 635
+    },
+    {
+      "surface_id": "canonical-132-formal_english",
+      "case_id": "canonical-132",
+      "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Greenview Apartments\",\"event_date_or_time\":\"May bill\",\"amount_inr\":\"480\",\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\"],\"formal_summary\":\"A sanitation fee of Rs 480 on the May bill for Greenview Apartments is disputed, but no transaction reference or evidence is supplied.\"}",
+      "latency_seconds": 2.0359665025000027,
+      "prompt_tokens": 647
+    },
+    {
+      "surface_id": "canonical-132-informal_english",
+      "case_id": "canonical-132",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"on the May bill\",\"amount_inr\":\"480\",\"service_identifier\":\"sanitation fee\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\"],\"formal_summary\":\"A sanitation fee of Rs 480 on the May bill for Greenview Apartments is disputed, but no transaction reference or evidence is supplied.\"}",
+      "latency_seconds": 2.0359665025000027,
+      "prompt_tokens": 650
+    },
+    {
+      "surface_id": "canonical-133-formal_english",
+      "case_id": "canonical-133",
+      "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":null,\"event_date_or_time\":\"for a week\",\"amount_inr\":null,\"service_identifier\":\"waste pickup zone 3\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Waste pickup zone 3 has received no collection for a week, but its location is not stated.\"}",
+      "latency_seconds": 1.8802120994999996,
+      "prompt_tokens": 641
+    },
+    {
+      "surface_id": "canonical-133-informal_english",
+      "case_id": "canonical-133",
+      "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":null,\"event_date_or_time\":\"for a week\",\"amount_inr\":null,\"service_identifier\":\"waste pickup zone 3\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Waste pickup zone 3 has received no collection for a week, but its location is not stated.\"}",
+      "latency_seconds": 1.8802120994999996,
+      "prompt_tokens": 643
+    },
+    {
+      "surface_id": "canonical-134-formal_english",
+      "case_id": "canonical-134",
+      "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"Junction 8 signal 8\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"signal 8\",\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"Signal 8 at Junction 8 is creating a collision risk right now.\"}",
+      "latency_seconds": 1.8802120994999996,
+      "prompt_tokens": 635
+    },
+    {
+      "surface_id": "canonical-134-informal_english",
+      "case_id": "canonical-134",
+      "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"Junction 8 signal 8\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"signal 8\",\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"Signal 8 at Junction 8 is creating a collision risk right now.\"}",
+      "latency_seconds": 1.8802120994999996,
+      "prompt_tokens": 638
+    },
+    {
+      "surface_id": "canonical-135-formal_english",
+      "case_id": "canonical-135",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"West Ring Road permit desk\",\"event_date_or_time\":\"Monday\",\"amount_inr\":null,\"service_identifier\":\"permit desk worker\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A worker at the West Ring Road permit desk refused to answer a question on Monday.\"}",
+      "latency_seconds": 1.6955792024999994,
+      "prompt_tokens": 637
+    },
+    {
+      "surface_id": "canonical-135-informal_english",
+      "case_id": "canonical-135",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"West Ring Road permit desk\",\"event_date_or_time\":\"Monday\",\"amount_inr\":null,\"service_identifier\":\"worker refusal to answer question\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A worker at the West Ring Road permit desk refused to answer a question on Monday.\"}",
+      "latency_seconds": 1.6955792024999994,
+      "prompt_tokens": 640
+    },
+    {
+      "surface_id": "canonical-136-formal_english",
+      "case_id": "canonical-136",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"R-12\",\"urgency\":\"routine\",\"missing_information\":[\"affected_date\"],\"formal_summary\":\"The record for repair request R-12 on Cedar Lane is incorrect, but the affected date is not stated.\"}",
+      "latency_seconds": 1.6955792024999994,
+      "prompt_tokens": 642
+    },
+    {
+      "surface_id": "canonical-136-informal_english",
+      "case_id": "canonical-136",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"R-12\",\"urgency\":\"routine\",\"missing_information\":[\"affected_date\"],\"formal_summary\":\"The record for repair request R-12 on Cedar Lane is incorrect, but the affected date is not stated.\"}",
+      "latency_seconds": 1.6955792024999994,
+      "prompt_tokens": 645
+    },
+    {
+      "surface_id": "canonical-137-formal_english",
+      "case_id": "canonical-137",
+      "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Mango Colony\",\"event_date_or_time\":\"since noon\",\"amount_inr\":null,\"service_identifier\":\"feeder F-6\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"Feeder F-6 has not supplied electricity to Mango Colony since noon.\"}",
+      "latency_seconds": 1.620351512500008,
+      "prompt_tokens": 635
+    },
+    {
+      "surface_id": "canonical-137-informal_english",
+      "case_id": "canonical-137",
+      "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Mango Colony\",\"event_date_or_time\":\"since noon\",\"amount_inr\":null,\"service_identifier\":\"feeder F-6\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"Feeder F-6 has not supplied electricity to Mango Colony since noon.\"}",
+      "latency_seconds": 1.620351512500008,
+      "prompt_tokens": 638
+    },
+    {
+      "surface_id": "canonical-138-formal_english",
+      "case_id": "canonical-138",
+      "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"beside Central School\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"live electrical wire\",\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"A live electrical wire is hanging beside Central School right now.\"}",
+      "latency_seconds": 1.620351512500008,
+      "prompt_tokens": 632
+    },
+    {
+      "surface_id": "canonical-138-informal_english",
+      "case_id": "canonical-138",
+      "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"beside Central School\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"live electrical wire\",\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"A live electrical wire is hanging beside Central School right now.\"}",
+      "latency_seconds": 1.620351512500008,
+      "prompt_tokens": 635
+    },
+    {
+      "surface_id": "canonical-139-formal_english",
+      "case_id": "canonical-139",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":\"Pine Apartments meter E-99\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"reading record\",\"urgency\":\"routine\",\"missing_information\":[\"affected date\"],\"formal_summary\":\"The reading record for meter E-99 at Pine Apartments is incorrect, but the affected date is not stated.\"}",
+      "latency_seconds": 1.8145560520000004,
+      "prompt_tokens": 642
+    },
+    {
+      "surface_id": "canonical-139-informal_english",
+      "case_id": "canonical-139",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"meter E-99 at Pine Apartments\",\"urgency\":\"routine\",\"missing_information\":[\"affected date\"],\"formal_summary\":\"The reading record for meter E-99 at Pine Apartments is incorrect, but the affected date is not stated.\"}",
+      "latency_seconds": 1.8145560520000004,
+      "prompt_tokens": 645
+    },
+    {
+      "surface_id": "canonical-140-formal_english",
+      "case_id": "canonical-140",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"since morning\",\"amount_inr\":null,\"service_identifier\":\"pension login\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The pension login on the Civic benefits portal has been unavailable since morning.\"}",
+      "latency_seconds": 1.8145560520000004,
+      "prompt_tokens": 634
+    },
+    {
+      "surface_id": "canonical-140-informal_english",
+      "case_id": "canonical-140",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"since morning\",\"amount_inr\":null,\"service_identifier\":\"pension login\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Please help. The pension login on the Civic benefits portal has been unavailable since morning.\"}",
+      "latency_seconds": 1.8145560520000004,
+      "prompt_tokens": 637
+    },
+    {
+      "surface_id": "canonical-141-formal_english",
+      "case_id": "canonical-141",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"East Ward service centre\",\"event_date_or_time\":\"Friday\",\"amount_inr\":null,\"service_identifier\":\"worker refusal\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A worker at the East Ward service centre refused to provide help on Friday.\"}",
+      "latency_seconds": 1.9030912720000117,
+      "prompt_tokens": 635
+    },
+    {
+      "surface_id": "canonical-141-informal_english",
+      "case_id": "canonical-141",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"East Ward service centre\",\"event_date_or_time\":\"Friday\",\"amount_inr\":null,\"service_identifier\":\"worker refusal\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A worker at the East Ward service centre refused to provide help on Friday.\"}",
+      "latency_seconds": 1.9030912720000117,
+      "prompt_tokens": 638
+    },
+    {
+      "surface_id": "canonical-142-formal_english",
+      "case_id": "canonical-142",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"yesterday\",\"amount_inr\":\"300\",\"service_identifier\":\"Civic certificate counter\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\"],\"formal_summary\":\"The Civic certificate counter charged Rs 300 for application A-61 yesterday, but no transaction reference or evidence is supplied.\"}",
+      "latency_seconds": 1.9030912720000117,
+      "prompt_tokens": 644
+    },
+    {
+      "surface_id": "canonical-142-informal_english",
+      "case_id": "canonical-142",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"yesterday\",\"amount_inr\":\"300\",\"service_identifier\":\"Civic certificate counter\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\"],\"formal_summary\":\"The Civic certificate counter charged Rs 300 for application A-61 yesterday, but no transaction reference or evidence is supplied.\"}",
+      "latency_seconds": 1.9030912720000117,
+      "prompt_tokens": 647
+    },
+    {
+      "surface_id": "canonical-143-formal_english",
+      "case_id": "canonical-143",
+      "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Riverside playground\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"broken railing\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A broken railing at Riverside playground is a safety hazard now.\"}",
+      "latency_seconds": 1.6758580197499953,
+      "prompt_tokens": 632
+    },
+    {
+      "surface_id": "canonical-143-informal_english",
+      "case_id": "canonical-143",
+      "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Riverside playground\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"broken railing\",\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"A broken railing at Riverside playground is a safety hazard now.\"}",
+      "latency_seconds": 1.6758580197499953,
+      "prompt_tokens": 635
+    },
+    {
+      "surface_id": "canonical-144-formal_english",
+      "case_id": "canonical-144",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":\"Central Library\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"M-7\",\"urgency\":\"routine\",\"missing_information\":[\"affected_date\"],\"formal_summary\":\"Membership record M-7 at Central Library contains an error, but the affected date is not stated.\"}",
+      "latency_seconds": 1.6758580197499953,
+      "prompt_tokens": 640
+    },
+    {
+      "surface_id": "canonical-144-informal_english",
+      "case_id": "canonical-144",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":\"Central Library\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"M-7\",\"urgency\":\"routine\",\"missing_information\":[\"affected_date\"],\"formal_summary\":\"Membership record M-7 at Central Library contains an error, but the affected date is not stated.\"}",
+      "latency_seconds": 1.6758580197499953,
+      "prompt_tokens": 643
+    },
+    {
+      "surface_id": "canonical-145-formal_english",
+      "case_id": "canonical-145",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"for two days\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"service_identifier\"],\"formal_summary\":\"The Community Hall booking service has not responded for two days, but no reservation identifier is stated.\"}",
+      "latency_seconds": 3.1563814540000408,
+      "prompt_tokens": 639
+    },
+    {
+      "surface_id": "canonical-145-informal_english",
+      "case_id": "canonical-145",
+      "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"for two days\",\"amount_inr\":null,\"service_identifier\":\"Community Hall booking service\",\"urgency\":\"routine\",\"missing_information\":[\"reservation identifier\"],\"formal_summary\":\"The Community Hall booking service has not responded for two days, but no reservation identifier is stated.\"}",
+      "latency_seconds": 3.1563814540000408,
+      "prompt_tokens": 642
+    }
+  ]
+}

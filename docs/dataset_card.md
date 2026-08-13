@@ -5,8 +5,8 @@
 CivicStruct compares rules, prompting, retrieval-selected prompting, and
 SmolLM3 QLoRA on public-service complaint structuring. The working data has a
 controlled synthetic core, a small licensed public training slice, and a
-separate public transfer slice. The final controlled test set is written,
-audited, and frozen, but predictions remain unopened.
+separate public transfer slice. The final controlled test set was written,
+audited, and frozen before the system configuration was fixed and evaluated.
 
 ## files and current counts
 
@@ -91,9 +91,8 @@ retrieval, prompt design, model selection, and the internal test set.
 The same privacy transformation is applied: direct identifiers and source
 request IDs are discarded, exact addresses and coordinates are not retained,
 and location is generalized to community area. Every row was manually mapped
-to the project schema. The resulting transfer score will be reported
-separately because the slice has narrow domain coverage and comes from a
-different civic system.
+to the project schema. Its transfer score is reported separately because the
+slice has narrow domain coverage and comes from a different civic system.
 
 ## split and leakage rules
 
@@ -103,8 +102,9 @@ slice may enter QLoRA training and retrieval, while the external slice may not.
 Retrieved prompts use unique case IDs.
 
 The final controlled test complaints were written independently rather than
-copied from the training templates. Test predictions remain closed until
-the prompts, retriever, adapter, decoding settings, and evaluator are frozen.
+copied from the training templates. Test predictions were generated once,
+after the prompts, retriever, adapter, decoding settings, and evaluator were
+frozen.
 
 ## provenance and audit
 

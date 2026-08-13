@@ -4,6 +4,7 @@ from copy import deepcopy
 
 from src.check_examples import load_examples
 from src.evaluate import evaluate_outputs
+from src.report_final import percentile
 from src.report_validation import categorize_failure, wilson_interval
 
 
@@ -95,6 +96,11 @@ class FailureReportTest(unittest.TestCase):
         self.assertEqual(high, 1.0)
         self.assertLess(low, 1.0)
         self.assertGreater(low, 0.9)
+
+    def test_bootstrap_percentile_interpolates_without_dependencies(self):
+        self.assertEqual(percentile([0.0, 1.0], 0.5), 0.5)
+        self.assertEqual(percentile([0.0, 0.5, 1.0], 0.0), 0.0)
+        self.assertEqual(percentile([0.0, 0.5, 1.0], 1.0), 1.0)
 
 
 if __name__ == "__main__":

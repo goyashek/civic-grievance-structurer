@@ -31,3 +31,6 @@ __pycache__/
 
 # local executed notebook references
 notebooks/.local/
+
+# local final result bundle
+data/final_results/civicstruct_final_results.zip

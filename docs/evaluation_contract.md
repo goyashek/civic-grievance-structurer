@@ -32,6 +32,9 @@ comparison as their field scores; amount and service identifier use exact
 match. Its denominator is the number of predicted non-null values across those
 fields. The rate is `null` when that denominator is zero.
 
-Summary faithfulness remains a blinded human score. Each system will use the
-same frozen complaint sample in randomized order. An exact string match would
-penalize faithful paraphrases, so it is not part of the automatic evaluator.
+Summary quality uses a separate single-reviewer blinded rubric pass. Each
+system uses the same frozen complaint sample, and all complaint-summary pairs
+are shuffled with system names hidden during scoring. Factuality requires no
+unsupported or contradictory facts. Completeness requires the core issue and
+material facts to remain. An exact string match would penalize faithful
+paraphrases, so it is not part of the automatic evaluator.

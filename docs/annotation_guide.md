@@ -42,8 +42,9 @@ Do not count mechanical template rewrites as independent training evidence.
 Label each row by how its wording was actually made, such as
 `manual_surface`, `canonical_summary_surface`, or `template_surface`.
 
-Review each validation variant and the planned test rows. Review at least 20
-percent of training variants. Reject or correct a variant when it:
+Review each validation variant and every independently written final-test row.
+Review at least 20 percent of training variants. Reject or correct a variant
+when it:
 
 - adds a person, cause, amount, date, location, identifier, or promised action;
 - removes a fact or intentional omission from the canonical case;
@@ -52,7 +53,8 @@ percent of training variants. Reject or correct a variant when it:
 - copies another complaint closely enough to weaken the split audit.
 
 Strict JSON and schema validation catch useful format errors, but they cannot
-prove semantic preservation. Human review remains part of the data contract.
+prove semantic preservation. Human review remains part of the data contract;
+the repository records full review for the validation and final-test rows.
 
 ## licensed public rows
 

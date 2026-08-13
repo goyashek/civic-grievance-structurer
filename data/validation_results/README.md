@@ -1,8 +1,13 @@
 # validation results
 
-These are the development results for the 50 validation complaints. Nothing here
-touches the internal test set or the external transfer slice, and both are still
-unopened.
+These are the development results for the 50 validation complaints. At the time
+of this run, nothing here touched the internal test set or the external transfer
+slice, and both were still unopened.
+
+The frozen final evaluation is now documented separately in
+[`data/final_results/`](../final_results/README.md). This file stays focused on
+validation because validation was used for system selection and the controlled
+training-length revision.
 
 Regenerate every number from the saved responses by running
 `python3 -m src.report_validation` from the repository root. That script rescores

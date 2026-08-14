@@ -34,3 +34,5 @@ notebooks/.local/
 
 # local final result bundle
 data/final_results/civicstruct_final_results.zip
+data/final_results/civicstruct_final_results_kaggle.zip
+data/final_results/civicstruct_final_external_validation.zip

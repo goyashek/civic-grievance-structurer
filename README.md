@@ -17,7 +17,7 @@ extraction behind a valid-looking JSON object.
 | base model | `HuggingFaceTB/SmolLM3-3B` |
 | adaptation | 4-bit QLoRA, 30.2M trainable parameters |
 | training data | 120 controlled and 40 licensed public complaints |
-| evaluation | 50 validation, 50 frozen internal test, 20 external transfer rows |
+| evaluation | 50 validation, 50 frozen internal test, 20 San Diego transfer rows, 60-row Baton Rouge source-aligned diagnostic |
 | comparison | rules, zero-shot, static few-shot, retrieved few-shot, QLoRA |
 | experiment runtime | Kaggle Tesla T4 |
 | current state | experiment and metric closeout complete; local demo still pending |
@@ -310,6 +310,28 @@ fact fields. The 1.00 missing-information score needs context: every external
 row has generalized location and the same `exact_location` omission. It does
 not show broad missing-information reasoning across all eight labels.
 
+## Cross-city source-aligned diagnostic
+
+The executed external-validation notebook also queried the official Baton
+Rouge 311 API and kept 60 safe comments: ten each from garbage, recycling,
+drainage, sewer, road maintenance, and street or traffic categories. The
+source category was mapped only to the project's broad service-domain labels.
+
+| system | strict schema valid | service-domain agreement, end to end |
+|---|---:|---:|
+| deterministic rules | 1.000 | 0.150 |
+| zero-shot | 0.000 | 0.000 |
+| static few-shot | 0.967 | 0.367 |
+| retrieved few-shot | 0.933 | 0.350 |
+| QLoRA | 0.983 | 0.500 |
+
+QLoRA produced 59 valid records and matched the broad source category on 30
+of 60 rows. This is a source-aligned diagnostic, not a full gold evaluation:
+the public rows do not contain audited labels for issue type, urgency, missing
+information, or summary faithfulness. It is evidence that the frozen system
+keeps its output format on a different civic system, while semantic transfer
+is still limited.
+
 ## Data-size ablation
 
 The ablation keeps the two-epoch recipe fixed and changes only the number of
@@ -420,6 +442,25 @@ ablations, freezes the system, and only then loads held-out data. The untouched
 executed copy is
 [`final_kaggle_run_executed.ipynb`](notebooks/final_kaggle_run_executed.ipynb).
 
+The cross-city handoff is
+[`final_kaggle_external_validation.ipynb`](notebooks/final_kaggle_external_validation.ipynb),
+with its executed copy in
+[`final_kaggle_external_validation_executed.ipynb`](notebooks/final_kaggle_external_validation_executed.ipynb).
+It reruns the frozen final recipe and then performs the separate Baton Rouge
+source-aligned diagnostic with Kaggle Internet enabled.
+
+The full Kaggle ZIPs contain the roughly 121 MB adapter, so GitHub's 100 MB
+file limit makes them unsuitable for normal Git tracking. They are preserved
+locally under `data/final_results/` and ignored by Git. The preserved files
+have these SHA-256 hashes:
+
+```text
+civicstruct_final_results_kaggle.zip
+85f42be61bde8235a4c6d133c825685a15359b2110afcf30dd68aafcdf285527
+civicstruct_final_external_validation.zip
+771d2859cad977677a55ef4367dad81e2cd6fdb482887dd7c6a058a3a054df36
+```
+
 The two saved development MLflow stores can be opened with:
 
 ```bash
@@ -441,7 +482,7 @@ mlflow ui --backend-store-uri data/validation_results/mlruns
 | [`data/model_selection_results/`](data/model_selection_results/README.md) | six model-selection runs and MLflow records |
 | [`data/validation_results/`](data/validation_results/README.md) | baseline outputs, QLoRA run, failure audit, and MLflow records |
 | [`data/final_results/`](data/final_results/README.md) | frozen final run, adapter, raw outputs, intervals, and summary judgments |
-| [`notebooks/`](notebooks/) | model smoke test, bake-off, validation training, and final Kaggle run |
+| [`notebooks/`](notebooks/) | model smoke test, bake-off, validation training, and final Kaggle runs |
 
 ## Limitations
 

@@ -6,6 +6,12 @@ from src.check_examples import load_examples
 from src.evaluate import evaluate_outputs
 from src.report_final import percentile
 from src.report_validation import categorize_failure, wilson_interval
+from src.schema import (
+    ISSUE_TYPE_LABELS,
+    MISSING_INFORMATION_LABELS,
+    SERVICE_DOMAIN_LABELS,
+    URGENCY_LABELS,
+)
 
 
 class SharedMetricsTest(unittest.TestCase):
@@ -15,11 +21,16 @@ class SharedMetricsTest(unittest.TestCase):
 
     def test_perfect_output(self):
         report = evaluate_outputs([self.gold], [json.dumps(self.gold)])
-        self.assertEqual(report["evaluation_version"], "1.0")
+        self.assertEqual(report["evaluation_version"], "2.0")
         self.assertEqual(report["strict"]["schema_validity_rate"], 1.0)
-        self.assertEqual(
-            set(report["strict"]["end_to_end_field_metrics"].values()), {1.0}
-        )
+        fields = report["strict"]["end_to_end_field_metrics"]
+        self.assertAlmostEqual(fields["service_domain_macro_f1"], 1 / len(SERVICE_DOMAIN_LABELS))
+        self.assertAlmostEqual(fields["issue_type_macro_f1"], 1 / len(ISSUE_TYPE_LABELS))
+        self.assertAlmostEqual(fields["urgency_macro_f1"], 1 / len(URGENCY_LABELS))
+        expected_missing = sum(
+            label in self.gold["missing_information"] for label in MISSING_INFORMATION_LABELS
+        ) / len(MISSING_INFORMATION_LABELS)
+        self.assertAlmostEqual(fields["missing_information_macro_f1"], expected_missing)
         self.assertEqual(report["conditional_valid"]["denominator"], 1)
 
     def test_wrong_but_valid_output(self):
@@ -40,7 +51,7 @@ class SharedMetricsTest(unittest.TestCase):
             set(report["strict"]["end_to_end_field_metrics"].values()), {0.0}
         )
         self.assertEqual(
-            report["strict"]["hallucinated_non_null_fields"]["rate"], 1.0
+            report["strict"]["exact_factual_field_mismatches"]["rate"], 1.0
         )
 
     def test_invalid_json_receives_no_semantic_score(self):
@@ -50,7 +61,7 @@ class SharedMetricsTest(unittest.TestCase):
             set(report["strict"]["end_to_end_field_metrics"].values()), {0.0}
         )
         self.assertIsNone(report["conditional_valid"]["field_metrics"])
-        self.assertIsNone(report["strict"]["hallucinated_non_null_fields"]["rate"])
+        self.assertIsNone(report["strict"]["exact_factual_field_mismatches"]["rate"])
 
     def test_schema_invalid_json_receives_no_semantic_score(self):
         invalid = deepcopy(self.gold)
@@ -67,8 +78,26 @@ class SharedMetricsTest(unittest.TestCase):
         report = evaluate_outputs([self.gold], [raw])
         self.assertEqual(report["strict"]["schema_valid_count"], 0)
         self.assertEqual(report["repaired"]["repairable_json_rate"], 1.0)
+        fields = report["repaired"]["end_to_end_field_metrics"]
+        self.assertAlmostEqual(fields["service_domain_macro_f1"], 1 / len(SERVICE_DOMAIN_LABELS))
+        self.assertAlmostEqual(fields["issue_type_macro_f1"], 1 / len(ISSUE_TYPE_LABELS))
+        self.assertEqual(fields["location_normalized_match"], 1.0)
+
+    def test_macro_f1_counts_a_valid_prediction_for_a_missing_gold_class(self):
+        predictions = [self.gold, dict(self.gold, service_domain="other")]
+        report = evaluate_outputs(
+            [self.gold, deepcopy(self.gold)], [json.dumps(item) for item in predictions]
+        )
+        self.assertAlmostEqual(
+            report["strict"]["end_to_end_field_metrics"]["service_domain_macro_f1"],
+            (2 / 3) / len(SERVICE_DOMAIN_LABELS),
+        )
+
+    def test_macro_f1_returns_zero_for_classes_with_no_support(self):
+        report = evaluate_outputs([self.gold], [json.dumps(self.gold)])
         self.assertEqual(
-            set(report["repaired"]["end_to_end_field_metrics"].values()), {1.0}
+            report["strict"]["end_to_end_field_metrics"]["service_domain_macro_f1"],
+            1 / len(SERVICE_DOMAIN_LABELS),
         )
 
 

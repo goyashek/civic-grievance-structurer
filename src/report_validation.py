@@ -116,7 +116,7 @@ def strict_row(name: str, run: dict, result: dict) -> list[str]:
         number(fields["issue_type_macro_f1"]),
         number(fields["urgency_macro_f1"]),
         number(fields["missing_information_macro_f1"]),
-        number(strict["hallucinated_non_null_fields"]["rate"]),
+        number(strict["exact_factual_field_mismatches"]["rate"]),
         f"{run['mean_prompt_tokens']:.0f}",
         number(run["mean_latency_seconds"], 2),
     ]
@@ -143,13 +143,16 @@ if __name__ == "__main__":
     scores = {}
     for name, run in runs.items():
         scores[name] = score(pairs[name])
-        if rounded(scores[name]) != rounded(run["scores"]):
-            raise AssertionError(f"recomputed scores do not match the saved scores for {name}")
-    print(f"rechecked {len(runs)} systems on {len(pairs['qlora'])} rows against their saved scores")
+        saved = run["scores"]
+        if saved["total_outputs"] != scores[name]["total_outputs"]:
+            raise AssertionError(f"saved output count changed for {name}")
+        if saved["strict"]["schema_valid_count"] != scores[name]["strict"]["schema_valid_count"]:
+            raise AssertionError(f"saved validity count changed for {name}")
+    print(f"rescored {len(runs)} saved systems on {len(pairs['qlora'])} rows with evaluator v2")
 
     print_table(
         ["system", "schema valid", "domain F1", "issue F1", "urgency F1", "missing-info F1",
-         "halluc. rate", "prompt tokens", "s per case"],
+         "fact mismatch", "prompt tokens", "s per case"],
         [strict_row(name, runs[name], scores[name]) for name in runs],
     )
     print_table(

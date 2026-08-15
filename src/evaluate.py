@@ -3,31 +3,51 @@
 import json
 from typing import Any
 
-from .schema import SchemaError, validate_gold
+from .schema import (
+    ISSUE_TYPE_LABELS,
+    MISSING_INFORMATION_LABELS,
+    SERVICE_DOMAIN_LABELS,
+    URGENCY_LABELS,
+    SchemaError,
+    validate_gold,
+)
 
 
 CATEGORICAL_FIELDS = ("service_domain", "issue_type", "urgency")
+CATEGORICAL_LABELS = {
+    "service_domain": SERVICE_DOMAIN_LABELS,
+    "issue_type": ISSUE_TYPE_LABELS,
+    "urgency": URGENCY_LABELS,
+}
 FACT_FIELDS = ("location", "event_date_or_time", "amount_inr", "service_identifier")
-EVALUATION_VERSION = "1.0"
+TEXT_FACT_FIELDS = frozenset({"location", "event_date_or_time"})
+FACT_BREAKDOWN_LABELS = (
+    "correct",
+    "omitted",
+    "fabricated",
+    "distorted_or_partially_correct",
+    "normalization_only_mismatch",
+)
+EVALUATION_VERSION = "2.0"
 
 
-def _macro_f1(gold_values: list[Any], predicted_values: list[Any]) -> float:
+def _macro_f1(
+    gold_values: list[Any], predicted_values: list[Any], labels: tuple[str, ...]
+) -> float:
     scores = []
     pairs = list(zip(gold_values, predicted_values))
-    for label in sorted(set(gold_values)):
+    for label in labels:
         true_positive = sum(gold == predicted == label for gold, predicted in pairs)
         false_positive = sum(gold != label and predicted == label for gold, predicted in pairs)
         false_negative = sum(gold == label and predicted != label for gold, predicted in pairs)
-        scores.append(
-            2 * true_positive / (2 * true_positive + false_positive + false_negative)
-        )
+        denominator = 2 * true_positive + false_positive + false_negative
+        scores.append(0.0 if denominator == 0 else 2 * true_positive / denominator)
     return sum(scores) / len(scores)
 
 
 def _missing_macro_f1(golds: list[dict], predictions: list[dict | None]) -> float:
-    labels = sorted({label for gold in golds for label in gold["missing_information"]})
     scores = []
-    for label in labels:
+    for label in MISSING_INFORMATION_LABELS:
         gold_values = [label in gold["missing_information"] for gold in golds]
         predicted_values = [
             prediction is not None and label in prediction["missing_information"]
@@ -68,6 +88,7 @@ def _field_metrics(golds: list[dict], predictions: list[dict | None]) -> dict[st
         f"{field}_macro_f1": _macro_f1(
             [gold[field] for gold in golds],
             [prediction[field] if prediction is not None else None for prediction in predictions],
+            CATEGORICAL_LABELS[field],
         )
         for field in CATEGORICAL_FIELDS
     }
@@ -87,7 +108,7 @@ def _field_metrics(golds: list[dict], predictions: list[dict | None]) -> dict[st
     return metrics
 
 
-def _hallucination(
+def _exact_factual_field_mismatches(
     golds: list[dict], predictions: list[dict | None]
 ) -> dict[str, int | float | None]:
     pairs = [
@@ -97,17 +118,65 @@ def _hallucination(
         for field in FACT_FIELDS
         if prediction[field] is not None
     ]
-    hallucinated = sum(
+    mismatches = sum(
         (_normalize_text(gold) != _normalize_text(predicted))
         if field in {"location", "event_date_or_time"}
         else gold != predicted
         for field, gold, predicted in pairs
     )
     return {
-        "count": hallucinated,
+        "count": mismatches,
         "predicted_non_null_count": len(pairs),
-        "rate": None if not pairs else hallucinated / len(pairs),
+        "rate": None if not pairs else mismatches / len(pairs),
     }
+
+
+def _factuality_breakdown(
+    golds: list[dict], predictions: list[dict | None]
+) -> dict[str, Any]:
+    by_field = {
+        field: {label: 0 for label in FACT_BREAKDOWN_LABELS} for field in FACT_FIELDS
+    }
+    for gold, prediction in zip(golds, predictions):
+        for field in FACT_FIELDS:
+            expected = gold[field]
+            actual = prediction[field] if prediction is not None else None
+            counts = by_field[field]
+            if expected is None and actual is None:
+                counts["correct"] += 1
+            elif expected is None:
+                counts["fabricated"] += 1
+            elif actual is None:
+                counts["omitted"] += 1
+            elif expected == actual:
+                counts["correct"] += 1
+            elif field in TEXT_FACT_FIELDS and _normalize_text(expected) == _normalize_text(actual):
+                counts["normalization_only_mismatch"] += 1
+            else:
+                counts["distorted_or_partially_correct"] += 1
+
+    overall = {
+        label: sum(counts[label] for counts in by_field.values())
+        for label in FACT_BREAKDOWN_LABELS
+    }
+    return {
+        "total_fields": len(golds) * len(FACT_FIELDS),
+        "by_field": by_field,
+        "overall": overall,
+    }
+
+
+def factuality_breakdown(
+    golds: list[dict], raw_outputs: list[Any]
+) -> dict[str, Any]:
+    """Categorize fact-field outcomes without using a model-based judge."""
+
+    if not golds or len(golds) != len(raw_outputs):
+        raise ValueError("gold outputs and raw outputs must have the same non-zero length")
+    for gold in golds:
+        validate_gold(gold)
+    predictions = [_parse_and_validate(raw)[1] for raw in raw_outputs]
+    return _factuality_breakdown(golds, predictions)
 
 
 def _parse_and_validate(raw_output: Any) -> tuple[bool, dict | None]:
@@ -184,7 +253,10 @@ def evaluate_outputs(golds: list[dict], raw_outputs: list[Any]) -> dict[str, Any
             "schema_valid_count": strict_valid_count,
             "schema_validity_rate": strict_valid_count / total,
             "end_to_end_field_metrics": _field_metrics(golds, strict_predictions),
-            "hallucinated_non_null_fields": _hallucination(golds, strict_predictions),
+            "exact_factual_field_mismatches": _exact_factual_field_mismatches(
+                golds, strict_predictions
+            ),
+            "factuality_breakdown": _factuality_breakdown(golds, strict_predictions),
         },
         "conditional_valid": {
             "denominator": strict_valid_count,
@@ -196,6 +268,9 @@ def evaluate_outputs(golds: list[dict], raw_outputs: list[Any]) -> dict[str, Any
             "schema_valid_count": repaired_valid_count,
             "schema_validity_rate": repaired_valid_count / total,
             "end_to_end_field_metrics": _field_metrics(golds, repaired_predictions),
-            "hallucinated_non_null_fields": _hallucination(golds, repaired_predictions),
+            "exact_factual_field_mismatches": _exact_factual_field_mismatches(
+                golds, repaired_predictions
+            ),
+            "factuality_breakdown": _factuality_breakdown(golds, repaired_predictions),
         },
     }

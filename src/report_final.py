@@ -7,8 +7,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from .evaluate import evaluate_outputs
-from .report_validation import rounded, wilson_interval
+from .evaluate import CATEGORICAL_LABELS, FACT_FIELDS, evaluate_outputs
+from .report_validation import wilson_interval
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,12 +16,27 @@ RESULTS_DIR = ROOT / "data/final_results"
 ARCHIVE = RESULTS_DIR / "civicstruct_final_results.zip"
 REVIEW_PATH = RESULTS_DIR / "summary_review.json"
 METRICS_PATH = RESULTS_DIR / "final_metrics.json"
+V1_METRICS_PATH = RESULTS_DIR / "evaluation_v1_metrics.json"
+PAIRWISE_PATH = RESULTS_DIR / "pairwise_comparisons.json"
+FACTUALITY_PATH = RESULTS_DIR / "factuality_breakdown.json"
 SYSTEM_ORDER = (
     "deterministic_rules",
     "zero_shot",
     "static_few_shot",
     "retrieved_few_shot",
     "qlora",
+)
+PAIRWISE_COMPARISONS = (
+    ("qlora", "retrieved_few_shot"),
+    ("qlora", "deterministic_rules"),
+    ("retrieved_few_shot", "static_few_shot"),
+)
+PAIRWISE_METRICS = (
+    "schema_validity_rate",
+    "service_domain_macro_f1",
+    "issue_type_macro_f1",
+    "missing_information_macro_f1",
+    "exact_factual_field_mismatch_rate",
 )
 BOOTSTRAP_ITERATIONS = 2_000
 BOOTSTRAP_SEED = 42
@@ -49,12 +64,12 @@ def primary_metrics(score: dict) -> dict[str, float | None]:
         "service_domain_macro_f1": fields["service_domain_macro_f1"],
         "issue_type_macro_f1": fields["issue_type_macro_f1"],
         "missing_information_macro_f1": fields["missing_information_macro_f1"],
-        "hallucinated_non_null_field_rate": strict["hallucinated_non_null_fields"]["rate"],
+        "exact_factual_field_mismatch_rate": strict["exact_factual_field_mismatches"]["rate"],
     }
 
 
 def confidence_intervals(rows: list[dict], runs: dict[str, dict]) -> dict[str, dict]:
-    """Use Wilson for validity and paired row bootstrap for semantic metrics."""
+    """Use Wilson for validity and row bootstrap for semantic metrics."""
 
     golds = [row["gold"] for row in rows]
     responses = {
@@ -98,8 +113,77 @@ def confidence_intervals(rows: list[dict], runs: dict[str, dict]) -> dict[str, d
                 "point": point[metric],
                 "lower": None if not values else percentile(values, 0.025),
                 "upper": None if not values else percentile(values, 0.975),
+                "method": f"percentile bootstrap, {BOOTSTRAP_ITERATIONS} resamples",
+            }
+    return report
+
+
+def paired_bootstrap_comparisons(rows: list[dict], runs: dict[str, dict]) -> dict[str, dict]:
+    """Estimate paired differences from the same complaint resamples."""
+
+    golds = [row["gold"] for row in rows]
+    responses = {
+        name: {output["case_id"]: output["response"] for output in runs[name]["outputs"]}
+        for name in SYSTEM_ORDER
+    }
+    samples = {
+        pair: defaultdict(list)
+        for pair in PAIRWISE_COMPARISONS
+    }
+    rng = random.Random(BOOTSTRAP_SEED)
+    for _ in range(BOOTSTRAP_ITERATIONS):
+        indices = [rng.randrange(len(rows)) for _ in rows]
+        sampled_golds = [golds[index] for index in indices]
+        scores = {}
+        for name in {name for pair in PAIRWISE_COMPARISONS for name in pair}:
+            sampled_outputs = [responses[name][rows[index]["case_id"]] for index in indices]
+            scores[name] = primary_metrics(evaluate_outputs(sampled_golds, sampled_outputs))
+        for pair in PAIRWISE_COMPARISONS:
+            left, right = pair
+            for metric in PAIRWISE_METRICS:
+                left_value = scores[left][metric]
+                right_value = scores[right][metric]
+                if left_value is not None and right_value is not None:
+                    samples[pair][metric].append(left_value - right_value)
+
+    report = {}
+    for left, right in PAIRWISE_COMPARISONS:
+        left_point = primary_metrics(runs[left]["scores"])
+        right_point = primary_metrics(runs[right]["scores"])
+        differences = {}
+        for metric in PAIRWISE_METRICS:
+            point = None
+            if left_point[metric] is not None and right_point[metric] is not None:
+                point = left_point[metric] - right_point[metric]
+            values = samples[(left, right)][metric]
+            differences[metric] = {
+                "point": point,
+                "lower": None if not values else percentile(values, 0.025),
+                "upper": None if not values else percentile(values, 0.975),
                 "method": f"paired percentile bootstrap, {BOOTSTRAP_ITERATIONS} resamples",
             }
+        report[f"{left}_minus_{right}"] = {
+            "system_a": left,
+            "system_b": right,
+            "difference": differences,
+        }
+    return report
+
+
+def factuality_reports(rows: list[dict], runs: dict[str, dict]) -> dict[str, dict]:
+    """Build the deterministic fact error report from preserved responses."""
+
+    golds = [row["gold"] for row in rows]
+    report = {}
+    for name in SYSTEM_ORDER:
+        outputs = {output["case_id"]: output["response"] for output in runs[name]["outputs"]}
+        score = evaluate_outputs(
+            golds, [outputs[row["case_id"]] for row in rows]
+        )
+        report[name] = {
+            "exact_factual_field_mismatches": score["strict"]["exact_factual_field_mismatches"],
+            "breakdown": score["strict"]["factuality_breakdown"],
+        }
     return report
 
 
@@ -142,12 +226,18 @@ def load_and_verify() -> tuple[dict[str, dict], dict[str, list[dict]]]:
     }
     for split in runs:
         for name in SYSTEM_ORDER:
+            saved = runs[split][name]["scores"]
             recomputed = evaluate_outputs(
                 [row["gold"] for row in rows[split]],
                 [output["response"] for output in runs[split][name]["outputs"]],
             )
-            if rounded(recomputed) != rounded(runs[split][name]["scores"]):
-                raise AssertionError(f"saved final scores do not reproduce for {split}/{name}")
+            if saved["total_outputs"] != recomputed["total_outputs"]:
+                raise AssertionError(f"saved output count changed for {split}/{name}")
+            for field in ("json_parse_count", "schema_invalid_count", "schema_valid_count"):
+                if saved["strict"][field] != recomputed["strict"][field]:
+                    raise AssertionError(f"saved validity counts changed for {split}/{name}")
+            runs[split][name]["scores_v1"] = saved
+            runs[split][name]["scores"] = recomputed
     return runs, rows
 
 
@@ -157,7 +247,7 @@ def number(value: Any) -> str:
 
 def print_table(title: str, intervals: dict[str, dict]) -> None:
     print(f"\n## {title}\n")
-    print("| system | schema valid | domain F1 | issue F1 | missing-info F1 | halluc. rate |")
+    print("| system | schema valid | domain F1 | issue F1 | missing-info F1 | fact mismatch |")
     print("|---|---|---|---|---|---|")
     for name in SYSTEM_ORDER:
         columns = []
@@ -166,7 +256,7 @@ def print_table(title: str, intervals: dict[str, dict]) -> None:
             "service_domain_macro_f1",
             "issue_type_macro_f1",
             "missing_information_macro_f1",
-            "hallucinated_non_null_field_rate",
+            "exact_factual_field_mismatch_rate",
         ):
             item = intervals[name][metric]
             columns.append(
@@ -177,11 +267,59 @@ def print_table(title: str, intervals: dict[str, dict]) -> None:
 
 if __name__ == "__main__":
     final_runs, split_rows = load_and_verify()
+    if not V1_METRICS_PATH.exists():
+        V1_METRICS_PATH.write_text(METRICS_PATH.read_text(encoding="utf-8"), encoding="utf-8")
     review = json.loads(REVIEW_PATH.read_text(encoding="utf-8"))
+    pairwise = {
+        split: paired_bootstrap_comparisons(split_rows[split], final_runs[split])
+        for split in final_runs
+    }
+    factuality = {
+        split: factuality_reports(split_rows[split], final_runs[split])
+        for split in final_runs
+    }
+    PAIRWISE_PATH.write_text(
+        json.dumps(
+            {
+                "evaluation_version": "2.0",
+                "confidence_level": 0.95,
+                "bootstrap_iterations": BOOTSTRAP_ITERATIONS,
+                "bootstrap_seed": BOOTSTRAP_SEED,
+                "comparisons": pairwise,
+            },
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    FACTUALITY_PATH.write_text(
+        json.dumps(
+            {
+                "evaluation_version": "2.0",
+                "comparison_view": "strict end-to-end",
+                "fact_fields": FACT_FIELDS,
+                "categories": (
+                    "correct",
+                    "omitted",
+                    "fabricated",
+                    "distorted_or_partially_correct",
+                    "normalization_only_mismatch",
+                ),
+                "splits": factuality,
+            },
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
     report = {
+        "evaluation_version": "2.0",
         "confidence_level": 0.95,
         "bootstrap_iterations": BOOTSTRAP_ITERATIONS,
         "bootstrap_seed": BOOTSTRAP_SEED,
+        "macro_f1_taxonomies": CATEGORICAL_LABELS,
+        "pairwise_comparisons_file": PAIRWISE_PATH.name,
+        "factuality_breakdown_file": FACTUALITY_PATH.name,
         "automatic": {
             split: confidence_intervals(split_rows[split], final_runs[split])
             for split in final_runs

@@ -24,43 +24,27 @@ GOLD_FIELDS = frozenset(
         "formal_summary",
     }
 )
-ALLOWED_DOMAINS = frozenset(
-    {
-        "public_transport",
-        "water_supply",
-        "sanitation_and_waste",
-        "roads_and_streetlights",
-        "electricity",
-        "welfare_or_document_service",
-        "other",
-    }
+SERVICE_DOMAIN_LABELS = (
+    "public_transport",
+    "water_supply",
+    "sanitation_and_waste",
+    "roads_and_streetlights",
+    "electricity",
+    "welfare_or_document_service",
+    "other",
 )
-ALLOWED_ISSUES = frozenset(
-    {
-        "delay_or_non_arrival",
-        "service_outage_or_non_delivery",
-        "damaged_infrastructure",
-        "overcharging_or_payment_problem",
-        "record_or_document_error",
-        "staff_conduct",
-        "safety_or_health_hazard",
-        "other",
-    }
+ISSUE_TYPE_LABELS = (
+    "delay_or_non_arrival",
+    "service_outage_or_non_delivery",
+    "damaged_infrastructure",
+    "overcharging_or_payment_problem",
+    "record_or_document_error",
+    "staff_conduct",
+    "safety_or_health_hazard",
+    "other",
 )
-ALLOWED_URGENCY = frozenset({"routine", "time_sensitive", "safety_critical"})
-ALLOWED_MISSING = frozenset(
-    {
-        "exact_location",
-        "date_or_time",
-        "service_identifier",
-        "transaction_or_reference_id",
-        "amount",
-        "supporting_evidence",
-        "affected_person_or_group",
-        "none",
-    }
-)
-MISSING_INFORMATION_ORDER = (
+URGENCY_LABELS = ("routine", "time_sensitive", "safety_critical")
+MISSING_INFORMATION_LABELS = (
     "exact_location",
     "date_or_time",
     "service_identifier",
@@ -70,6 +54,12 @@ MISSING_INFORMATION_ORDER = (
     "affected_person_or_group",
     "none",
 )
+
+ALLOWED_DOMAINS = frozenset(SERVICE_DOMAIN_LABELS)
+ALLOWED_ISSUES = frozenset(ISSUE_TYPE_LABELS)
+ALLOWED_URGENCY = frozenset(URGENCY_LABELS)
+ALLOWED_MISSING = frozenset(MISSING_INFORMATION_LABELS)
+MISSING_INFORMATION_ORDER = MISSING_INFORMATION_LABELS
 
 
 def validate_gold(gold: dict[str, Any]) -> None:

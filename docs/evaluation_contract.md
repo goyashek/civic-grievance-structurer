@@ -1,6 +1,6 @@
 # evaluation contract
 
-Evaluation contract version 1.0 receives one schema-valid gold object and one
+Evaluation contract version 2.0 receives one schema-valid gold object and one
 raw model string for each complaint. It keeps three score views separate:
 
 - strict output accepts the entire raw string only when it parses as one JSON
@@ -18,19 +18,26 @@ is reported beside the strict view and never replaces it.
 The repairable-JSON rate divides newly schema-valid repaired objects by all
 raw outputs in the run.
 
-Service domain, issue type, and urgency use macro-F1 over labels represented
-in the gold slice. Missing information uses label-wise macro-F1 over labels
-represented in the same slice. This avoids giving a perfect system a zero for
-a label that has no gold support. The report also includes normalized location
+Service domain, issue type, and urgency use macro-F1 over their complete frozen
+taxonomies. Missing information uses the same rule over all eight labels. A
+class with zero support in a sample contributes zero, so the estimand does not
+change across bootstrap resamples. The report also includes normalized location
 and date or time match, exact amount and service-identifier match, and the
 support denominator for conditional scores.
 
-The hallucinated non-null field rate uses location, date or time, amount, and
+The exact factual field mismatch rate uses location, date or time, amount, and
 service identifier. Its numerator counts a predicted non-null value that does
 not match the gold field. Location and date or time use the same normalized
 comparison as their field scores; amount and service identifier use exact
 match. Its denominator is the number of predicted non-null values across those
 fields. The rate is `null` when that denominator is zero.
+
+The deterministic factuality breakdown scores every fact field in every row.
+It separates correct, omitted, fabricated, distorted or partly correct, and
+normalization-only mismatches. It does not use a model-based judge. A mismatch
+that remains after the defined normalization is placed in the distorted or
+partly correct bucket because the automatic evaluator cannot reliably tell
+which part of the value was right.
 
 Summary quality uses a separate single-reviewer blinded rubric pass. Each
 system uses the same frozen complaint sample, and all complaint-summary pairs

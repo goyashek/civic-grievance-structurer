@@ -2,9 +2,10 @@
 
 This folder preserves the final frozen CivicStruct experiment. The original
 Kaggle ZIP contains the adapter, raw responses, automatic scores, training
-revision, data-size ablations, run metadata, and MLflow store. The separate
-metrics file adds confidence intervals and a blinded summary rubric pass
-without changing any saved prediction or point estimate.
+revision, data-size ablations, run metadata, and MLflow store. The Evaluation
+v2 files correct the macro-F1 taxonomy, recompute uncertainty, and add paired
+comparisons and a deterministic factuality breakdown without changing any
+saved prediction.
 
 Recompute all ten system evaluations from the raw responses and rebuild the
 interval report from the repository root with:
@@ -14,22 +15,23 @@ python3 -m src.report_final
 ```
 
 Schema validity and rubric pass rates use 95 percent Wilson intervals. The
-field metrics use paired percentile bootstrap intervals from 2,000 row
-resamples with seed 42. These intervals are uncertainty estimates for the
-small frozen samples, not guarantees about performance on other portals.
+field metrics and paired system differences use percentile bootstrap intervals
+from 2,000 row resamples with seed 42. These intervals are uncertainty
+estimates for the small frozen samples, not guarantees about performance on
+other portals.
 
 ## internal controlled test
 
-| system | schema valid | domain F1 | issue F1 | missing-info F1 | halluc. rate |
+| system | schema valid | domain F1 | issue F1 | missing-info F1 | fact mismatch |
 |---|---|---|---|---|---|
-| deterministic rules | 1.000 (0.929 to 1.000) | 0.883 (0.769 to 0.960) | 0.730 (0.604 to 0.839) | 0.011 (0.000 to 0.030) | n/a |
+| deterministic rules | 1.000 (0.929 to 1.000) | 0.883 (0.768 to 0.960) | 0.730 (0.598 to 0.819) | 0.010 (0.000 to 0.023) | n/a |
 | zero-shot | 0.000 (0.000 to 0.071) | 0.000 (0.000 to 0.000) | 0.000 (0.000 to 0.000) | 0.000 (0.000 to 0.000) | n/a |
-| static few-shot | 0.720 (0.583 to 0.825) | 0.522 (0.367 to 0.626) | 0.397 (0.271 to 0.515) | 0.251 (0.159 to 0.394) | 0.570 (0.471 to 0.670) |
-| retrieved few-shot | 0.820 (0.692 to 0.902) | 0.638 (0.488 to 0.754) | 0.638 (0.497 to 0.778) | 0.397 (0.263 to 0.636) | 0.378 (0.267 to 0.490) |
-| QLoRA | 0.940 (0.838 to 0.979) | 0.829 (0.699 to 0.914) | 0.745 (0.582 to 0.867) | 0.765 (0.576 to 0.890) | 0.365 (0.279 to 0.450) |
+| static few-shot | 0.720 (0.583 to 0.825) | 0.522 (0.366 to 0.626) | 0.397 (0.268 to 0.496) | 0.219 (0.116 to 0.250) | 0.570 (0.471 to 0.670) |
+| retrieved few-shot | 0.820 (0.692 to 0.902) | 0.638 (0.487 to 0.754) | 0.638 (0.495 to 0.733) | 0.348 (0.209 to 0.437) | 0.378 (0.267 to 0.490) |
+| QLoRA | 0.940 (0.838 to 0.979) | 0.829 (0.697 to 0.914) | 0.745 (0.572 to 0.854) | 0.670 (0.364 to 0.723) | 0.365 (0.279 to 0.450) |
 
 QLoRA is the strongest learned system on schema validity, domain, issue type,
-and missing information. Its hallucination point estimate is slightly lower
+and missing information. Its exact fact mismatch point estimate is slightly lower
 than retrieval's, and their intervals overlap. The keyword rules are
 competitive on the controlled taxonomy but almost never identify missing
 information. Zero-shot produced no strict schema-valid responses; 40 of its
@@ -37,18 +39,32 @@ information. Zero-shot produced no strict schema-valid responses; 40 of its
 
 ## external transfer
 
-| system | schema valid | domain F1 | issue F1 | missing-info F1 | halluc. rate |
+| system | schema valid | domain F1 | issue F1 | missing-info F1 | fact mismatch |
 |---|---|---|---|---|---|
-| deterministic rules | 1.000 (0.839 to 1.000) | 0.693 (0.379 to 0.917) | 0.433 (0.222 to 0.581) | 1.000 (1.000 to 1.000) | n/a |
+| deterministic rules | 1.000 (0.839 to 1.000) | 0.198 (0.108 to 0.261) | 0.163 (0.083 to 0.217) | 0.125 (0.125 to 0.125) | n/a |
 | zero-shot | 0.000 (0.000 to 0.161) | 0.000 (0.000 to 0.000) | 0.000 (0.000 to 0.000) | 0.000 (0.000 to 0.000) | n/a |
-| static few-shot | 0.950 (0.764 to 0.991) | 0.651 (0.459 to 0.883) | 0.241 (0.095 to 0.389) | 0.000 (0.000 to 0.000) | 0.947 (0.883 to 1.000) |
-| retrieved few-shot | 0.950 (0.764 to 0.991) | 0.768 (0.469 to 0.984) | 0.309 (0.133 to 0.465) | 0.710 (0.519 to 0.857) | 0.250 (0.091 to 0.400) |
-| QLoRA | 1.000 (0.839 to 1.000) | 0.816 (0.486 to 1.000) | 0.417 (0.187 to 0.630) | 1.000 (1.000 to 1.000) | 0.125 (0.000 to 0.286) |
+| static few-shot | 0.950 (0.764 to 0.991) | 0.186 (0.131 to 0.250) | 0.090 (0.036 to 0.146) | 0.000 (0.000 to 0.000) | 0.947 (0.883 to 1.000) |
+| retrieved few-shot | 0.950 (0.764 to 0.991) | 0.220 (0.134 to 0.280) | 0.116 (0.048 to 0.174) | 0.089 (0.065 to 0.107) | 0.250 (0.091 to 0.400) |
+| QLoRA | 1.000 (0.839 to 1.000) | 0.233 (0.139 to 0.286) | 0.156 (0.070 to 0.236) | 0.125 (0.125 to 0.125) | 0.125 (0.000 to 0.286) |
 
 QLoRA transfers best among the learned systems on this 20-row slice. The
 intervals are wide, and the slice covers only road, streetlight, drainage, and
 waste complaints from one different civic system. It is a transfer check, not
 evidence of general performance across real grievance portals.
+
+## paired bootstrap differences on the internal test
+
+Each difference uses the same 2,000 complaint resamples for both systems.
+Positive values favor the first system in the comparison.
+
+| comparison | domain F1 | issue F1 | missing-info F1 |
+|---|---:|---:|---:|
+| QLoRA minus retrieved | +0.190 (0.052 to 0.343) | +0.106 (-0.066 to 0.257) | +0.322 (0.024 to 0.418) |
+| QLoRA minus rules | -0.054 (-0.192 to 0.071) | +0.015 (-0.164 to 0.189) | +0.660 (0.358 to 0.708) |
+| retrieved minus static | +0.116 (-0.027 to 0.251) | +0.242 (0.122 to 0.361) | +0.128 (-0.013 to 0.254) |
+
+The paired comparisons are stored in `pairwise_comparisons.json`. The full
+fact-field counts are in `factuality_breakdown.json`.
 
 ## training revision and ablation
 
@@ -91,5 +107,8 @@ only ten complaints and should be read as a small qualitative audit.
 ## saved artifacts
 
 - `civicstruct_final_results.zip`: untouched Kaggle result bundle;
-- `final_metrics.json`: recomputed point estimates and confidence intervals;
+- `evaluation_v1_metrics.json`: the pre-correction published metrics;
+- `final_metrics.json`: Evaluation v2 point estimates and confidence intervals;
+- `pairwise_comparisons.json`: paired bootstrap system differences;
+- `factuality_breakdown.json`: deterministic fact-field error categories;
 - `summary_review.json`: sampled cases, rubric, and all 50 judgments.

@@ -73,7 +73,7 @@ complaint -> frozen prompt ---+-> static three-shot SmolLM3 ---+-> raw response
 
 raw response -> strict JSON parse -> schema validation -> field metrics
             -> narrow JSON unwrap -> repaired metrics
-            -> fact comparison    -> hallucinated-field rate
+            -> fact comparison    -> exact factual field mismatch rate
 ```
 
 The five systems answer different questions:
@@ -114,14 +114,14 @@ I ran a 40-case development bake-off across Qwen3-4B, SmolLM3-3B, and
 Phi-4-mini. Every zero-shot run failed strict schema validity. Fixed few-shot
 prompting made the comparison useful.
 
-| base model, fixed few-shot | schema valid | domain F1 | issue F1 | missing-info F1 | halluc. rate | peak T4 memory |
+| base model, fixed few-shot | schema valid | domain F1 | issue F1 | missing-info F1 | fact mismatch | peak T4 memory |
 |---|---:|---:|---:|---:|---:|---:|
 | Qwen3-4B | 0.175 | 0.268 | 0.200 | 0.302 | 0.176 | 5,771 MB |
 | SmolLM3-3B | 0.425 | 0.483 | 0.221 | 0.563 | 0.056 | 2,668 MB |
 | Phi-4-mini | 0.400 | 0.485 | 0.199 | 0.508 | 0.143 | 4,107 MB |
 
 SmolLM3 had the best balance of schema validity, issue classification,
-missing-information extraction, hallucination rate, and memory. Phi was a
+missing-information extraction, exact fact mismatch rate, and memory. Phi was a
 little better on domain F1, but not enough to outweigh the rest. I selected
 one base model here and did not fine-tune the full shortlist.
 
@@ -239,20 +239,22 @@ The report also keeps two diagnostic views:
 - repaired metrics may unwrap one complete JSON object from a code fence or
   surrounding text, but never alter a key, label, type, or value.
 
-Service domain, issue type, and urgency use macro-F1 over labels present in the
-gold slice. Missing information uses label-wise macro-F1. Location and time
-use normalized exact matching; amount and service identifier use exact
-matching.
+Service domain, issue type, and urgency use macro-F1 over the complete frozen
+taxonomy, including labels with zero support in a resample. Missing information
+uses the same rule over all eight labels. Location and time use normalized
+exact matching; amount and service identifier use exact matching.
 
-The hallucinated non-null field rate checks location, time, amount, and service
+The exact factual field mismatch rate checks location, time, amount, and service
 identifier. It divides unsupported or mismatched predicted facts by all
 non-null facts the system predicted. The rate is `n/a` when a system predicts
-no non-null facts. That distinction matters for the rules baseline, which can
-look safe simply because it leaves facts empty.
+no non-null facts. The separate factuality breakdown counts correct, omitted,
+fabricated, distorted or partly correct, and normalization-only cases by
+field.
 
 Schema-validity and rubric pass rates use 95 percent Wilson intervals. The
-primary semantic metrics use paired percentile bootstrap intervals from 2,000
-row resamples with seed 42. See the full
+primary semantic metrics use percentile bootstrap intervals from 2,000 row
+resamples with seed 42. Paired system differences are reported separately.
+See the full
 [`evaluation contract`](docs/evaluation_contract.md) for the exact rules.
 
 ## Final controlled test results
@@ -260,13 +262,13 @@ row resamples with seed 42. See the full
 These are strict end-to-end results on 50 independently written complaints.
 Parentheses contain 95 percent intervals.
 
-| system | schema valid | domain F1 | issue F1 | missing-info F1 | halluc. rate |
+| system | schema valid | domain F1 | issue F1 | missing-info F1 | fact mismatch |
 |---|---|---|---|---|---|
-| deterministic rules | 1.000 (0.929 to 1.000) | 0.883 (0.769 to 0.960) | 0.730 (0.604 to 0.839) | 0.011 (0.000 to 0.030) | n/a |
+| deterministic rules | 1.000 (0.929 to 1.000) | 0.883 (0.768 to 0.960) | 0.730 (0.598 to 0.819) | 0.010 (0.000 to 0.023) | n/a |
 | zero-shot | 0.000 (0.000 to 0.071) | 0.000 (0.000 to 0.000) | 0.000 (0.000 to 0.000) | 0.000 (0.000 to 0.000) | n/a |
-| static few-shot | 0.720 (0.583 to 0.825) | 0.522 (0.367 to 0.626) | 0.397 (0.271 to 0.515) | 0.251 (0.159 to 0.394) | 0.570 (0.471 to 0.670) |
-| retrieved few-shot | 0.820 (0.692 to 0.902) | 0.638 (0.488 to 0.754) | 0.638 (0.497 to 0.778) | 0.397 (0.263 to 0.636) | 0.378 (0.267 to 0.490) |
-| QLoRA | 0.940 (0.838 to 0.979) | 0.829 (0.699 to 0.914) | 0.745 (0.582 to 0.867) | 0.765 (0.576 to 0.890) | 0.365 (0.279 to 0.450) |
+| static few-shot | 0.720 (0.583 to 0.825) | 0.522 (0.366 to 0.626) | 0.397 (0.268 to 0.496) | 0.219 (0.116 to 0.250) | 0.570 (0.471 to 0.670) |
+| retrieved few-shot | 0.820 (0.692 to 0.902) | 0.638 (0.487 to 0.754) | 0.638 (0.495 to 0.733) | 0.348 (0.209 to 0.437) | 0.378 (0.267 to 0.490) |
+| QLoRA | 0.940 (0.838 to 0.979) | 0.829 (0.697 to 0.914) | 0.745 (0.572 to 0.854) | 0.670 (0.364 to 0.723) | 0.365 (0.279 to 0.450) |
 
 QLoRA is the strongest learned system across the main structured fields. It
 also uses about 328 prompt tokens per complaint, compared with 657 for
@@ -283,9 +285,10 @@ Zero-shot is mainly a formatting failure. None of its 50 raw responses passes
 strict validation, but the narrow JSON unwrap recovers 40. This is why repaired
 output is useful as a diagnostic and dangerous as the headline score.
 
-QLoRA is still not fact-safe. Its 0.365 hallucinated-field rate means 46 of 126
-predicted non-null facts do not match the gold value under the evaluator. The
-adapter solves schema reliability much better than exact factual extraction.
+QLoRA is still not fact-safe. Its 0.365 exact factual field mismatch rate means
+46 of 126 predicted non-null facts do not match the gold value under the
+evaluator. The adapter solves schema reliability much better than exact factual
+extraction.
 
 The primary automatic metric table, raw-response checks, confidence intervals,
 and machine-readable scores are in the
@@ -297,13 +300,13 @@ The 20-row San Diego slice is reported separately. It covers road,
 streetlight, drainage, and waste complaints from one civic system and is too
 small for broad deployment claims.
 
-| system | schema valid | domain F1 | issue F1 | missing-info F1 | halluc. rate |
+| system | schema valid | domain F1 | issue F1 | missing-info F1 | fact mismatch |
 |---|---|---|---|---|---|
-| deterministic rules | 1.000 (0.839 to 1.000) | 0.693 (0.379 to 0.917) | 0.433 (0.222 to 0.581) | 1.000 (1.000 to 1.000) | n/a |
+| deterministic rules | 1.000 (0.839 to 1.000) | 0.198 (0.108 to 0.261) | 0.163 (0.083 to 0.217) | 0.125 (0.125 to 0.125) | n/a |
 | zero-shot | 0.000 (0.000 to 0.161) | 0.000 (0.000 to 0.000) | 0.000 (0.000 to 0.000) | 0.000 (0.000 to 0.000) | n/a |
-| static few-shot | 0.950 (0.764 to 0.991) | 0.651 (0.459 to 0.883) | 0.241 (0.095 to 0.389) | 0.000 (0.000 to 0.000) | 0.947 (0.883 to 1.000) |
-| retrieved few-shot | 0.950 (0.764 to 0.991) | 0.768 (0.469 to 0.984) | 0.309 (0.133 to 0.465) | 0.710 (0.519 to 0.857) | 0.250 (0.091 to 0.400) |
-| QLoRA | 1.000 (0.839 to 1.000) | 0.816 (0.486 to 1.000) | 0.417 (0.187 to 0.630) | 1.000 (1.000 to 1.000) | 0.125 (0.000 to 0.286) |
+| static few-shot | 0.950 (0.764 to 0.991) | 0.186 (0.131 to 0.250) | 0.090 (0.036 to 0.146) | 0.000 (0.000 to 0.000) | 0.947 (0.883 to 1.000) |
+| retrieved few-shot | 0.950 (0.764 to 0.991) | 0.220 (0.134 to 0.280) | 0.116 (0.048 to 0.174) | 0.089 (0.065 to 0.107) | 0.250 (0.091 to 0.400) |
+| QLoRA | 1.000 (0.839 to 1.000) | 0.233 (0.139 to 0.286) | 0.156 (0.070 to 0.236) | 0.125 (0.125 to 0.125) | 0.125 (0.000 to 0.286) |
 
 QLoRA transfers best among the learned systems on this slice, especially for
 fact fields. The 1.00 missing-information score needs context: every external
@@ -389,8 +392,8 @@ generation, not by crushing every simple baseline.
 
 ### Retrieval and fine-tuning fail differently
 
-On validation, retrieval hallucinated fewer facts than the one-epoch adapter.
-On the final test, QLoRA's hallucination point estimate is slightly lower than
+On validation, retrieval had a lower exact fact mismatch rate than the one-epoch
+adapter. On the final test, QLoRA's exact mismatch point estimate is slightly lower than
 retrieval's, and their intervals overlap. Retrieval uses more context and is
 cheaper to change. QLoRA is more reliable about schema and missing information
 with a shorter prompt. Neither removes the need to validate output.
@@ -473,7 +476,7 @@ mlflow ui --backend-store-uri data/validation_results/mlruns
 | path | contents |
 |---|---|
 | [`src/schema.py`](src/schema.py) | schema version 1.0 and dependency-free validation |
-| [`src/evaluate.py`](src/evaluate.py) | strict, conditional, repaired, field, and hallucination metrics |
+| [`src/evaluate.py`](src/evaluate.py) | strict, conditional, repaired, field, and factuality metrics |
 | [`src/report_validation.py`](src/report_validation.py) | reproducible validation tables and failure categories |
 | [`src/report_final.py`](src/report_final.py) | final score verification and confidence intervals |
 | [`docs/annotation_guide.md`](docs/annotation_guide.md) | label definitions and annotation decisions |
@@ -495,7 +498,7 @@ mlflow ui --backend-store-uri data/validation_results/mlruns
   the source portals.
 - Confidence intervals are wide. There is one training run per ablation size,
   one final test run, and one summary reviewer.
-- The hallucinated-field metric is strict about extracted values. QLoRA still
+- The exact factual field mismatch metric is strict about extracted values. QLoRA still
   needs downstream validation and should not route or submit complaints without
   review.
 - Roman-script Hinglish appears only as limited annotation coverage, not a

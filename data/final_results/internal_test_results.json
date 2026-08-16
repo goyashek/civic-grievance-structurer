@@ -1,0 +1,2374 @@
+{
+  "deterministic_rules": {
+    "method": "internal-test-deterministic-rules",
+    "model_name": null,
+    "model_revision": null,
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 256
+    },
+    "mean_latency_seconds": 0.0,
+    "mean_prompt_tokens": 0.0,
+    "demonstration_count": 0,
+    "scores": {
+      "evaluation_version": "1.0",
+      "total_outputs": 50,
+      "strict": {
+        "json_parse_count": 50,
+        "invalid_json_count": 0,
+        "schema_invalid_count": 0,
+        "schema_valid_count": 50,
+        "schema_validity_rate": 1.0,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.8830106401534973,
+          "issue_type_macro_f1": 0.7298122929701877,
+          "urgency_macro_f1": 0.7927318295739347,
+          "missing_information_macro_f1": 0.01098901098901099,
+          "location_normalized_match": 0.06,
+          "event_date_or_time_normalized_match": 0.2,
+          "amount_inr_exact_match": 0.86,
+          "service_identifier_exact_match": 0.12
+        },
+        "hallucinated_non_null_fields": {
+          "count": 0,
+          "predicted_non_null_count": 0,
+          "rate": null
+        }
+      },
+      "conditional_valid": {
+        "denominator": 50,
+        "field_metrics": {
+          "service_domain_macro_f1": 0.8830106401534973,
+          "issue_type_macro_f1": 0.7298122929701877,
+          "urgency_macro_f1": 0.7927318295739347,
+          "missing_information_macro_f1": 0.01098901098901099,
+          "location_normalized_match": 0.06,
+          "event_date_or_time_normalized_match": 0.2,
+          "amount_inr_exact_match": 0.86,
+          "service_identifier_exact_match": 0.12
+        }
+      },
+      "repaired": {
+        "repairable_count": 0,
+        "repairable_json_rate": 0.0,
+        "schema_valid_count": 50,
+        "schema_validity_rate": 1.0,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.8830106401534973,
+          "issue_type_macro_f1": 0.7298122929701877,
+          "urgency_macro_f1": 0.7927318295739347,
+          "missing_information_macro_f1": 0.01098901098901099,
+          "location_normalized_match": 0.06,
+          "event_date_or_time_normalized_match": 0.2,
+          "amount_inr_exact_match": 0.86,
+          "service_identifier_exact_match": 0.12
+        },
+        "hallucinated_non_null_fields": {
+          "count": 0,
+          "predicted_non_null_count": 0,
+          "rate": null
+        }
+      }
+    },
+    "outputs": [
+      {
+        "surface_id": "test-001-independent",
+        "case_id": "test-001",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"delay_or_non_arrival\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Bus 92 never came to Cedar Market stop at 7:10 this morning. I waited for forty minutes before giving up.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-002-independent",
+        "case_id": "test-002",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"There has been no bus service on route 18 between North Gate and the district hospital for three days.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-003-independent",
+        "case_id": "test-003",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The display board at platform 2 in Riverfront station has a cracked screen and half the text cannot be read.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-004-independent",
+        "case_id": "test-004",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The ticket machine at Old Fort terminal charged Rs 85 for a Rs 50 day pass yesterday. Machine TM-4 printed no payment reference.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-005-independent",
+        "case_id": "test-005",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"At Hill Road depot on Monday, the clerk at counter 6 shouted at passengers who asked about pass renewals.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-006-independent",
+        "case_id": "test-006",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The rear door of bus 61 opened while the bus was moving near Rose Circle this evening.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-007-independent",
+        "case_id": "test-007",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"My student pass SP-204 shows the wrong expiry date on the MetroCard portal. It says 12 September instead of 12 December.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-008-independent",
+        "case_id": "test-008",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The audio announcements at Central interchange are only in one language, so many passengers cannot understand platform changes.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-009-independent",
+        "case_id": "test-009",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"No water has reached Maple Enclave since Friday night. This is the fourth day without supply.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-010-independent",
+        "case_id": "test-010",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A water main beside the post office on Fern Lane has been leaking continuously since yesterday afternoon.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-011-independent",
+        "case_id": "test-011",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The July water bill for consumer W-771 is Rs 2,460, although the usual bill is about Rs 600. The bill is for Lotus Residency, but there is no complaint reference or meter photo.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-012-independent",
+        "case_id": "test-012",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Water from public tap 14 near Sunrise School smells of fuel right now, and children have been filling bottles there.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-013-independent",
+        "case_id": "test-013",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"staff_conduct\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The tanker driver assigned to Green Park refused to stop at the listed point and insulted residents on Tuesday morning. The tanker number was WT-32.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-014-independent",
+        "case_id": "test-014",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The water account for meter MTR-88 at Silver Court records 940 units, but the meter shows 490. The affected billing date is not visible online.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-015-independent",
+        "case_id": "test-015",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Water reaches Ashok Vihar for only ten minutes every alternate morning, and the pressure is too low to fill an overhead tank.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-016-independent",
+        "case_id": "test-016",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"delay_or_non_arrival\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The scheduled waste van for lane 5 in Nandan Colony did not arrive at 9 AM today.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-017-independent",
+        "case_id": "test-017",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Nobody has collected household garbage from Pine Block for six days, and bags are now piling up outside.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-018-independent",
+        "case_id": "test-018",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Public bin SB-19 has a broken base, and rubbish falls out whenever it is lifted. I forgot to note the street.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-019-independent",
+        "case_id": "test-019",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The sanitation office at Ward Centre charged Rs 350 for replacing bin tag BT-9, but the notice says replacement costs Rs 100. No receipt was given on Saturday.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-020-independent",
+        "case_id": "test-020",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A street sweeper in Lake Colony pushed dust into shop entrances and swore at people who objected yesterday evening.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-021-independent",
+        "case_id": "test-021",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"safety_or_health_hazard\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Medical waste and used needles are lying beside the community tap in Shanti Nagar right now.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-022-independent",
+        "case_id": "test-022",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"My address is wrong in the door-to-door collection record for service card SC-58. It lists Garden Block instead of Garden Annex, and the date of the change is missing.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-023-independent",
+        "case_id": "test-023",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Two deep potholes have opened outside the clinic on Banyan Road after last week's rain.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-024-independent",
+        "case_id": "test-024",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Every streetlight on the east side of Neem Avenue has been off since Sunday.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-025-independent",
+        "case_id": "test-025",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Signal TS-11 at College Square is showing green in both directions right now. Vehicles nearly collided twice.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-026-independent",
+        "case_id": "test-026",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The worker at road permit desk 2 in South Zone office tore up my form and refused to explain why on Wednesday.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-027-independent",
+        "case_id": "test-027",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Repair request RR-503 for Palm Street is marked completed on the road portal, but the pothole is still open. The portal does not show when the status changed.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-028-independent",
+        "case_id": "test-028",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The municipal parking meter at River Walk deducted Rs 120 for one hour on Friday although the board says Rs 40. Meter PM-17 displayed no transaction code.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-029-independent",
+        "case_id": "test-029",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A road inspection team was booked for 11 AM today at Willow Lane, but nobody arrived. The booking number is IN-72.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-030-independent",
+        "case_id": "test-030",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Feeder F-21 has supplied no electricity to Krishna Enclave since 6 PM yesterday.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-031-independent",
+        "case_id": "test-031",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Electric pole EP-44 beside the market entrance on Tulip Road is leaning after the storm.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-032-independent",
+        "case_id": "test-032",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"My August electricity bill for account EL-309 at Rose Apartments is Rs 8,900, nearly four times the normal amount. I have no payment reference or meter photograph.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-033-independent",
+        "case_id": "test-033",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The electricity portal lists meter E-205 under Cedar Homes, but the meter is installed at Cedar Heights. It does not show when this record was changed.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-034-independent",
+        "case_id": "test-034",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"staff_conduct\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The technician at counter 4 in the East Power office mocked an elderly customer and refused to check complaint CP-81 yesterday.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-035-independent",
+        "case_id": "test-035",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"safety_or_health_hazard\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A snapped electrical cable is sparking on the pavement outside Lake School right now.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-036-independent",
+        "case_id": "test-036",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"delay_or_non_arrival\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A meter inspection for request MI-66 was scheduled for 2 PM on Thursday, but the technician never arrived. I did not include the address in the request.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-037-independent",
+        "case_id": "test-037",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"delay_or_non_arrival\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Birth certificate application BC-410 was due last Friday at North Ward office, but the certificate has still not arrived.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-038-independent",
+        "case_id": "test-038",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The disability pension page on the Citizen Benefits portal has been unavailable since Monday morning, so applications cannot be submitted.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-039-independent",
+        "case_id": "test-039",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Income certificate IC-72 spells the locality as Green Vally instead of Green Valley. The certificate portal does not show when the error was introduced.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-040-independent",
+        "case_id": "test-040",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The certificate kiosk at West Civic Centre charged Rs 500 for application DC-19 on Tuesday, although the displayed fee is Rs 200. It gave no receipt.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-041-independent",
+        "case_id": "test-041",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"staff_conduct\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"At the Senior Support desk in Central Service Hall, the clerk ignored people in the queue and closed the window early yesterday.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-042-independent",
+        "case_id": "test-042",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The medicine support approval for case MS-31 has been pending for twelve days, and the stated treatment starts tomorrow. The application does not say which patient is affected.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-043-independent",
+        "case_id": "test-043",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The entrance to the South Ward service centre has stairs but no ramp, so wheelchair users cannot reach the document counters.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-044-independent",
+        "case_id": "test-044",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"delay_or_non_arrival\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Confirmation for reading-room booking LB-24 at City Library was due by noon, but nothing arrived.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-045-independent",
+        "case_id": "test-045",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The wooden stage in Community Park has several loose boards and has remained damaged since last month.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-046-independent",
+        "case_id": "test-046",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The community hall portal charged Rs 1,800 for booking CH-57 on Saturday even though the listed fee was Rs 1,200. No payment reference appeared.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-047-independent",
+        "case_id": "test-047",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"staff_conduct\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The attendant at animal care desk 1 in Civic Annex laughed at a report about an injured stray dog and refused to register it this morning.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-048-independent",
+        "case_id": "test-048",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"safety_or_health_hazard\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A metal railing beside the children's slide in Lake Park has broken away and sharp edges are exposed right now.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-049-independent",
+        "case_id": "test-049",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Library membership LM-308 is shown as expired on the Civic Library portal even though the card says it is valid until 30 November.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "test-050-independent",
+        "case_id": "test-050",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The neighbourhood sports-ground reservation service has returned an error for two days. I do not have a reservation number yet.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      }
+    ],
+    "mlflow_run_id": "c70677beecdf4c5e89904201aecddc1d"
+  },
+  "zero_shot": {
+    "method": "internal-test-zero-shot",
+    "model_name": "HuggingFaceTB/SmolLM3-3B",
+    "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 256
+    },
+    "mean_latency_seconds": 2.9425010369200026,
+    "mean_prompt_tokens": 327.5,
+    "demonstration_count": 0,
+    "scores": {
+      "evaluation_version": "1.0",
+      "total_outputs": 50,
+      "strict": {
+        "json_parse_count": 0,
+        "invalid_json_count": 50,
+        "schema_invalid_count": 0,
+        "schema_valid_count": 0,
+        "schema_validity_rate": 0.0,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.0,
+          "issue_type_macro_f1": 0.0,
+          "urgency_macro_f1": 0.0,
+          "missing_information_macro_f1": 0.0,
+          "location_normalized_match": 0.0,
+          "event_date_or_time_normalized_match": 0.0,
+          "amount_inr_exact_match": 0.0,
+          "service_identifier_exact_match": 0.0
+        },
+        "hallucinated_non_null_fields": {
+          "count": 0,
+          "predicted_non_null_count": 0,
+          "rate": null
+        }
+      },
+      "conditional_valid": {
+        "denominator": 0,
+        "field_metrics": null
+      },
+      "repaired": {
+        "repairable_count": 40,
+        "repairable_json_rate": 0.8,
+        "schema_valid_count": 40,
+        "schema_validity_rate": 0.8,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.5487512487512488,
+          "issue_type_macro_f1": 0.43523231154810105,
+          "urgency_macro_f1": 0.3390410958904109,
+          "missing_information_macro_f1": 0.16932283188440822,
+          "location_normalized_match": 0.54,
+          "event_date_or_time_normalized_match": 0.3,
+          "amount_inr_exact_match": 0.74,
+          "service_identifier_exact_match": 0.1
+        },
+        "hallucinated_non_null_fields": {
+          "count": 55,
+          "predicted_non_null_count": 102,
+          "rate": 0.5392156862745098
+        }
+      }
+    },
+    "outputs": [
+      {
+        "surface_id": "test-001-independent",
+        "case_id": "test-001",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"delay_or_non_arrival\",\n  \"location\": \"Cedar Market stop\",\n  \"event_date_or_time\": \"7:10 this morning\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"Bus 92 did not arrive at the Cedar Market stop as scheduled at 7:10 this morning.\"\n}\n```",
+        "latency_seconds": 2.7752099094999494,
+        "prompt_tokens": 328
+      },
+      {
+        "surface_id": "test-002-independent",
+        "case_id": "test-002",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"North Gate to the district hospital\",\n  \"event_date_or_time\": \"three days\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\"],\n  \"formal_summary\": \"There has been no bus service on route 18 between North Gate and the district hospital for three days.\"\n}\n```",
+        "latency_seconds": 2.7752099094999494,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-003-independent",
+        "case_id": "test-003",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Riverfront station, platform 2\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not applicable\",\n  \"service_identifier\": \"not applicable\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The display board at platform 2 in Riverfront station has a cracked screen and half the text cannot be read.\"\n}\n```",
+        "latency_seconds": 2.7752099094999494,
+        "prompt_tokens": 325
+      },
+      {
+        "surface_id": "test-004-independent",
+        "case_id": "test-004",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"overcharging_or_payment_problem\",\n  \"location\": \"Old Fort terminal\",\n  \"event_date_or_time\": \"yesterday\",\n  \"amount_inr\": 85,\n  \"service_identifier\": \"Machine TM-4\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\"],\n  \"formal_summary\": \"The ticket machine at Old Fort terminal charged Rs 85 for a Rs 50 day pass yesterday.\"\n}\n```",
+        "latency_seconds": 2.7752099094999494,
+        "prompt_tokens": 331
+      },
+      {
+        "surface_id": "test-005-independent",
+        "case_id": "test-005",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"staff_conduct\",\n  \"location\": \"Hill Road depot\",\n  \"event_date_or_time\": \"Monday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"A clerk at counter 6 at Hill Road depot shouted at passengers who asked about pass renewals on Monday.\"\n}\n```",
+        "latency_seconds": 2.865741484249952,
+        "prompt_tokens": 325
+      },
+      {
+        "surface_id": "test-006-independent",
+        "case_id": "test-006",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Rose Circle\",\n  \"event_date_or_time\": \"this evening\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"The rear door of bus 61 opened while the bus was moving near Rose Circle this evening.\"\n}\n```",
+        "latency_seconds": 2.865741484249952,
+        "prompt_tokens": 321
+      },
+      {
+        "surface_id": "test-007-independent",
+        "case_id": "test-007",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"record_or_document_error\",\n  \"location\": \"MetroCard portal\",\n  \"event_date_or_time\": \"2023-09-12\",\n  \"amount_inr\": 0,\n  \"service_identifier\": \"SP-204\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The student pass SP-204 has an incorrect expiry date of 12 September on the MetroCard portal, which should be 12 December.\"\n}\n```",
+        "latency_seconds": 2.865741484249952,
+        "prompt_tokens": 330
+      },
+      {
+        "surface_id": "test-008-independent",
+        "case_id": "test-008",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"record_or_document_error\",\n  \"location\": \"Central interchange\",\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The audio announcements at Central interchange are only in one language, so many passengers cannot understand platform changes.\"\n}\n```",
+        "latency_seconds": 2.865741484249952,
+        "prompt_tokens": 322
+      },
+      {
+        "surface_id": "test-009-independent",
+        "case_id": "test-009",
+        "response": "```json\n{\n  \"service_domain\": \"water_supply\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Maple Enclave\",\n  \"event_date_or_time\": \"Friday night\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"No water has reached Maple Enclave since Friday night. This is the fourth day without supply.\"\n}\n```",
+        "latency_seconds": 3.1822076050000305,
+        "prompt_tokens": 321
+      },
+      {
+        "surface_id": "test-010-independent",
+        "case_id": "test-010",
+        "response": "```json\n{\n  \"service_domain\": \"water_supply\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"beside the post office on Fern Lane\",\n  \"event_date_or_time\": \"since yesterday afternoon\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"time_sensitive\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"There is a continuous water leak beside the post office on Fern Lane.\"\n}\n```",
+        "latency_seconds": 3.1822076050000305,
+        "prompt_tokens": 320
+      },
+      {
+        "surface_id": "test-011-independent",
+        "case_id": "test-011",
+        "response": "```json\n{\n  \"service_domain\": \"water_supply\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Lotus Residency\",\n  \"event_date_or_time\": \"July\",\n  \"amount_inr\": 2460,\n  \"service_identifier\": \"W-771\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The water bill for consumer W-771 in Lotus Residency shows an unusually high amount of Rs 2460, which is significantly higher than the usual bill of Rs 600. There is no complaint reference or meter photo provided.\"\n}\n```",
+        "latency_seconds": 3.1822076050000305,
+        "prompt_tokens": 346
+      },
+      {
+        "surface_id": "test-012-independent",
+        "case_id": "test-012",
+        "response": "```json\n{\n  \"service_domain\": \"water_supply\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"14 near Sunrise School\",\n  \"event_date_or_time\": \"current\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"There is a current issue with the water supply at location 14 near Sunrise School, where the water smells of fuel and children have been filling bottles.\"\n}\n```",
+        "latency_seconds": 3.1822076050000305,
+        "prompt_tokens": 325
+      },
+      {
+        "surface_id": "test-013-independent",
+        "case_id": "test-013",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"staff_conduct\",\n  \"location\": \"Green Park\",\n  \"event_date_or_time\": \"Tuesday morning\",\n  \"amount_inr\": null,\n  \"service_identifier\": \"WT-32\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The tanker driver assigned to Green Park refused to stop at the listed point and insulted residents on Tuesday morning.\"\n}\n```",
+        "latency_seconds": 2.849026182249986,
+        "prompt_tokens": 332
+      },
+      {
+        "surface_id": "test-014-independent",
+        "case_id": "test-014",
+        "response": "```json\n{\n  \"service_domain\": \"water_supply\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Silver Court\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not specified\",\n  \"service_identifier\": \"MTR-88\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"amount_inr\"],\n  \"formal_summary\": \"The water meter MTR-88 at Silver Court shows a discrepancy between the recorded units (940) and the displayed units (490), and the affected billing date is not visible online.\"\n}\n```",
+        "latency_seconds": 2.849026182249986,
+        "prompt_tokens": 335
+      },
+      {
+        "surface_id": "test-015-independent",
+        "case_id": "test-015",
+        "response": "```json\n{\n  \"service_domain\": \"water_supply\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Ashok Vihar\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not specified\",\n  \"service_identifier\": \"not specified\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"Water supply in Ashok Vihar is experiencing a service outage, with water reaching only for ten minutes every alternate morning and insufficient pressure to fill an overhead tank.\"\n}\n```",
+        "latency_seconds": 2.849026182249986,
+        "prompt_tokens": 328
+      },
+      {
+        "surface_id": "test-016-independent",
+        "case_id": "test-016",
+        "response": "```json\n{\n  \"service_domain\": \"sanitation_and_waste\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Nandan Colony, lane 5\",\n  \"event_date_or_time\": \"today\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"The scheduled waste van for lane 5 in Nandan Colony did not arrive at 9 AM today.\"\n}\n```",
+        "latency_seconds": 2.849026182249986,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-017-independent",
+        "case_id": "test-017",
+        "response": "```json\n{\n  \"service_domain\": \"sanitation_and_waste\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Pine Block\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not applicable\",\n  \"service_identifier\": \"not applicable\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\"],\n  \"formal_summary\": \"Household garbage has not been collected from Pine Block for six days, and bags are now piling up outside.\"\n}\n```",
+        "latency_seconds": 2.9530241002501043,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-018-independent",
+        "case_id": "test-018",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": null,\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": [\"exact_location\"],\n  \"formal_summary\": \"Public bin SB-19 has a broken base, causing rubbish to fall out when lifted.\"\n}\n```",
+        "latency_seconds": 2.9530241002501043,
+        "prompt_tokens": 328
+      },
+      {
+        "surface_id": "test-019-independent",
+        "case_id": "test-019",
+        "response": "```json\n{\n  \"service_domain\": \"sanitation_and_waste\",\n  \"issue_type\": \"overcharging_or_payment_problem\",\n  \"location\": \"Ward Centre\",\n  \"event_date_or_time\": \"Saturday\",\n  \"amount_inr\": 350,\n  \"service_identifier\": \"BT-9\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\"],\n  \"formal_summary\": \"The sanitation office at Ward Centre overcharged Rs 350 for replacing bin tag BT-9, but the notice states the replacement cost is Rs 100. No receipt was provided on Saturday.\"\n}\n```",
+        "latency_seconds": 2.9530241002501043,
+        "prompt_tokens": 337
+      },
+      {
+        "surface_id": "test-020-independent",
+        "case_id": "test-020",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"staff_conduct\",\n  \"location\": \"Lake Colony\",\n  \"event_date_or_time\": \"yesterday evening\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"A street sweeper in Lake Colony engaged in inappropriate conduct by pushing dust into shop entrances and swearing at people who objected yesterday evening.\"\n}\n```",
+        "latency_seconds": 2.9530241002501043,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-021-independent",
+        "case_id": "test-021",
+        "response": "```json\n{\n  \"service_domain\": \"sanitation_and_waste\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Shanti Nagar\",\n  \"event_date_or_time\": \"current\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"Damaged infrastructure: used needles and medical waste are lying beside the community tap in Shanti Nagar.\"\n}\n```",
+        "latency_seconds": 2.4684601692499655,
+        "prompt_tokens": 320
+      },
+      {
+        "surface_id": "test-022-independent",
+        "case_id": "test-022",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"record_or_document_error\",\n  \"location\": \"Garden Annex\",\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": \"SC-58\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\"],\n  \"formal_summary\": \"The address in the door-to-door collection record for service card SC-58 is incorrect, listing Garden Block instead of Garden Annex, and the date of the change is missing.\"\n}\n```",
+        "latency_seconds": 2.4684601692499655,
+        "prompt_tokens": 338
+      },
+      {
+        "surface_id": "test-023-independent",
+        "case_id": "test-023",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"outside the clinic on Banyan Road\",\n  \"event_date_or_time\": \"after last week's rain\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"There are two deep potholes outside the clinic on Banyan Road, caused by last week's rain.\"\n}\n```",
+        "latency_seconds": 2.4684601692499655,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-024-independent",
+        "case_id": "test-024",
+        "response": "```json\n{\n  \"service_domain\": \"roads_and_streetlights\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Neem Avenue, east side\",\n  \"event_date_or_time\": \"Sunday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"The streetlights on the east side of Neem Avenue have been off since Sunday.\"\n}\n```",
+        "latency_seconds": 2.4684601692499655,
+        "prompt_tokens": 319
+      },
+      {
+        "surface_id": "test-025-independent",
+        "case_id": "test-025",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"staff_conduct\",\n  \"location\": \"College Square\",\n  \"event_date_or_time\": \"current\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"Signal TS-11 at College Square is showing green in both directions, but vehicles nearly collided twice, indicating a potential issue with staff conduct.\"\n}\n```",
+        "latency_seconds": 2.825287975500032,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-026-independent",
+        "case_id": "test-026",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"staff_conduct\",\n  \"location\": \"South Zone office\",\n  \"event_date_or_time\": \"Wednesday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"A worker at the road permit desk 2 in the South Zone office tore up the form on Wednesday and refused to explain why.\"\n}\n```",
+        "latency_seconds": 2.825287975500032,
+        "prompt_tokens": 326
+      },
+      {
+        "surface_id": "test-027-independent",
+        "case_id": "test-027",
+        "response": "```json\n{\n  \"service_domain\": \"roads_and_streetlights\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Palm Street\",\n  \"event_date_or_time\": \"2023-04-05\",\n  \"amount_inr\": 0,\n  \"service_identifier\": \"RR-503\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The pothole on Palm Street is still open despite the portal indicating it is marked as completed.\"\n}\n```",
+        "latency_seconds": 2.825287975500032,
+        "prompt_tokens": 337
+      },
+      {
+        "surface_id": "test-028-independent",
+        "case_id": "test-028",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"overcharging_or_payment_problem\",\n  \"location\": \"River Walk\",\n  \"event_date_or_time\": \"Friday\",\n  \"amount_inr\": 120,\n  \"service_identifier\": \"Meter PM-17\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\"],\n  \"formal_summary\": \"The municipal parking meter at River Walk overcharged Rs 120 for one hour on Friday, despite the board indicating Rs 40. The meter PM-17 displayed no transaction code.\"\n}\n```",
+        "latency_seconds": 2.825287975500032,
+        "prompt_tokens": 335
+      },
+      {
+        "surface_id": "test-029-independent",
+        "case_id": "test-029",
+        "response": "```json\n{\n  \"service_domain\": \"roads_and_streetlights\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Willow Lane\",\n  \"event_date_or_time\": \"2023-10-05T11:00:00\",\n  \"amount_inr\": null,\n  \"service_identifier\": \"IN-72\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"Road inspection team was booked for 11 AM today at Willow Lane, but nobody arrived.\"\n}\n```",
+        "latency_seconds": 2.8880120932500404,
+        "prompt_tokens": 329
+      },
+      {
+        "surface_id": "test-030-independent",
+        "case_id": "test-030",
+        "response": "```json\n{\n  \"service_domain\": \"electricity\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Krishna Enclave\",\n  \"event_date_or_time\": \"6 PM yesterday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"Feeder F-21 has caused a service outage for Krishna Enclave since 6 PM yesterday.\"\n}\n```",
+        "latency_seconds": 2.8880120932500404,
+        "prompt_tokens": 321
+      },
+      {
+        "surface_id": "test-031-independent",
+        "case_id": "test-031",
+        "response": "```json\n{\n  \"service_domain\": \"electricity\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"beside the market entrance on Tulip Road\",\n  \"event_date_or_time\": \"after the storm\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"The electric pole EP-44 beside the market entrance on Tulip Road is leaning after the storm.\"\n}\n```",
+        "latency_seconds": 2.8880120932500404,
+        "prompt_tokens": 321
+      },
+      {
+        "surface_id": "test-032-independent",
+        "case_id": "test-032",
+        "response": "```json\n{\n  \"service_domain\": \"electricity\",\n  \"issue_type\": \"overcharging_or_payment_problem\",\n  \"location\": \"Rose Apartments\",\n  \"event_date_or_time\": \"August\",\n  \"amount_inr\": 8900,\n  \"service_identifier\": \"EL-309\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The electricity bill for account EL-309 at Rose Apartments in August is Rs 8,900, which is significantly higher than the normal amount. No payment reference or meter photograph is provided.\"\n}\n```",
+        "latency_seconds": 2.8880120932500404,
+        "prompt_tokens": 337
+      },
+      {
+        "surface_id": "test-033-independent",
+        "case_id": "test-033",
+        "response": "```json\n{\n  \"service_domain\": \"electricity\",\n  \"issue_type\": \"record_or_document_error\",\n  \"location\": \"Cedar Heights\",\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": \"E-205\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\"],\n  \"formal_summary\": \"The electricity meter E-205 is listed under Cedar Homes but is actually installed at Cedar Heights, and the record was not updated with the correct location and date.\"\n}\n```",
+        "latency_seconds": 2.397781532249951,
+        "prompt_tokens": 333
+      },
+      {
+        "surface_id": "test-034-independent",
+        "case_id": "test-034",
+        "response": "```json\n{\n  \"service_domain\": \"electricity\",\n  \"issue_type\": \"staff_conduct\",\n  \"location\": \"East Power office\",\n  \"event_date_or_time\": \"yesterday\",\n  \"amount_inr\": null,\n  \"service_identifier\": \"CP-81\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"affected_person_or_group\"],\n  \"formal_summary\": \"A technician at counter 4 in the East Power office mocked an elderly customer and refused to check complaint CP-81 yesterday.\"\n}\n```",
+        "latency_seconds": 2.397781532249951,
+        "prompt_tokens": 327
+      },
+      {
+        "surface_id": "test-035-independent",
+        "case_id": "test-035",
+        "response": "```json\n{\n  \"service_domain\": \"electricity\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"outside Lake School\",\n  \"event_date_or_time\": \"current\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"safety_critical\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"An electrical cable has snapped and is sparking on the pavement outside Lake School, posing a safety hazard.\"\n}\n```",
+        "latency_seconds": 2.397781532249951,
+        "prompt_tokens": 317
+      },
+      {
+        "surface_id": "test-036-independent",
+        "case_id": "test-036",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": null,\n  \"event_date_or_time\": \"2 PM on Thursday\",\n  \"amount_inr\": null,\n  \"service_identifier\": \"MI-66\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\"],\n  \"formal_summary\": \"A meter inspection for request MI-66 was scheduled for 2 PM on Thursday, but the technician never arrived.\"\n}\n```",
+        "latency_seconds": 2.397781532249951,
+        "prompt_tokens": 335
+      },
+      {
+        "surface_id": "test-037-independent",
+        "case_id": "test-037",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"record_or_document_error\",\n  \"location\": \"North Ward office\",\n  \"event_date_or_time\": \"last Friday\",\n  \"amount_inr\": null,\n  \"service_identifier\": \"BC-410\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"Birth certificate application BC-410 was due last Friday at North Ward office, but the certificate has still not arrived.\"\n}\n```",
+        "latency_seconds": 2.990733203249988,
+        "prompt_tokens": 325
+      },
+      {
+        "surface_id": "test-038-independent",
+        "case_id": "test-038",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"record_or_document_error\",\n  \"location\": null,\n  \"event_date_or_time\": \"Monday morning\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The Citizen Benefits portal's disability pension page has been unavailable since Monday morning, preventing applications from being submitted.\"\n}\n```",
+        "latency_seconds": 2.990733203249988,
+        "prompt_tokens": 324
+      },
+      {
+        "surface_id": "test-039-independent",
+        "case_id": "test-039",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"record_or_document_error\",\n  \"location\": \"Green Vally\",\n  \"event_date_or_time\": \"Unknown\",\n  \"amount_inr\": \"0\",\n  \"service_identifier\": \"IC-72\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The income certificate IC-72 has an error in the locality, listing 'Green Vally' instead of 'Green Valley'. The certificate portal does not indicate when this error was introduced.\"\n}\n```",
+        "latency_seconds": 2.990733203249988,
+        "prompt_tokens": 331
+      },
+      {
+        "surface_id": "test-040-independent",
+        "case_id": "test-040",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"overcharging_or_payment_problem\",\n  \"location\": \"West Civic Centre\",\n  \"event_date_or_time\": \"Tuesday\",\n  \"amount_inr\": 500,\n  \"service_identifier\": \"DC-19\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The certificate kiosk at West Civic Centre overcharged for application DC-19 on Tuesday, charging Rs 500 instead of the displayed Rs 200, and provided no receipt.\"\n}\n```",
+        "latency_seconds": 2.990733203249988,
+        "prompt_tokens": 336
+      },
+      {
+        "surface_id": "test-041-independent",
+        "case_id": "test-041",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"staff_conduct\",\n  \"location\": \"Senior Support desk in Central Service Hall\",\n  \"event_date_or_time\": \"yesterday\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The clerk at the Senior Support desk in Central Service Hall ignored people in the queue and closed the window early yesterday.\"\n}\n```",
+        "latency_seconds": 2.7375373417499986,
+        "prompt_tokens": 326
+      },
+      {
+        "surface_id": "test-042-independent",
+        "case_id": "test-042",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"record_or_document_error\",\n  \"location\": null,\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"The medicine support approval for case MS-31 has been pending for twelve days, and the stated treatment starts tomorrow. The application does not specify which patient is affected.\"\n}\n```",
+        "latency_seconds": 2.7375373417499986,
+        "prompt_tokens": 335
+      },
+      {
+        "surface_id": "test-043-independent",
+        "case_id": "test-043",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"South Ward service centre\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not applicable\",\n  \"service_identifier\": \"not applicable\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The South Ward service centre lacks a ramp for wheelchair users, preventing access to document counters.\"\n}\n```",
+        "latency_seconds": 2.7375373417499986,
+        "prompt_tokens": 325
+      },
+      {
+        "surface_id": "test-044-independent",
+        "case_id": "test-044",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"record_or_document_error\",\n  \"location\": \"City Library\",\n  \"event_date_or_time\": \"Due by noon\",\n  \"amount_inr\": null,\n  \"service_identifier\": \"LB-24\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The reading-room booking LB-24 at City Library was not confirmed by noon, indicating a potential record or document error.\"\n}\n```",
+        "latency_seconds": 2.7375373417499986,
+        "prompt_tokens": 322
+      },
+      {
+        "surface_id": "test-045-independent",
+        "case_id": "test-045",
+        "response": "```json\n{\n  \"service_domain\": \"roads_and_streetlights\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Community Park\",\n  \"event_date_or_time\": \"last month\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"The wooden stage in Community Park has several loose boards and has remained damaged since last month.\"\n}\n```",
+        "latency_seconds": 2.891392372500036,
+        "prompt_tokens": 320
+      },
+      {
+        "surface_id": "test-046-independent",
+        "case_id": "test-046",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"overcharging_or_payment_problem\",\n  \"location\": null,\n  \"event_date_or_time\": \"Saturday\",\n  \"amount_inr\": 1800,\n  \"service_identifier\": \"CH-57\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The community hall portal overcharged Rs 1,800 for booking CH-57 on Saturday, despite the listed fee being Rs 1,200. No payment reference was provided.\"\n}\n```",
+        "latency_seconds": 2.891392372500036,
+        "prompt_tokens": 336
+      },
+      {
+        "surface_id": "test-047-independent",
+        "case_id": "test-047",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"staff_conduct\",\n  \"location\": \"Civic Annex, animal care desk 1\",\n  \"event_date_or_time\": \"this morning\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The attendant at animal care desk 1 in Civic Annex laughed at a report about an injured stray dog and refused to register it.\"\n}\n```",
+        "latency_seconds": 2.891392372500036,
+        "prompt_tokens": 330
+      },
+      {
+        "surface_id": "test-048-independent",
+        "case_id": "test-048",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Lake Park\",\n  \"event_date_or_time\": \"current\",\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"A metal railing beside the children's slide in Lake Park has broken away, exposing sharp edges.\"\n}\n```",
+        "latency_seconds": 2.891392372500036,
+        "prompt_tokens": 324
+      },
+      {
+        "surface_id": "test-049-independent",
+        "case_id": "test-049",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"record_or_document_error\",\n  \"location\": \"Civic Library\",\n  \"event_date_or_time\": \"2023-10-15\",\n  \"amount_inr\": 0,\n  \"service_identifier\": \"LM-308\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"transaction_or_reference_id\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"The library membership card for LM-308 is shown as expired on the Civic Library portal, despite the card indicating it is valid until 30 November.\"\n}\n```",
+        "latency_seconds": 5.913697984999999,
+        "prompt_tokens": 329
+      },
+      {
+        "surface_id": "test-050-independent",
+        "case_id": "test-050",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"record_or_document_error\",\n  \"location\": null,\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\"],\n  \"formal_summary\": \"The neighbourhood sports-ground reservation service has returned an error for two days, and I do not have a reservation number yet.\"\n}\n```",
+        "latency_seconds": 5.913697984999999,
+        "prompt_tokens": 325
+      }
+    ],
+    "public_method": "zero_shot",
+    "mlflow_run_id": "9ea1a69bc18d4ee4acdc62f260d64b6e"
+  },
+  "static_few_shot": {
+    "method": "internal-test-static-few-shot",
+    "model_name": "HuggingFaceTB/SmolLM3-3B",
+    "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 256
+    },
+    "mean_latency_seconds": 2.1707098942599896,
+    "mean_prompt_tokens": 645.5,
+    "demonstration_count": 3,
+    "scores": {
+      "evaluation_version": "1.0",
+      "total_outputs": 50,
+      "strict": {
+        "json_parse_count": 50,
+        "invalid_json_count": 0,
+        "schema_invalid_count": 14,
+        "schema_valid_count": 36,
+        "schema_validity_rate": 0.72,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.5217227217227217,
+          "issue_type_macro_f1": 0.3968253968253968,
+          "urgency_macro_f1": 0.5202874516307352,
+          "missing_information_macro_f1": 0.2507462686567164,
+          "location_normalized_match": 0.42,
+          "event_date_or_time_normalized_match": 0.3,
+          "amount_inr_exact_match": 0.72,
+          "service_identifier_exact_match": 0.18
+        },
+        "hallucinated_non_null_fields": {
+          "count": 57,
+          "predicted_non_null_count": 100,
+          "rate": 0.57
+        }
+      },
+      "conditional_valid": {
+        "denominator": 36,
+        "field_metrics": {
+          "service_domain_macro_f1": 0.6271441910097373,
+          "issue_type_macro_f1": 0.49242979242979246,
+          "urgency_macro_f1": 0.6190476190476191,
+          "missing_information_macro_f1": 0.5898989898989899,
+          "location_normalized_match": 0.5833333333333334,
+          "event_date_or_time_normalized_match": 0.4166666666666667,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 0.25
+        }
+      },
+      "repaired": {
+        "repairable_count": 0,
+        "repairable_json_rate": 0.0,
+        "schema_valid_count": 36,
+        "schema_validity_rate": 0.72,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.5217227217227217,
+          "issue_type_macro_f1": 0.3968253968253968,
+          "urgency_macro_f1": 0.5202874516307352,
+          "missing_information_macro_f1": 0.2507462686567164,
+          "location_normalized_match": 0.42,
+          "event_date_or_time_normalized_match": 0.3,
+          "amount_inr_exact_match": 0.72,
+          "service_identifier_exact_match": 0.18
+        },
+        "hallucinated_non_null_fields": {
+          "count": 57,
+          "predicted_non_null_count": 100,
+          "rate": 0.57
+        }
+      }
+    },
+    "outputs": [
+      {
+        "surface_id": "test-001-independent",
+        "case_id": "test-001",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"Cedar Market stop\",\"event_date_or_time\":\"7:10 this morning\",\"amount_inr\":null,\"service_identifier\":\"bus 92\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Bus 92 never came to Cedar Market stop at 7:10 this morning. I waited for forty minutes before giving up.\"}",
+        "latency_seconds": 1.9689798347499163,
+        "prompt_tokens": 646
+      },
+      {
+        "surface_id": "test-002-independent",
+        "case_id": "test-002",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"between North Gate and the district hospital\",\"event_date_or_time\":\"for three days\",\"amount_inr\":null,\"service_identifier\":\"route 18\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"There has been no bus service on route 18 between North Gate and the district hospital for three days.\"}",
+        "latency_seconds": 1.9689798347499163,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "test-003-independent",
+        "case_id": "test-003",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"platform 2 in Riverfront station\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"display board\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The display board at platform 2 in Riverfront station has a cracked screen and half the text cannot be read.\"}",
+        "latency_seconds": 1.9689798347499163,
+        "prompt_tokens": 643
+      },
+      {
+        "surface_id": "test-004-independent",
+        "case_id": "test-004",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Old Fort terminal\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":\"85\",\"service_identifier\":\"TM-4\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"exact_location\"],\"formal_summary\":\"The ticket machine at Old Fort terminal charged Rs 85 for a Rs 50 day pass yesterday. Machine TM-4 printed no payment reference.\"}",
+        "latency_seconds": 1.9689798347499163,
+        "prompt_tokens": 649
+      },
+      {
+        "surface_id": "test-005-independent",
+        "case_id": "test-005",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"Hill Road depot\",\"event_date_or_time\":\"Monday\",\"amount_inr\":null,\"service_identifier\":\"passenger inquiry at counter 6\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"At Hill Road depot on Monday, the clerk at counter 6 shouted at passengers who asked about pass renewals.\"}",
+        "latency_seconds": 2.3142248545000257,
+        "prompt_tokens": 643
+      },
+      {
+        "surface_id": "test-006-independent",
+        "case_id": "test-006",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"staff_conduct\",\"location\":\"near Rose Circle\",\"event_date_or_time\":\"this evening\",\"amount_inr\":null,\"service_identifier\":\"bus 61\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The rear door of bus 61 opened while the bus was moving near Rose Circle this evening.\"}",
+        "latency_seconds": 2.3142248545000257,
+        "prompt_tokens": 639
+      },
+      {
+        "surface_id": "test-007-independent",
+        "case_id": "test-007",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"student pass SP-204\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"date_or_time\",\"service_identifier\",\"transaction_or_reference_id\",\"amount\",\"supporting_evidence\",\"affected_person_or_group\"],\"formal_summary\":\"My student pass SP-204 shows the wrong expiry date on the MetroCard portal. It says 12 September instead of 12 December.\"}",
+        "latency_seconds": 2.3142248545000257,
+        "prompt_tokens": 648
+      },
+      {
+        "surface_id": "test-008-independent",
+        "case_id": "test-008",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"record_or_document_error\",\"location\":\"Central interchange\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"audio announcements\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The audio announcements at Central interchange are only in one language, so many passengers cannot understand platform changes.\"}",
+        "latency_seconds": 2.3142248545000257,
+        "prompt_tokens": 640
+      },
+      {
+        "surface_id": "test-009-independent",
+        "case_id": "test-009",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":null,\"event_date_or_time\":\"since Friday night\",\"amount_inr\":null,\"service_identifier\":\"Maple Enclave water supply\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"No water has reached Maple Enclave since Friday night. This is the fourth day without supply.\"}",
+        "latency_seconds": 2.1070425164999733,
+        "prompt_tokens": 639
+      },
+      {
+        "surface_id": "test-010-independent",
+        "case_id": "test-010",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"beside the post office on Fern Lane\",\"event_date_or_time\":\"since yesterday afternoon\",\"amount_inr\":null,\"service_identifier\":\"water main leak\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A water main beside the post office on Fern Lane has been leaking continuously since yesterday afternoon.\"}",
+        "latency_seconds": 2.1070425164999733,
+        "prompt_tokens": 638
+      },
+      {
+        "surface_id": "test-011-independent",
+        "case_id": "test-011",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Lotus Residency\",\"event_date_or_time\":\"July\",\"amount_inr\":\"2460\",\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"meter_photo\",\"complaint_reference\"],\"formal_summary\":\"The July water bill for consumer W-771 at Lotus Residency is Rs 2460, which is significantly higher than the usual bill of Rs 600.\"}",
+        "latency_seconds": 2.1070425164999733,
+        "prompt_tokens": 664
+      },
+      {
+        "surface_id": "test-012-independent",
+        "case_id": "test-012",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"public tap 14 near Sunrise School\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"fuel smell\",\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"Water from public tap 14 near Sunrise School smells of fuel right now, and children have been filling bottles there.\"}",
+        "latency_seconds": 2.1070425164999733,
+        "prompt_tokens": 643
+      },
+      {
+        "surface_id": "test-013-independent",
+        "case_id": "test-013",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":null,\"event_date_or_time\":\"Tuesday morning\",\"amount_inr\":null,\"service_identifier\":\"WT-32 tanker\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The tanker driver assigned to Green Park refused to stop at the listed point and insulted residents on Tuesday morning.\"}",
+        "latency_seconds": 2.126780097749929,
+        "prompt_tokens": 650
+      },
+      {
+        "surface_id": "test-014-independent",
+        "case_id": "test-014",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"not visible online\",\"amount_inr\":null,\"service_identifier\":\"meter MTR-88\",\"urgency\":\"routine\",\"missing_information\":[\"affected billing date\"],\"formal_summary\":\"The water account for meter MTR-88 at Silver Court records 940 units, but the meter shows 490. The affected billing date is not visible online.\"}",
+        "latency_seconds": 2.126780097749929,
+        "prompt_tokens": 653
+      },
+      {
+        "surface_id": "test-015-independent",
+        "case_id": "test-015",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Ashok Vihar\",\"event_date_or_time\":\"every alternate morning\",\"amount_inr\":null,\"service_identifier\":\"water supply to Ashok Vihar\",\"urgency\":\"routine\",\"missing_information\":[\"exact_time\",\"pressure_level\",\"affected_person_or_group\"],\"formal_summary\":\"Water reaches Ashok Vihar for only ten minutes every alternate morning, and the pressure is too low to fill an overhead tank.\"}",
+        "latency_seconds": 2.126780097749929,
+        "prompt_tokens": 646
+      },
+      {
+        "surface_id": "test-016-independent",
+        "case_id": "test-016",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"lane 5 in Nandan Colony\",\"event_date_or_time\":\"9 AM today\",\"amount_inr\":null,\"service_identifier\":\"waste van\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The scheduled waste van for lane 5 in Nandan Colony did not arrive at 9 AM today.\"}",
+        "latency_seconds": 2.126780097749929,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "test-017-independent",
+        "case_id": "test-017",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Pine Block\",\"event_date_or_time\":\"since six days ago\",\"amount_inr\":null,\"service_identifier\":\"garbage collection\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Household garbage has not been collected from Pine Block for six days, and bags are now piling up outside.\"}",
+        "latency_seconds": 2.252486545250008,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "test-018-independent",
+        "case_id": "test-018",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"bin SB-19\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Public bin SB-19 has a broken base, and rubbish falls out whenever it is lifted.\"}",
+        "latency_seconds": 2.252486545250008,
+        "prompt_tokens": 646
+      },
+      {
+        "surface_id": "test-019-independent",
+        "case_id": "test-019",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Ward Centre sanitation office\",\"event_date_or_time\":\"Saturday\",\"amount_inr\":\"350\",\"service_identifier\":\"bin tag replacement\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"receipt\",\"affected_person_or_group\"],\"formal_summary\":\"The sanitation office at Ward Centre charged Rs 350 for replacing bin tag BT-9, but the notice says replacement costs Rs 100. No receipt was given on Saturday.\"}",
+        "latency_seconds": 2.252486545250008,
+        "prompt_tokens": 655
+      },
+      {
+        "surface_id": "test-020-independent",
+        "case_id": "test-020",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":\"Lake Colony\",\"event_date_or_time\":\"yesterday evening\",\"amount_inr\":null,\"service_identifier\":\"street sweeper\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A street sweeper in Lake Colony pushed dust into shop entrances and swore at people who objected yesterday evening.\"}",
+        "latency_seconds": 2.252486545250008,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "test-021-independent",
+        "case_id": "test-021",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"beside the community tap in Shanti Nagar\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"medical waste\",\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"Medical waste and used needles are lying beside the community tap in Shanti Nagar right now.\"}",
+        "latency_seconds": 2.068396536000023,
+        "prompt_tokens": 638
+      },
+      {
+        "surface_id": "test-022-independent",
+        "case_id": "test-022",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"SC-58\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"date_of_change\"],\"formal_summary\":\"My address is wrong in the door-to-door collection record for service card SC-58. It lists Garden Block instead of Garden Annex, and the date of the change is missing.\"}",
+        "latency_seconds": 2.068396536000023,
+        "prompt_tokens": 656
+      },
+      {
+        "surface_id": "test-023-independent",
+        "case_id": "test-023",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"outside the clinic on Banyan Road\",\"event_date_or_time\":\"after last week's rain\",\"amount_inr\":null,\"service_identifier\":\"potholes\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Two deep potholes have opened outside the clinic on Banyan Road after last week's rain.\"}",
+        "latency_seconds": 2.068396536000023,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "test-024-independent",
+        "case_id": "test-024",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"east side of Neem Avenue\",\"event_date_or_time\":\"since Sunday\",\"amount_inr\":null,\"service_identifier\":\"streetlights\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Every streetlight on the east side of Neem Avenue has been off since Sunday.\"}",
+        "latency_seconds": 2.068396536000023,
+        "prompt_tokens": 637
+      },
+      {
+        "surface_id": "test-025-independent",
+        "case_id": "test-025",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":\"TS-11 signal at College Square\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"TS-11 signal\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Signal TS-11 at College Square is showing green in both directions right now. Vehicles nearly collided twice.\"}",
+        "latency_seconds": 2.0605524059999425,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "test-026-independent",
+        "case_id": "test-026",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":\"road permit desk 2 in South Zone office\",\"event_date_or_time\":\"Wednesday\",\"amount_inr\":null,\"service_identifier\":\"road permit form\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The worker at road permit desk 2 in South Zone office tore up my form and refused to explain why on Wednesday.\"}",
+        "latency_seconds": 2.0605524059999425,
+        "prompt_tokens": 644
+      },
+      {
+        "surface_id": "test-027-independent",
+        "case_id": "test-027",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Palm Street\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"RR-503\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Repair request RR-503 for Palm Street is marked completed on the road portal, but the pothole is still open. The portal does not show when the status changed.\"}",
+        "latency_seconds": 2.0605524059999425,
+        "prompt_tokens": 655
+      },
+      {
+        "surface_id": "test-028-independent",
+        "case_id": "test-028",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"River Walk parking meter\",\"event_date_or_time\":\"Friday\",\"amount_inr\":\"120\",\"service_identifier\":\"PM-17\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\"],\"formal_summary\":\"The municipal parking meter at River Walk deducted Rs 120 for one hour on Friday although the board says Rs 40. Meter PM-17 displayed no transaction code.\"}",
+        "latency_seconds": 2.0605524059999425,
+        "prompt_tokens": 653
+      },
+      {
+        "surface_id": "test-029-independent",
+        "case_id": "test-029",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":\"Willow Lane\",\"event_date_or_time\":\"11 AM today\",\"amount_inr\":null,\"service_identifier\":\"IN-72\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A road inspection team was booked for 11 AM today at Willow Lane, but nobody arrived.\"}",
+        "latency_seconds": 2.0812061357499942,
+        "prompt_tokens": 647
+      },
+      {
+        "surface_id": "test-030-independent",
+        "case_id": "test-030",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Krishna Enclave\",\"event_date_or_time\":\"6 PM yesterday\",\"amount_inr\":null,\"service_identifier\":\"feeder F-21\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"Feeder F-21 has supplied no electricity to Krishna Enclave since 6 PM yesterday.\"}",
+        "latency_seconds": 2.0812061357499942,
+        "prompt_tokens": 639
+      },
+      {
+        "surface_id": "test-031-independent",
+        "case_id": "test-031",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"beside the market entrance on Tulip Road\",\"event_date_or_time\":\"after the storm\",\"amount_inr\":null,\"service_identifier\":\"EP-44\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Electric pole EP-44 beside the market entrance on Tulip Road is leaning after the storm.\"}",
+        "latency_seconds": 2.0812061357499942,
+        "prompt_tokens": 639
+      },
+      {
+        "surface_id": "test-032-independent",
+        "case_id": "test-032",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Rose Apartments\",\"event_date_or_time\":\"August\",\"amount_inr\":8900,\"service_identifier\":\"EL-309\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"meter_photograph\"],\"formal_summary\":\"My August electricity bill for account EL-309 at Rose Apartments is Rs 8,900, nearly four times the normal amount. I have no payment reference or meter photograph.\"}",
+        "latency_seconds": 2.0812061357499942,
+        "prompt_tokens": 655
+      },
+      {
+        "surface_id": "test-033-independent",
+        "case_id": "test-033",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"record_or_document_error\",\"location\":\"Cedar Homes\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"meter E-205\",\"urgency\":\"routine\",\"missing_information\":[\"date_or_time_of_record_change\"],\"formal_summary\":\"The electricity portal lists meter E-205 under Cedar Homes, but the meter is installed at Cedar Heights. It does not show when this record was changed.\"}",
+        "latency_seconds": 1.9534882797502178,
+        "prompt_tokens": 651
+      },
+      {
+        "surface_id": "test-034-independent",
+        "case_id": "test-034",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"staff_conduct\",\"location\":\"East Power office, counter 4\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":null,\"service_identifier\":\"CP-81\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The technician at counter 4 in the East Power office mocked an elderly customer and refused to check complaint CP-81 yesterday.\"}",
+        "latency_seconds": 1.9534882797502178,
+        "prompt_tokens": 645
+      },
+      {
+        "surface_id": "test-035-independent",
+        "case_id": "test-035",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"outside Lake School\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"snapped electrical cable\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A snapped electrical cable is sparking on the pavement outside Lake School right now.\"}",
+        "latency_seconds": 1.9534882797502178,
+        "prompt_tokens": 635
+      },
+      {
+        "surface_id": "test-036-independent",
+        "case_id": "test-036",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"2 PM on Thursday\",\"amount_inr\":null,\"service_identifier\":\"MI-66\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A meter inspection for request MI-66 was scheduled for 2 PM on Thursday, but the technician never arrived.\"}",
+        "latency_seconds": 1.9534882797502178,
+        "prompt_tokens": 653
+      },
+      {
+        "surface_id": "test-037-independent",
+        "case_id": "test-037",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":\"North Ward office\",\"event_date_or_time\":\"last Friday\",\"amount_inr\":null,\"service_identifier\":\"BC-410\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Birth certificate application BC-410 was due last Friday at North Ward office, but the certificate has still not arrived.\"}",
+        "latency_seconds": 2.1078645302500263,
+        "prompt_tokens": 643
+      },
+      {
+        "surface_id": "test-038-independent",
+        "case_id": "test-038",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"since Monday morning\",\"amount_inr\":null,\"service_identifier\":\"Citizen Benefits portal\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The disability pension page on the Citizen Benefits portal has been unavailable since Monday morning, so applications cannot be submitted.\"}",
+        "latency_seconds": 2.1078645302500263,
+        "prompt_tokens": 642
+      },
+      {
+        "surface_id": "test-039-independent",
+        "case_id": "test-039",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"IC-72\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"date_or_time\",\"service_identifier\",\"transaction_or_reference_id\",\"amount\",\"supporting_evidence\",\"affected_person_or_group\",\"none\"],\"formal_summary\":\"Income certificate IC-72 spells the locality as Green Vally instead of Green Valley.\"}",
+        "latency_seconds": 2.1078645302500263,
+        "prompt_tokens": 649
+      },
+      {
+        "surface_id": "test-040-independent",
+        "case_id": "test-040",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"West Civic Centre certificate kiosk\",\"event_date_or_time\":\"Tuesday\",\"amount_inr\":\"500\",\"service_identifier\":\"DC-19\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"receipt\"],\"formal_summary\":\"The certificate kiosk at West Civic Centre charged Rs 500 for application DC-19 on Tuesday, although the displayed fee is Rs 200. It gave no receipt.\"}",
+        "latency_seconds": 2.1078645302500263,
+        "prompt_tokens": 654
+      },
+      {
+        "surface_id": "test-041-independent",
+        "case_id": "test-041",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"Senior Support desk in Central Service Hall\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":null,\"service_identifier\":\"clerk behavior\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"At the Senior Support desk in Central Service Hall, the clerk ignored people in the queue and closed the window early yesterday.\"}",
+        "latency_seconds": 2.4285710419999305,
+        "prompt_tokens": 644
+      },
+      {
+        "surface_id": "test-042-independent",
+        "case_id": "test-042",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"since 12 days ago\",\"amount_inr\":null,\"service_identifier\":\"medicine support approval for case MS-31\",\"urgency\":\"routine\",\"missing_information\":[\"affected patient\",\"date_or_time of approval\",\"reason for delay\",\"supporting_evidence\",\"transaction_or_reference_id\"],\"formal_summary\":\"The medicine support approval for case MS-31 has been pending for twelve days, and the stated treatment starts tomorrow. The application does not say which patient is affected.\"}",
+        "latency_seconds": 2.4285710419999305,
+        "prompt_tokens": 653
+      },
+      {
+        "surface_id": "test-043-independent",
+        "case_id": "test-043",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"South Ward service centre entrance\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"no ramp at South Ward service centre entrance\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The entrance to the South Ward service centre has stairs but no ramp, so wheelchair users cannot reach the document counters.\"}",
+        "latency_seconds": 2.4285710419999305,
+        "prompt_tokens": 643
+      },
+      {
+        "surface_id": "test-044-independent",
+        "case_id": "test-044",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"by noon\",\"amount_inr\":null,\"service_identifier\":\"LB-24\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Confirmation for reading-room booking LB-24 at City Library was due by noon, but nothing arrived.\"}",
+        "latency_seconds": 2.4285710419999305,
+        "prompt_tokens": 640
+      },
+      {
+        "surface_id": "test-045-independent",
+        "case_id": "test-045",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Community Park wooden stage\",\"event_date_or_time\":\"since last month\",\"amount_inr\":null,\"service_identifier\":\"wooden stage\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The wooden stage in Community Park has several loose boards and has remained damaged since last month.\"}",
+        "latency_seconds": 1.99188323175008,
+        "prompt_tokens": 638
+      },
+      {
+        "surface_id": "test-046-independent",
+        "case_id": "test-046",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":null,\"event_date_or_time\":\"Saturday\",\"amount_inr\":1800,\"service_identifier\":\"CH-57\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"exact_location\"],\"formal_summary\":\"The community hall portal charged Rs 1,800 for booking CH-57 on Saturday even though the listed fee was Rs 1,200.\"}",
+        "latency_seconds": 1.99188323175008,
+        "prompt_tokens": 654
+      },
+      {
+        "surface_id": "test-047-independent",
+        "case_id": "test-047",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"animal care desk 1 in Civic Annex\",\"event_date_or_time\":\"this morning\",\"amount_inr\":null,\"service_identifier\":\"stray dog registration\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The attendant at animal care desk 1 in Civic Annex laughed at a report about an injured stray dog and refused to register it this morning.\"}",
+        "latency_seconds": 1.99188323175008,
+        "prompt_tokens": 648
+      },
+      {
+        "surface_id": "test-048-independent",
+        "case_id": "test-048",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Lake Park children's slide area\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"metal railing\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A metal railing beside the children's slide in Lake Park has broken away and sharp edges are exposed right now.\"}",
+        "latency_seconds": 1.99188323175008,
+        "prompt_tokens": 642
+      },
+      {
+        "surface_id": "test-049-independent",
+        "case_id": "test-049",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"LM-308\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Library membership LM-308 is shown as expired on the Civic Library portal even though the card says it is valid until 30 November.\"}",
+        "latency_seconds": 3.3447953359996063,
+        "prompt_tokens": 647
+      },
+      {
+        "surface_id": "test-050-independent",
+        "case_id": "test-050",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":\"for two days\",\"amount_inr\":null,\"service_identifier\":\"sports-ground reservation service\",\"urgency\":\"routine\",\"missing_information\":[\"reservation number\"],\"formal_summary\":\"The neighbourhood sports-ground reservation service has returned an error for two days. I do not have a reservation number yet.\"}",
+        "latency_seconds": 3.3447953359996063,
+        "prompt_tokens": 643
+      }
+    ],
+    "public_method": "static_few_shot",
+    "mlflow_run_id": "1dbc85bcadae495a9a51e06836f9b5a2"
+  },
+  "retrieved_few_shot": {
+    "method": "internal-test-retrieved-few-shot",
+    "model_name": "HuggingFaceTB/SmolLM3-3B",
+    "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 256
+    },
+    "mean_latency_seconds": 2.142479238920005,
+    "mean_prompt_tokens": 656.82,
+    "demonstration_count": 3,
+    "scores": {
+      "evaluation_version": "1.0",
+      "total_outputs": 50,
+      "strict": {
+        "json_parse_count": 50,
+        "invalid_json_count": 0,
+        "schema_invalid_count": 9,
+        "schema_valid_count": 41,
+        "schema_validity_rate": 0.82,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.6380964507014928,
+          "issue_type_macro_f1": 0.6383394383394383,
+          "urgency_macro_f1": 0.7282051282051283,
+          "missing_information_macro_f1": 0.3972558514931396,
+          "location_normalized_match": 0.5,
+          "event_date_or_time_normalized_match": 0.56,
+          "amount_inr_exact_match": 0.82,
+          "service_identifier_exact_match": 0.36
+        },
+        "hallucinated_non_null_fields": {
+          "count": 37,
+          "predicted_non_null_count": 98,
+          "rate": 0.37755102040816324
+        }
+      },
+      "conditional_valid": {
+        "denominator": 41,
+        "field_metrics": {
+          "service_domain_macro_f1": 0.7185143288084465,
+          "issue_type_macro_f1": 0.7287112397406516,
+          "urgency_macro_f1": 0.7988505747126436,
+          "missing_information_macro_f1": 0.70423197492163,
+          "location_normalized_match": 0.6097560975609756,
+          "event_date_or_time_normalized_match": 0.6829268292682927,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 0.43902439024390244
+        }
+      },
+      "repaired": {
+        "repairable_count": 0,
+        "repairable_json_rate": 0.0,
+        "schema_valid_count": 41,
+        "schema_validity_rate": 0.82,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.6380964507014928,
+          "issue_type_macro_f1": 0.6383394383394383,
+          "urgency_macro_f1": 0.7282051282051283,
+          "missing_information_macro_f1": 0.3972558514931396,
+          "location_normalized_match": 0.5,
+          "event_date_or_time_normalized_match": 0.56,
+          "amount_inr_exact_match": 0.82,
+          "service_identifier_exact_match": 0.36
+        },
+        "hallucinated_non_null_fields": {
+          "count": 37,
+          "predicted_non_null_count": 98,
+          "rate": 0.37755102040816324
+        }
+      }
+    },
+    "outputs": [
+      {
+        "surface_id": "test-001-independent",
+        "case_id": "test-001",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"Cedar Market stop\",\"event_date_or_time\":\"7:10 this morning\",\"amount_inr\":null,\"service_identifier\":\"Bus 92\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Bus 92 never came to Cedar Market stop at 7:10 this morning. I waited for forty minutes before giving up.\"}",
+        "latency_seconds": 2.070977734000053,
+        "prompt_tokens": 666
+      },
+      {
+        "surface_id": "test-002-independent",
+        "case_id": "test-002",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"North Gate to district hospital\",\"event_date_or_time\":\"for three days\",\"amount_inr\":null,\"service_identifier\":\"route 18\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a three-day bus service outage on route 18 between North Gate and the district hospital.\"}",
+        "latency_seconds": 2.070977734000053,
+        "prompt_tokens": 659
+      },
+      {
+        "surface_id": "test-003-independent",
+        "case_id": "test-003",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"platform 2, Riverfront station\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"date_or_time\"],\"formal_summary\":\"The display board at platform 2 in Riverfront station has a cracked screen and half the text cannot be read.\"}",
+        "latency_seconds": 2.070977734000053,
+        "prompt_tokens": 664
+      },
+      {
+        "surface_id": "test-004-independent",
+        "case_id": "test-004",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Old Fort terminal\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":85,\"service_identifier\":\"ticket machine TM-4\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"exact_location\",\"date_or_time\"],\"formal_summary\":\"The ticket machine at Old Fort terminal charged Rs 85 for a Rs 50 day pass yesterday. Machine TM-4 printed no payment reference.\"}",
+        "latency_seconds": 2.070977734000053,
+        "prompt_tokens": 657
+      },
+      {
+        "surface_id": "test-005-independent",
+        "case_id": "test-005",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"staff_conduct\",\"location\":\"Hill Road depot\",\"event_date_or_time\":\"Monday\",\"amount_inr\":null,\"service_identifier\":\"passenger inquiries\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"At Hill Road depot on Monday, the clerk at counter 6 shouted at passengers who asked about pass renewals.\"}",
+        "latency_seconds": 1.849794643999985,
+        "prompt_tokens": 637
+      },
+      {
+        "surface_id": "test-006-independent",
+        "case_id": "test-006",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"near Rose Circle\",\"event_date_or_time\":\"this evening\",\"amount_inr\":null,\"service_identifier\":\"bus 61\",\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"The rear door of bus 61 opened while the bus was moving near Rose Circle this evening.\"}",
+        "latency_seconds": 1.849794643999985,
+        "prompt_tokens": 650
+      },
+      {
+        "surface_id": "test-007-independent",
+        "case_id": "test-007",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"record_or_document_error\",\"location\":\"MetroCard portal\",\"event_date_or_time\":\"today\",\"amount_inr\":null,\"service_identifier\":\"student pass SP-204\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"My student pass SP-204 shows the wrong expiry date on the MetroCard portal. It says 12 September instead of 12 December.\"}",
+        "latency_seconds": 1.849794643999985,
+        "prompt_tokens": 671
+      },
+      {
+        "surface_id": "test-008-independent",
+        "case_id": "test-008",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"Central interchange\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"The audio announcements at Central interchange are only in one language, so many passengers cannot understand platform changes.\"}",
+        "latency_seconds": 1.849794643999985,
+        "prompt_tokens": 638
+      },
+      {
+        "surface_id": "test-009-independent",
+        "case_id": "test-009",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Maple Enclave\",\"event_date_or_time\":\"since Friday night\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"No water has reached Maple Enclave since Friday night, marking the fourth consecutive day without supply.\"}",
+        "latency_seconds": 2.000356052999905,
+        "prompt_tokens": 614
+      },
+      {
+        "surface_id": "test-010-independent",
+        "case_id": "test-010",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"beside the post office on Fern Lane\",\"event_date_or_time\":\"since yesterday afternoon\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A water main beside the post office on Fern Lane has been leaking continuously since yesterday afternoon.\"}",
+        "latency_seconds": 2.000356052999905,
+        "prompt_tokens": 632
+      },
+      {
+        "surface_id": "test-011-independent",
+        "case_id": "test-011",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Lotus Residency\",\"event_date_or_time\":\"July\",\"amount_inr\":2460,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\",\"meter_photo\"],\"formal_summary\":\"The July water bill for consumer W-771 is Rs 2,460, although the usual bill is about Rs 600.\"}",
+        "latency_seconds": 2.000356052999905,
+        "prompt_tokens": 731
+      },
+      {
+        "surface_id": "test-012-independent",
+        "case_id": "test-012",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"near Sunrise School\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"Water from public tap 14 near Sunrise School smells of fuel right now, and children have been filling bottles there.\"}",
+        "latency_seconds": 2.000356052999905,
+        "prompt_tokens": 639
+      },
+      {
+        "surface_id": "test-013-independent",
+        "case_id": "test-013",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"staff_conduct\",\"location\":null,\"event_date_or_time\":\"Tuesday morning\",\"amount_inr\":null,\"service_identifier\":\"WT-32 tanker driver\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A tanker driver assigned to Green Park refused to stop at the listed point and insulted residents on Tuesday morning. The tanker number was WT-32.\"}",
+        "latency_seconds": 1.9869730815000821,
+        "prompt_tokens": 655
+      },
+      {
+        "surface_id": "test-014-independent",
+        "case_id": "test-014",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Silver Court\",\"event_date_or_time\":\"today\",\"amount_inr\":null,\"service_identifier\":\"meter MTR-88\",\"urgency\":\"routine\",\"missing_information\":[\"affected_billing_date\"],\"formal_summary\":\"The water account for meter MTR-88 at Silver Court records 940 units, but the meter shows 490. The affected billing date is not visible online.\"}",
+        "latency_seconds": 1.9869730815000821,
+        "prompt_tokens": 696
+      },
+      {
+        "surface_id": "test-015-independent",
+        "case_id": "test-015",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Ashok Vihar\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"date_or_time\",\"service_identifier\",\"amount\"],\"formal_summary\":\"Water supply in Ashok Vihar is intermittent, lasting only ten minutes every alternate morning, with insufficient pressure to fill an overhead tank.\"}",
+        "latency_seconds": 1.9869730815000821,
+        "prompt_tokens": 685
+      },
+      {
+        "surface_id": "test-016-independent",
+        "case_id": "test-016",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"lane 5, Nandan Colony\",\"event_date_or_time\":\"9 AM today\",\"amount_inr\":null,\"service_identifier\":\"waste van\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The scheduled waste van for lane 5 in Nandan Colony did not arrive at 9 AM today.\"}",
+        "latency_seconds": 1.9869730815000821,
+        "prompt_tokens": 637
+      },
+      {
+        "surface_id": "test-017-independent",
+        "case_id": "test-017",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Pine Block\",\"event_date_or_time\":\"for six days\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"The complaint reports uncollected household garbage for six days in Pine Block, with bags piling up outside.\"}",
+        "latency_seconds": 2.2418731319999097,
+        "prompt_tokens": 669
+      },
+      {
+        "surface_id": "test-018-independent",
+        "case_id": "test-018",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"public bin SB-19\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The public bin SB-19 has a broken base, causing rubbish to fall out when lifted.\"}",
+        "latency_seconds": 2.2418731319999097,
+        "prompt_tokens": 632
+      },
+      {
+        "surface_id": "test-019-independent",
+        "case_id": "test-019",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"record_or_document_error\",\"location\":\"Ward Centre\",\"event_date_or_time\":\"Saturday\",\"amount_inr\":350,\"service_identifier\":\"bin tag replacement\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\",\"exact_location\",\"date_or_time\"],\"formal_summary\":\"The sanitation office at Ward Centre charged Rs 350 for replacing bin tag BT-9, but the notice says replacement costs Rs 100. No receipt was given on Saturday.\"}",
+        "latency_seconds": 2.2418731319999097,
+        "prompt_tokens": 648
+      },
+      {
+        "surface_id": "test-020-independent",
+        "case_id": "test-020",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":\"Lake Colony\",\"event_date_or_time\":\"yesterday evening\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A street sweeper in Lake Colony pushed dust into shop entrances and swore at people who objected yesterday evening.\"}",
+        "latency_seconds": 2.2418731319999097,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "test-021-independent",
+        "case_id": "test-021",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"beside the community tap in Shanti Nagar\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"Medical waste and used needles are lying beside the community tap in Shanti Nagar right now.\"}",
+        "latency_seconds": 2.2228337235001163,
+        "prompt_tokens": 633
+      },
+      {
+        "surface_id": "test-022-independent",
+        "case_id": "test-022",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"record_or_document_error\",\"location\":\"Garden Block (incorrectly listed in the record for SC-58)\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"SC-58\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"date_or_time\"],\"formal_summary\":\"The door-to-door collection record for service card SC-58 lists an incorrect address (Garden Block instead of Garden Annex) and the date of the change is missing.\"}",
+        "latency_seconds": 2.2228337235001163,
+        "prompt_tokens": 709
+      },
+      {
+        "surface_id": "test-023-independent",
+        "case_id": "test-023",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"outside the clinic on Banyan Road\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"potholes\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Two deep potholes have opened outside the clinic on Banyan Road after last week's rain.\"}",
+        "latency_seconds": 2.2228337235001163,
+        "prompt_tokens": 626
+      },
+      {
+        "surface_id": "test-024-independent",
+        "case_id": "test-024",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Neem Avenue\",\"event_date_or_time\":\"Sunday\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Every streetlight on the east side of Neem Avenue has been off since Sunday.\"}",
+        "latency_seconds": 2.2228337235001163,
+        "prompt_tokens": 629
+      },
+      {
+        "surface_id": "test-025-independent",
+        "case_id": "test-025",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"College Square\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":\"Signal TS-11\",\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"Signal TS-11 at College Square is showing green in both directions right now, causing vehicles nearly to collide twice.\"}",
+        "latency_seconds": 2.2486898237500554,
+        "prompt_tokens": 650
+      },
+      {
+        "surface_id": "test-026-independent",
+        "case_id": "test-026",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"South Zone office\",\"event_date_or_time\":\"Wednesday\",\"amount_inr\":null,\"service_identifier\":\"road permit form\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"date_or_time\",\"service_identifier\",\"transaction_or_reference_id\",\"amount\",\"supporting_evidence\",\"affected_person_or_group\",\"none\"],\"formal_summary\":\"The worker at road permit desk 2 in South Zone office tore up my form and refused to explain why on Wednesday.\"}",
+        "latency_seconds": 2.2486898237500554,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "test-027-independent",
+        "case_id": "test-027",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"other\",\"location\":\"Palm Street\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"Repair request RR-503\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"date_or_time\",\"supporting_evidence\"],\"formal_summary\":\"The repair request RR-503 for Palm Street is marked completed on the road portal, but the pothole is still open, and the portal does not show when the status changed.\"}",
+        "latency_seconds": 2.2486898237500554,
+        "prompt_tokens": 623
+      },
+      {
+        "surface_id": "test-028-independent",
+        "case_id": "test-028",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"River Walk parking meter\",\"event_date_or_time\":\"Friday\",\"amount_inr\":120,\"service_identifier\":\"meter PM-17\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\"],\"formal_summary\":\"The municipal parking meter at River Walk deducted Rs 120 for one hour on Friday although the board says Rs 40. Meter PM-17 displayed no transaction code.\"}",
+        "latency_seconds": 2.2486898237500554,
+        "prompt_tokens": 704
+      },
+      {
+        "surface_id": "test-029-independent",
+        "case_id": "test-029",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":\"Willow Lane\",\"event_date_or_time\":\"at 11 AM today\",\"amount_inr\":null,\"service_identifier\":\"IN-72\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A road inspection team was booked for 11 AM today at Willow Lane, but nobody arrived. The booking number is IN-72.\"}",
+        "latency_seconds": 2.1410707747500055,
+        "prompt_tokens": 683
+      },
+      {
+        "surface_id": "test-030-independent",
+        "case_id": "test-030",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Krishna Enclave\",\"event_date_or_time\":\"since 6 PM yesterday\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"service_identifier\"],\"formal_summary\":\"Feeder F-21 has supplied no electricity to Krishna Enclave since 6 PM yesterday.\"}",
+        "latency_seconds": 2.1410707747500055,
+        "prompt_tokens": 682
+      },
+      {
+        "surface_id": "test-031-independent",
+        "case_id": "test-031",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"electric pole EP-44 beside the market entrance on Tulip Road\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"electric pole\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Electric pole EP-44 beside the market entrance on Tulip Road is leaning after the storm.\"}",
+        "latency_seconds": 2.1410707747500055,
+        "prompt_tokens": 639
+      },
+      {
+        "surface_id": "test-032-independent",
+        "case_id": "test-032",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Rose Apartments\",\"event_date_or_time\":\"August\",\"amount_inr\":8900,\"service_identifier\":\"account EL-309\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"meter_photograph\"],\"formal_summary\":\"My August electricity bill for account EL-309 at Rose Apartments is Rs 8,900, nearly four times the normal amount. I have no payment reference or meter photograph.\"}",
+        "latency_seconds": 2.1410707747500055,
+        "prompt_tokens": 731
+      },
+      {
+        "surface_id": "test-033-independent",
+        "case_id": "test-033",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"record_or_document_error\",\"location\":\"Cedar Homes\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"meter E-205\",\"urgency\":\"routine\",\"missing_information\":[\"date_or_time\"],\"formal_summary\":\"The electricity portal lists meter E-205 under Cedar Homes, but the meter is installed at Cedar Heights, and it does not show when this record was changed.\"}",
+        "latency_seconds": 1.9193480904998523,
+        "prompt_tokens": 639
+      },
+      {
+        "surface_id": "test-034-independent",
+        "case_id": "test-034",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"staff_conduct\",\"location\":\"counter 4 in the East Power office\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":null,\"service_identifier\":\"complaint CP-81\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The technician at counter 4 in the East Power office mocked an elderly customer and refused to check complaint CP-81 yesterday.\"}",
+        "latency_seconds": 1.9193480904998523,
+        "prompt_tokens": 638
+      },
+      {
+        "surface_id": "test-035-independent",
+        "case_id": "test-035",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"outside Lake School\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"A snapped electrical cable is sparking on the pavement outside Lake School right now.\"}",
+        "latency_seconds": 1.9193480904998523,
+        "prompt_tokens": 619
+      },
+      {
+        "surface_id": "test-036-independent",
+        "case_id": "test-036",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":null,\"event_date_or_time\":\"2 PM on Thursday\",\"amount_inr\":null,\"service_identifier\":\"meter inspection for MI-66\",\"urgency\":\"routine\",\"missing_information\":[\"address\"],\"formal_summary\":\"A meter inspection for request MI-66 was scheduled for 2 PM on Thursday, but the technician never arrived.\"}",
+        "latency_seconds": 1.9193480904998523,
+        "prompt_tokens": 664
+      },
+      {
+        "surface_id": "test-037-independent",
+        "case_id": "test-037",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"North Ward office\",\"event_date_or_time\":\"last Friday\",\"amount_inr\":null,\"service_identifier\":\"birth certificate application BC-410\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Birth certificate application BC-410 was due last Friday at North Ward office, but the certificate has still not arrived.\"}",
+        "latency_seconds": 2.174599539250039,
+        "prompt_tokens": 699
+      },
+      {
+        "surface_id": "test-038-independent",
+        "case_id": "test-038",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Citizen Benefits portal\",\"event_date_or_time\":\"since Monday morning\",\"amount_inr\":null,\"service_identifier\":\"disability pension page\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The disability pension page on the Citizen Benefits portal has been unavailable since Monday morning, so applications cannot be submitted.\"}",
+        "latency_seconds": 2.174599539250039,
+        "prompt_tokens": 647
+      },
+      {
+        "surface_id": "test-039-independent",
+        "case_id": "test-039",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"Income certificate IC-72\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"date_or_time\",\"supporting_evidence\"],\"formal_summary\":\"The locality in the Income certificate IC-72 is misspelled as 'Green Vally' instead of 'Green Valley'.\"}",
+        "latency_seconds": 2.174599539250039,
+        "prompt_tokens": 617
+      },
+      {
+        "surface_id": "test-040-independent",
+        "case_id": "test-040",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"certificate kiosk at West Civic Centre\",\"event_date_or_time\":\"Tuesday\",\"amount_inr\":500,\"service_identifier\":\"application DC-19\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"amount\",\"supporting_evidence\"],\"formal_summary\":\"The certificate kiosk at West Civic Centre charged Rs 500 for application DC-19 on Tuesday, although the displayed fee is Rs 200.\"}",
+        "latency_seconds": 2.174599539250039,
+        "prompt_tokens": 687
+      },
+      {
+        "surface_id": "test-041-independent",
+        "case_id": "test-041",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"staff_conduct\",\"location\":\"Senior Support desk in Central Service Hall\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":null,\"service_identifier\":\"clerk\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"At the Senior Support desk in Central Service Hall, the clerk ignored people in the queue and closed the window early yesterday.\"}",
+        "latency_seconds": 2.0673172869999235,
+        "prompt_tokens": 648
+      },
+      {
+        "surface_id": "test-042-independent",
+        "case_id": "test-042",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"medicine support approval for case MS-31\",\"urgency\":null,\"missing_information\":[\"affected_person\",\"date_or_time\"],\"formal_summary\":\"The medicine support approval for case MS-31 has been pending for twelve days, and the application does not specify the affected patient or the date of the treatment.\"}",
+        "latency_seconds": 2.0673172869999235,
+        "prompt_tokens": 689
+      },
+      {
+        "surface_id": "test-043-independent",
+        "case_id": "test-043",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"South Ward service centre\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"entrance ramp\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"date_or_time\"],\"formal_summary\":\"The entrance to the South Ward service centre has stairs but no ramp, so wheelchair users cannot reach the document counters.\"}",
+        "latency_seconds": 2.0673172869999235,
+        "prompt_tokens": 636
+      },
+      {
+        "surface_id": "test-044-independent",
+        "case_id": "test-044",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"City Library\",\"event_date_or_time\":\"by noon\",\"amount_inr\":null,\"service_identifier\":\"reading-room booking LB-24\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"Confirmation for reading-room booking LB-24 at City Library was due by noon, but nothing arrived.\"}",
+        "latency_seconds": 2.0673172869999235,
+        "prompt_tokens": 635
+      },
+      {
+        "surface_id": "test-045-independent",
+        "case_id": "test-045",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Community Park\",\"event_date_or_time\":\"since last month\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The wooden stage in Community Park has several loose boards and has remained damaged since last month.\"}",
+        "latency_seconds": 2.0869635037499847,
+        "prompt_tokens": 647
+      },
+      {
+        "surface_id": "test-046-independent",
+        "case_id": "test-046",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"community hall booking portal\",\"event_date_or_time\":\"on Saturday\",\"amount_inr\":1800,\"service_identifier\":\"booking CH-57\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"amount\",\"supporting_evidence\"],\"formal_summary\":\"The community hall portal charged Rs 1,800 for booking CH-57 on Saturday even though the listed fee was Rs 1,200.\"}",
+        "latency_seconds": 2.0869635037499847,
+        "prompt_tokens": 699
+      },
+      {
+        "surface_id": "test-047-independent",
+        "case_id": "test-047",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"animal care desk 1 in Civic Annex\",\"event_date_or_time\":\"this morning\",\"amount_inr\":null,\"service_identifier\":\"injured stray dog\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The attendant at animal care desk 1 in Civic Annex laughed at a report about an injured stray dog and refused to register it this morning.\"}",
+        "latency_seconds": 2.0869635037499847,
+        "prompt_tokens": 656
+      },
+      {
+        "surface_id": "test-048-independent",
+        "case_id": "test-048",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Lake Park\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":\"metal railing beside the children's slide\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A metal railing beside the children's slide in Lake Park has broken away and sharp edges are exposed right now.\"}",
+        "latency_seconds": 2.0869635037499847,
+        "prompt_tokens": 645
+      },
+      {
+        "surface_id": "test-049-independent",
+        "case_id": "test-049",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":\"Civic Library portal\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"Library membership LM-308\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Library membership LM-308 is shown as expired on the Civic Library portal even though the card says it is valid until 30 November.\"}",
+        "latency_seconds": 3.540386199000295,
+        "prompt_tokens": 623
+      },
+      {
+        "surface_id": "test-050-independent",
+        "case_id": "test-050",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":null,\"event_date_or_time\":\"for two days\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"reservation_number\"],\"formal_summary\":\"The neighbourhood sports-ground reservation service has returned an error for two days, and I do not have a reservation number yet.\"}",
+        "latency_seconds": 3.540386199000295,
+        "prompt_tokens": 682
+      }
+    ],
+    "retrieved_case_ids": {
+      "test-001-independent": [
+        "canonical-002",
+        "canonical-001",
+        "canonical-071"
+      ],
+      "test-002-independent": [
+        "canonical-003",
+        "public-train-040",
+        "public-train-037"
+      ],
+      "test-003-independent": [
+        "canonical-077",
+        "canonical-054",
+        "canonical-002"
+      ],
+      "test-004-independent": [
+        "canonical-114",
+        "canonical-007",
+        "canonical-036"
+      ],
+      "test-005-independent": [
+        "canonical-053",
+        "canonical-005",
+        "canonical-012"
+      ],
+      "test-006-independent": [
+        "canonical-006",
+        "canonical-076",
+        "canonical-005"
+      ],
+      "test-007-independent": [
+        "canonical-058",
+        "canonical-102",
+        "canonical-047"
+      ],
+      "test-008-independent": [
+        "canonical-001",
+        "canonical-054",
+        "canonical-120"
+      ],
+      "test-009-independent": [
+        "canonical-020",
+        "canonical-010",
+        "public-train-040"
+      ],
+      "test-010-independent": [
+        "canonical-080",
+        "canonical-027",
+        "canonical-031"
+      ],
+      "test-011-independent": [
+        "canonical-041",
+        "canonical-014",
+        "canonical-088"
+      ],
+      "test-012-independent": [
+        "canonical-079",
+        "canonical-100",
+        "canonical-086"
+      ],
+      "test-013-independent": [
+        "canonical-015",
+        "canonical-094",
+        "canonical-071"
+      ],
+      "test-014-independent": [
+        "canonical-104",
+        "canonical-082",
+        "canonical-058"
+      ],
+      "test-015-independent": [
+        "canonical-023",
+        "public-train-010",
+        "public-train-025"
+      ],
+      "test-016-independent": [
+        "canonical-050",
+        "canonical-001",
+        "canonical-009"
+      ],
+      "test-017-independent": [
+        "public-train-023",
+        "public-train-037",
+        "canonical-086"
+      ],
+      "test-018-independent": [
+        "canonical-016",
+        "canonical-064",
+        "public-train-003"
+      ],
+      "test-019-independent": [
+        "canonical-069",
+        "canonical-045",
+        "canonical-007"
+      ],
+      "test-020-independent": [
+        "canonical-009",
+        "public-train-017",
+        "canonical-025"
+      ],
+      "test-021-independent": [
+        "canonical-012",
+        "canonical-066",
+        "canonical-086"
+      ],
+      "test-022-independent": [
+        "public-train-031",
+        "canonical-104",
+        "canonical-096"
+      ],
+      "test-023-independent": [
+        "canonical-027",
+        "canonical-012",
+        "canonical-015"
+      ],
+      "test-024-independent": [
+        "canonical-037",
+        "canonical-044",
+        "public-train-014"
+      ],
+      "test-025-independent": [
+        "canonical-033",
+        "canonical-093",
+        "canonical-086"
+      ],
+      "test-026-independent": [
+        "canonical-103",
+        "canonical-053",
+        "canonical-118"
+      ],
+      "test-027-independent": [
+        "canonical-111",
+        "canonical-008",
+        "canonical-019"
+      ],
+      "test-028-independent": [
+        "canonical-097",
+        "canonical-036",
+        "canonical-041"
+      ],
+      "test-029-independent": [
+        "canonical-042",
+        "canonical-078",
+        "public-train-039"
+      ],
+      "test-030-independent": [
+        "public-train-007",
+        "canonical-099",
+        "canonical-105"
+      ],
+      "test-031-independent": [
+        "canonical-027",
+        "canonical-043",
+        "canonical-012"
+      ],
+      "test-032-independent": [
+        "canonical-088",
+        "canonical-101",
+        "canonical-047"
+      ],
+      "test-033-independent": [
+        "canonical-104",
+        "canonical-008",
+        "canonical-044"
+      ],
+      "test-034-independent": [
+        "canonical-045",
+        "canonical-089",
+        "canonical-103"
+      ],
+      "test-035-independent": [
+        "canonical-100",
+        "canonical-115",
+        "canonical-086"
+      ],
+      "test-036-independent": [
+        "canonical-045",
+        "canonical-051",
+        "canonical-104"
+      ],
+      "test-037-independent": [
+        "canonical-106",
+        "canonical-060",
+        "canonical-109"
+      ],
+      "test-038-independent": [
+        "canonical-054",
+        "canonical-063",
+        "canonical-112"
+      ],
+      "test-039-independent": [
+        "canonical-008",
+        "canonical-111",
+        "canonical-019"
+      ],
+      "test-040-independent": [
+        "canonical-062",
+        "canonical-052",
+        "canonical-015"
+      ],
+      "test-041-independent": [
+        "canonical-053",
+        "canonical-065",
+        "canonical-113"
+      ],
+      "test-042-independent": [
+        "public-train-032",
+        "canonical-055",
+        "public-train-040"
+      ],
+      "test-043-independent": [
+        "canonical-045",
+        "canonical-035",
+        "canonical-054"
+      ],
+      "test-044-independent": [
+        "canonical-113",
+        "canonical-068",
+        "canonical-120"
+      ],
+      "test-045-independent": [
+        "canonical-070",
+        "canonical-092",
+        "canonical-119"
+      ],
+      "test-046-independent": [
+        "canonical-062",
+        "canonical-068",
+        "canonical-052"
+      ],
+      "test-047-independent": [
+        "canonical-108",
+        "canonical-065",
+        "canonical-118"
+      ],
+      "test-048-independent": [
+        "canonical-066",
+        "canonical-076",
+        "canonical-115"
+      ],
+      "test-049-independent": [
+        "canonical-063",
+        "canonical-067",
+        "canonical-111"
+      ],
+      "test-050-independent": [
+        "canonical-078",
+        "public-train-031",
+        "canonical-117"
+      ]
+    },
+    "mlflow_run_id": "091fb8321d984de88b8937653573fbd0"
+  },
+  "qlora": {
+    "method": "internal-test-qlora",
+    "model_name": "HuggingFaceTB/SmolLM3-3B",
+    "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 256
+    },
+    "mean_latency_seconds": 3.5922834414200406,
+    "mean_prompt_tokens": 327.5,
+    "demonstration_count": 0,
+    "scores": {
+      "evaluation_version": "1.0",
+      "total_outputs": 50,
+      "strict": {
+        "json_parse_count": 50,
+        "invalid_json_count": 0,
+        "schema_invalid_count": 3,
+        "schema_valid_count": 47,
+        "schema_validity_rate": 0.94,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.8285714285714285,
+          "issue_type_macro_f1": 0.7445512820512821,
+          "urgency_macro_f1": 0.7779517286366602,
+          "missing_information_macro_f1": 0.7653439153439153,
+          "location_normalized_match": 0.72,
+          "event_date_or_time_normalized_match": 0.66,
+          "amount_inr_exact_match": 0.94,
+          "service_identifier_exact_match": 0.46
+        },
+        "hallucinated_non_null_fields": {
+          "count": 46,
+          "predicted_non_null_count": 126,
+          "rate": 0.36507936507936506
+        }
+      },
+      "conditional_valid": {
+        "denominator": 47,
+        "field_metrics": {
+          "service_domain_macro_f1": 0.8588744588744588,
+          "issue_type_macro_f1": 0.7737179487179487,
+          "urgency_macro_f1": 0.7904761904761904,
+          "missing_information_macro_f1": 0.8149595687331537,
+          "location_normalized_match": 0.7659574468085106,
+          "event_date_or_time_normalized_match": 0.7021276595744681,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 0.48936170212765956
+        }
+      },
+      "repaired": {
+        "repairable_count": 0,
+        "repairable_json_rate": 0.0,
+        "schema_valid_count": 47,
+        "schema_validity_rate": 0.94,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.8285714285714285,
+          "issue_type_macro_f1": 0.7445512820512821,
+          "urgency_macro_f1": 0.7779517286366602,
+          "missing_information_macro_f1": 0.7653439153439153,
+          "location_normalized_match": 0.72,
+          "event_date_or_time_normalized_match": 0.66,
+          "amount_inr_exact_match": 0.94,
+          "service_identifier_exact_match": 0.46
+        },
+        "hallucinated_non_null_fields": {
+          "count": 46,
+          "predicted_non_null_count": 126,
+          "rate": 0.36507936507936506
+        }
+      }
+    },
+    "outputs": [
+      {
+        "surface_id": "test-001-independent",
+        "case_id": "test-001",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"Cedar Market stop\",\"event_date_or_time\":\"7:10 this morning\",\"amount_inr\":null,\"service_identifier\":\"bus 92\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Bus 92 never came to Cedar Market stop at 7:10 this morning. I waited for forty minutes before giving up.\"}",
+        "latency_seconds": 3.430913090499871,
+        "prompt_tokens": 328
+      },
+      {
+        "surface_id": "test-002-independent",
+        "case_id": "test-002",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"between North Gate and the district hospital\",\"event_date_or_time\":\"for three days\",\"amount_inr\":null,\"service_identifier\":\"bus route 18\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"There has been no bus service on route 18 between North Gate and the district hospital for three days.\"}",
+        "latency_seconds": 3.430913090499871,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-003-independent",
+        "case_id": "test-003",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"platform 2, Riverfront station\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"display board\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The display board at platform 2 in Riverfront station has a cracked screen and half the text cannot be read.\"}",
+        "latency_seconds": 3.430913090499871,
+        "prompt_tokens": 325
+      },
+      {
+        "surface_id": "test-004-independent",
+        "case_id": "test-004",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Old Fort terminal\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":85,\"service_identifier\":\"ticket machine TM-4\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\"],\"formal_summary\":\"The ticket machine at Old Fort terminal charged Rs 85 for a Rs 50 day pass yesterday. Machine TM-4 printed no payment reference.\"}",
+        "latency_seconds": 3.430913090499871,
+        "prompt_tokens": 331
+      },
+      {
+        "surface_id": "test-005-independent",
+        "case_id": "test-005",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":\"Hill Road depot\",\"event_date_or_time\":\"Monday\",\"amount_inr\":null,\"service_identifier\":\"passenger pass renewals counter\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The complaint reports a clerk shouting at passengers at the pass renewals counter on Monday at Hill Road depot.\"}",
+        "latency_seconds": 3.0838633622499856,
+        "prompt_tokens": 325
+      },
+      {
+        "surface_id": "test-006-independent",
+        "case_id": "test-006",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"staff_conduct\",\"location\":\"near Rose Circle\",\"event_date_or_time\":\"this evening\",\"amount_inr\":null,\"service_identifier\":\"bus 61\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The rear door of bus 61 opened while the bus was moving near Rose Circle this evening.\"}",
+        "latency_seconds": 3.0838633622499856,
+        "prompt_tokens": 321
+      },
+      {
+        "surface_id": "test-007-independent",
+        "case_id": "test-007",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"record_or_document_error\",\"location\":\"MetroCard portal\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"student pass SP-204\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"My student pass SP-204 shows the wrong expiry date on the MetroCard portal. It says 12 September instead of 12 December.\"}",
+        "latency_seconds": 3.0838633622499856,
+        "prompt_tokens": 330
+      },
+      {
+        "surface_id": "test-008-independent",
+        "case_id": "test-008",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"other\",\"location\":\"Central interchange\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"audio announcements\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The audio announcements at Central interchange are only in one language, so many passengers cannot understand platform changes.\"}",
+        "latency_seconds": 3.0838633622499856,
+        "prompt_tokens": 322
+      },
+      {
+        "surface_id": "test-009-independent",
+        "case_id": "test-009",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Maple Enclave\",\"event_date_or_time\":\"since Friday night\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"No water has reached Maple Enclave since Friday night. This is the fourth day without supply.\"}",
+        "latency_seconds": 3.2617288402500435,
+        "prompt_tokens": 321
+      },
+      {
+        "surface_id": "test-010-independent",
+        "case_id": "test-010",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"beside the post office on Fern Lane\",\"event_date_or_time\":\"since yesterday afternoon\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A water main beside the post office on Fern Lane has been leaking continuously since yesterday afternoon.\"}",
+        "latency_seconds": 3.2617288402500435,
+        "prompt_tokens": 320
+      },
+      {
+        "surface_id": "test-011-independent",
+        "case_id": "test-011",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Lotus Residency\",\"event_date_or_time\":\"July\",\"amount_inr\":2460,\"service_identifier\":\"consumer W-771\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"meter_photo\"],\"formal_summary\":\"The July water bill for consumer W-771 is Rs 2,460, although the usual bill is about Rs 600.\"}",
+        "latency_seconds": 3.2617288402500435,
+        "prompt_tokens": 346
+      },
+      {
+        "surface_id": "test-012-independent",
+        "case_id": "test-012",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"near Sunrise School\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":\"public tap 14\",\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"Water from public tap 14 near Sunrise School smells of fuel right now, and children have been filling bottles there.\"}",
+        "latency_seconds": 3.2617288402500435,
+        "prompt_tokens": 325
+      },
+      {
+        "surface_id": "test-013-independent",
+        "case_id": "test-013",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":\"Green Park\",\"event_date_or_time\":\"Tuesday morning\",\"amount_inr\":null,\"service_identifier\":\"tanker number WT-32\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The tanker driver assigned to Green Park refused to stop at the listed point and insulted residents on Tuesday morning. The tanker number was WT-32.\"}",
+        "latency_seconds": 3.2693555982500584,
+        "prompt_tokens": 332
+      },
+      {
+        "surface_id": "test-014-independent",
+        "case_id": "test-014",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"record_or_document_error\",\"location\":\"Silver Court\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"meter MTR-88\",\"urgency\":\"routine\",\"missing_information\":[\"date_or_time\"],\"formal_summary\":\"The water account for meter MTR-88 at Silver Court records 940 units, but the meter shows 490. The affected billing date is not visible online.\"}",
+        "latency_seconds": 3.2693555982500584,
+        "prompt_tokens": 335
+      },
+      {
+        "surface_id": "test-015-independent",
+        "case_id": "test-015",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Ashok Vihar\",\"event_date_or_time\":\"every alternate morning\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Water reaches Ashok Vihar for only ten minutes every alternate morning, and the pressure is too low to fill an overhead tank.\"}",
+        "latency_seconds": 3.2693555982500584,
+        "prompt_tokens": 328
+      },
+      {
+        "surface_id": "test-016-independent",
+        "case_id": "test-016",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"lane 5, Nandan Colony\",\"event_date_or_time\":\"9 AM today\",\"amount_inr\":null,\"service_identifier\":\"waste van\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The scheduled waste van for lane 5 in Nandan Colony did not arrive at 9 AM today.\"}",
+        "latency_seconds": 3.2693555982500584,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-017-independent",
+        "case_id": "test-017",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Pine Block\",\"event_date_or_time\":\"for six days\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Nobody has collected household garbage from Pine Block for six days, and bags are now piling up outside.\"}",
+        "latency_seconds": 3.7727983437500825,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-018-independent",
+        "case_id": "test-018",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"bin SB-19\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Public bin SB-19 has a broken base, and rubbish falls out whenever it is lifted. I forgot to note the street.\"}",
+        "latency_seconds": 3.7727983437500825,
+        "prompt_tokens": 328
+      },
+      {
+        "surface_id": "test-019-independent",
+        "case_id": "test-019",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Ward Centre sanitation office\",\"event_date_or_time\":\"Saturday\",\"amount_inr\":350,\"service_identifier\":\"bin tag BT-9\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\"],\"formal_summary\":\"The sanitation office at Ward Centre charged Rs 350 for replacing bin tag BT-9, but the notice says replacement costs Rs 100. No receipt was given on Saturday.\"}",
+        "latency_seconds": 3.7727983437500825,
+        "prompt_tokens": 337
+      },
+      {
+        "surface_id": "test-020-independent",
+        "case_id": "test-020",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":\"Lake Colony\",\"event_date_or_time\":\"yesterday evening\",\"amount_inr\":null,\"service_identifier\":\"street sweeper\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A street sweeper in Lake Colony pushed dust into shop entrances and swore at people who objected yesterday evening.\"}",
+        "latency_seconds": 3.7727983437500825,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-021-independent",
+        "case_id": "test-021",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"Shanti Nagar\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Medical waste and used needles are lying beside the community tap in Shanti Nagar right now.\"}",
+        "latency_seconds": 3.6326927027500915,
+        "prompt_tokens": 320
+      },
+      {
+        "surface_id": "test-022-independent",
+        "case_id": "test-022",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"record_or_document_error\",\"location\":\"door-to-door collection record for service card SC-58\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"service card SC-58\",\"urgency\":\"routine\",\"missing_information\":[\"date_or_time\"],\"formal_summary\":\"My address is wrong in the door-to-door collection record for service card SC-58. It lists Garden Block instead of Garden Annex, and the date of the change is missing.\"}",
+        "latency_seconds": 3.6326927027500915,
+        "prompt_tokens": 338
+      },
+      {
+        "surface_id": "test-023-independent",
+        "case_id": "test-023",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"outside the clinic on Banyan Road\",\"event_date_or_time\":\"after last week's rain\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Two deep potholes have opened outside the clinic on Banyan Road after last week's rain.\"}",
+        "latency_seconds": 3.6326927027500915,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-024-independent",
+        "case_id": "test-024",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"east side of Neem Avenue\",\"event_date_or_time\":\"since Sunday\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Every streetlight on the east side of Neem Avenue has been off since Sunday.\"}",
+        "latency_seconds": 3.6326927027500915,
+        "prompt_tokens": 319
+      },
+      {
+        "surface_id": "test-025-independent",
+        "case_id": "test-025",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"College Square\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":\"signal TS-11\",\"urgency\":\"safety_critical\",\"missing_information\":[\"none\"],\"formal_summary\":\"Signal TS-11 at College Square is showing green in both directions right now. Vehicles nearly collided twice.\"}",
+        "latency_seconds": 3.6098689575001117,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "test-026-independent",
+        "case_id": "test-026",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":\"South Zone road permit desk 2\",\"event_date_or_time\":\"Wednesday\",\"amount_inr\":null,\"service_identifier\":\"road permit desk 2\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The worker at road permit desk 2 in South Zone office tore up my form and refused to explain why on Wednesday.\"}",
+        "latency_seconds": 3.6098689575001117,
+        "prompt_tokens": 326
+      },
+      {
+        "surface_id": "test-027-independent",
+        "case_id": "test-027",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Palm Street\",\"event_date_or_time\":\"repair request RR-503\",\"amount_inr\":null,\"service_identifier\":\"repair request RR-503\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Repair request RR-503 for Palm Street is marked completed on the road portal, but the pothole is still open. The portal does not show when the status changed.\"}",
+        "latency_seconds": 3.6098689575001117,
+        "prompt_tokens": 337
+      },
+      {
+        "surface_id": "test-028-independent",
+        "case_id": "test-028",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"River Walk parking meter\",\"event_date_or_time\":\"Friday\",\"amount_inr\":120,\"service_identifier\":\"meter PM-17\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\"],\"formal_summary\":\"The municipal parking meter at River Walk deducted Rs 120 for one hour on Friday although the board says Rs 40. Meter PM-17 displayed no transaction code.\"}",
+        "latency_seconds": 3.6098689575001117,
+        "prompt_tokens": 335
+      },
+      {
+        "surface_id": "test-029-independent",
+        "case_id": "test-029",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"staff_conduct\",\"location\":\"Willow Lane\",\"event_date_or_time\":\"today at 11 AM\",\"amount_inr\":null,\"service_identifier\":\"IN-72\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A road inspection team was booked for 11 AM today at Willow Lane, but nobody arrived. The booking number is IN-72.\"}",
+        "latency_seconds": 3.4772447177501817,
+        "prompt_tokens": 329
+      },
+      {
+        "surface_id": "test-030-independent",
+        "case_id": "test-030",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Krishna Enclave\",\"event_date_or_time\":\"since 6 PM yesterday\",\"amount_inr\":null,\"service_identifier\":\"feeder F-21\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"Feeder F-21 has supplied no electricity to Krishna Enclave since 6 PM yesterday.\"}",
+        "latency_seconds": 3.4772447177501817,
+        "prompt_tokens": 321
+      },
+      {
+        "surface_id": "test-031-independent",
+        "case_id": "test-031",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"beside the market entrance on Tulip Road\",\"event_date_or_time\":\"after the storm\",\"amount_inr\":null,\"service_identifier\":\"electric pole EP-44\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Electric pole EP-44 beside the market entrance on Tulip Road is leaning after the storm.\"}",
+        "latency_seconds": 3.4772447177501817,
+        "prompt_tokens": 321
+      },
+      {
+        "surface_id": "test-032-independent",
+        "case_id": "test-032",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"Rose Apartments\",\"event_date_or_time\":\"August\",\"amount_inr\":8900,\"service_identifier\":\"account EL-309\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"meter photograph\"],\"formal_summary\":\"My August electricity bill for account EL-309 at Rose Apartments is Rs 8,900, nearly four times the normal amount. I have no payment reference or meter photograph.\"}",
+        "latency_seconds": 3.4772447177501817,
+        "prompt_tokens": 337
+      },
+      {
+        "surface_id": "test-033-independent",
+        "case_id": "test-033",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"record_or_document_error\",\"location\":\"Cedar Heights\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"meter E-205\",\"urgency\":\"routine\",\"missing_information\":[\"date_or_time\"],\"formal_summary\":\"The electricity portal lists meter E-205 under Cedar Homes, but the meter is installed at Cedar Heights. It does not show when this record was changed.\"}",
+        "latency_seconds": 3.417323257499902,
+        "prompt_tokens": 333
+      },
+      {
+        "surface_id": "test-034-independent",
+        "case_id": "test-034",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"staff_conduct\",\"location\":\"East Power office\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":null,\"service_identifier\":\"counter 4\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The technician at counter 4 in the East Power office mocked an elderly customer and refused to check complaint CP-81 yesterday.\"}",
+        "latency_seconds": 3.417323257499902,
+        "prompt_tokens": 327
+      },
+      {
+        "surface_id": "test-035-independent",
+        "case_id": "test-035",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"outside Lake School\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A snapped electrical cable is sparking on the pavement outside Lake School right now.\"}",
+        "latency_seconds": 3.417323257499902,
+        "prompt_tokens": 317
+      },
+      {
+        "surface_id": "test-036-independent",
+        "case_id": "test-036",
+        "response": "{\"service_domain\":\"electricity\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":null,\"event_date_or_time\":\"2 PM on Thursday\",\"amount_inr\":null,\"service_identifier\":\"meter inspection for request MI-66\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A meter inspection for request MI-66 was scheduled for 2 PM on Thursday, but the technician never arrived. I did not include the address in the request.\"}",
+        "latency_seconds": 3.417323257499902,
+        "prompt_tokens": 335
+      },
+      {
+        "surface_id": "test-037-independent",
+        "case_id": "test-037",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"North Ward office\",\"event_date_or_time\":\"last Friday\",\"amount_inr\":null,\"service_identifier\":\"birth certificate application BC-410\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Birth certificate application BC-410 was due last Friday at North Ward office, but the certificate has still not arrived.\"}",
+        "latency_seconds": 3.596273920000158,
+        "prompt_tokens": 325
+      },
+      {
+        "surface_id": "test-038-independent",
+        "case_id": "test-038",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Citizen Benefits portal\",\"event_date_or_time\":\"since Monday morning\",\"amount_inr\":null,\"service_identifier\":\"disability pension page\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"The disability pension page on the Citizen Benefits portal has been unavailable since Monday morning, so applications cannot be submitted.\"}",
+        "latency_seconds": 3.596273920000158,
+        "prompt_tokens": 324
+      },
+      {
+        "surface_id": "test-039-independent",
+        "case_id": "test-039",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":\"income certificate portal\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"income certificate IC-72\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The income certificate IC-72 spells the locality as Green Vally instead of Green Valley. The certificate portal does not show when the error was introduced.\"}",
+        "latency_seconds": 3.596273920000158,
+        "prompt_tokens": 331
+      },
+      {
+        "surface_id": "test-040-independent",
+        "case_id": "test-040",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"West Civic Centre\",\"event_date_or_time\":\"Tuesday\",\"amount_inr\":500,\"service_identifier\":\"certificate kiosk\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\"],\"formal_summary\":\"The certificate kiosk at West Civic Centre charged Rs 500 for application DC-19 on Tuesday, although the displayed fee is Rs 200. It gave no receipt.\"}",
+        "latency_seconds": 3.596273920000158,
+        "prompt_tokens": 336
+      },
+      {
+        "surface_id": "test-041-independent",
+        "case_id": "test-041",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"staff_conduct\",\"location\":\"Senior Support desk in Central Service Hall\",\"event_date_or_time\":\"yesterday\",\"amount_inr\":null,\"service_identifier\":\"Senior Support desk\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The complaint reports a clerk ignoring queue members and closing the window early at the Senior Support desk in Central Service Hall yesterday.\"}",
+        "latency_seconds": 3.68394575100001,
+        "prompt_tokens": 326
+      },
+      {
+        "surface_id": "test-042-independent",
+        "case_id": "test-042",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"delay_or_non_arrival\",\"location\":null,\"event_date_or_time\":\"for twelve days\",\"amount_inr\":null,\"service_identifier\":\"medicine support approval for case MS-31\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"affected_person_or_group\"],\"formal_summary\":\"The medicine support approval for case MS-31 has been pending for twelve days, and the stated treatment starts tomorrow. The application does not say which patient is affected.\"}",
+        "latency_seconds": 3.68394575100001,
+        "prompt_tokens": 335
+      },
+      {
+        "surface_id": "test-043-independent",
+        "case_id": "test-043",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"South Ward service centre\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"document counters\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The entrance to the South Ward service centre has stairs but no ramp, so wheelchair users cannot reach the document counters.\"}",
+        "latency_seconds": 3.68394575100001,
+        "prompt_tokens": 325
+      },
+      {
+        "surface_id": "test-044-independent",
+        "case_id": "test-044",
+        "response": "{\"service_domain\":\"libraries\",\"issue_type\":\"delay_or_non_arrival\",\"location\":\"City Library\",\"event_date_or_time\":\"by noon\",\"amount_inr\":null,\"service_identifier\":\"reading-room booking LB-24\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Confirmation for reading-room booking LB-24 at City Library was due by noon, but nothing arrived.\"}",
+        "latency_seconds": 3.68394575100001,
+        "prompt_tokens": 322
+      },
+      {
+        "surface_id": "test-045-independent",
+        "case_id": "test-045",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Community Park\",\"event_date_or_time\":\"since last month\",\"amount_inr\":null,\"service_identifier\":\"wooden stage\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The wooden stage in Community Park has several loose boards and has remained damaged since last month.\"}",
+        "latency_seconds": 3.5525097619999997,
+        "prompt_tokens": 320
+      },
+      {
+        "surface_id": "test-046-independent",
+        "case_id": "test-046",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"overcharging_or_payment_problem\",\"location\":\"community hall portal\",\"event_date_or_time\":\"Saturday\",\"amount_inr\":1800,\"service_identifier\":\"booking CH-57\",\"urgency\":\"routine\",\"missing_information\":[\"transaction_or_reference_id\",\"supporting_evidence\"],\"formal_summary\":\"The community hall portal charged Rs 1,800 for booking CH-57 on Saturday even though the listed fee was Rs 1,200. No payment reference appeared.\"}",
+        "latency_seconds": 3.5525097619999997,
+        "prompt_tokens": 336
+      },
+      {
+        "surface_id": "test-047-independent",
+        "case_id": "test-047",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"staff_conduct\",\"location\":\"animal care desk 1, Civic Annex\",\"event_date_or_time\":\"this morning\",\"amount_inr\":null,\"service_identifier\":\"animal care desk 1\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The attendant at animal care desk 1 in Civic Annex laughed at a report about an injured stray dog and refused to register it this morning.\"}",
+        "latency_seconds": 3.5525097619999997,
+        "prompt_tokens": 330
+      },
+      {
+        "surface_id": "test-048-independent",
+        "case_id": "test-048",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Lake Park\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":\"metal railing beside the children's slide\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"A metal railing beside the children's slide in Lake Park has broken away and sharp edges are exposed right now.\"}",
+        "latency_seconds": 3.5525097619999997,
+        "prompt_tokens": 324
+      },
+      {
+        "surface_id": "test-049-independent",
+        "case_id": "test-049",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"record_or_document_error\",\"location\":\"Civic Library portal\",\"event_date_or_time\":\"as of the current date\",\"amount_inr\":null,\"service_identifier\":\"library membership LM-308\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Library membership LM-308 is shown as expired on the Civic Library portal even though the card says it is valid until 30 November.\"}",
+        "latency_seconds": 6.230049428500024,
+        "prompt_tokens": 329
+      },
+      {
+        "surface_id": "test-050-independent",
+        "case_id": "test-050",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"other\",\"location\":\"neighbourhood sports-ground reservation service\",\"event_date_or_time\":\"for two days\",\"amount_inr\":null,\"service_identifier\":\"sports-ground reservation service\",\"urgency\":\"routine\",\"missing_information\":[\"service_identifier\"],\"formal_summary\":\"The neighbourhood sports-ground reservation service has returned an error for two days. I do not have a reservation number yet.\"}",
+        "latency_seconds": 6.230049428500024,
+        "prompt_tokens": 325
+      }
+    ],
+    "adapter_epochs": 2,
+    "adapter_path": "/kaggle/working/civicstruct_final_output/final_adapter",
+    "mlflow_run_id": "b553985289dd4f59a3dc14fd41880da5"
+  }
+}

@@ -1,0 +1,493 @@
+{
+  "evaluation_version": "2.0",
+  "comparison_view": "strict end-to-end",
+  "fact_fields": [
+    "location",
+    "event_date_or_time",
+    "amount_inr",
+    "service_identifier"
+  ],
+  "categories": [
+    "correct",
+    "omitted",
+    "fabricated",
+    "distorted_or_partially_correct",
+    "normalization_only_mismatch"
+  ],
+  "splits": {
+    "internal_test": {
+      "deterministic_rules": {
+        "exact_factual_field_mismatches": {
+          "count": 0,
+          "predicted_non_null_count": 0,
+          "rate": null
+        },
+        "breakdown": {
+          "total_fields": 200,
+          "by_field": {
+            "location": {
+              "correct": 3,
+              "omitted": 47,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "event_date_or_time": {
+              "correct": 10,
+              "omitted": 40,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "amount_inr": {
+              "correct": 43,
+              "omitted": 7,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "service_identifier": {
+              "correct": 6,
+              "omitted": 44,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            }
+          },
+          "overall": {
+            "correct": 62,
+            "omitted": 138,
+            "fabricated": 0,
+            "distorted_or_partially_correct": 0,
+            "normalization_only_mismatch": 0
+          }
+        }
+      },
+      "zero_shot": {
+        "exact_factual_field_mismatches": {
+          "count": 0,
+          "predicted_non_null_count": 0,
+          "rate": null
+        },
+        "breakdown": {
+          "total_fields": 200,
+          "by_field": {
+            "location": {
+              "correct": 3,
+              "omitted": 47,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "event_date_or_time": {
+              "correct": 10,
+              "omitted": 40,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "amount_inr": {
+              "correct": 43,
+              "omitted": 7,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "service_identifier": {
+              "correct": 6,
+              "omitted": 44,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            }
+          },
+          "overall": {
+            "correct": 62,
+            "omitted": 138,
+            "fabricated": 0,
+            "distorted_or_partially_correct": 0,
+            "normalization_only_mismatch": 0
+          }
+        }
+      },
+      "static_few_shot": {
+        "exact_factual_field_mismatches": {
+          "count": 57,
+          "predicted_non_null_count": 100,
+          "rate": 0.57
+        },
+        "breakdown": {
+          "total_fields": 200,
+          "by_field": {
+            "location": {
+              "correct": 22,
+              "omitted": 19,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 9,
+              "normalization_only_mismatch": 0
+            },
+            "event_date_or_time": {
+              "correct": 19,
+              "omitted": 10,
+              "fabricated": 6,
+              "distorted_or_partially_correct": 15,
+              "normalization_only_mismatch": 0
+            },
+            "amount_inr": {
+              "correct": 43,
+              "omitted": 7,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "service_identifier": {
+              "correct": 11,
+              "omitted": 12,
+              "fabricated": 4,
+              "distorted_or_partially_correct": 23,
+              "normalization_only_mismatch": 0
+            }
+          },
+          "overall": {
+            "correct": 95,
+            "omitted": 48,
+            "fabricated": 10,
+            "distorted_or_partially_correct": 47,
+            "normalization_only_mismatch": 0
+          }
+        }
+      },
+      "retrieved_few_shot": {
+        "exact_factual_field_mismatches": {
+          "count": 37,
+          "predicted_non_null_count": 98,
+          "rate": 0.37755102040816324
+        },
+        "breakdown": {
+          "total_fields": 200,
+          "by_field": {
+            "location": {
+              "correct": 27,
+              "omitted": 9,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 14,
+              "normalization_only_mismatch": 0
+            },
+            "event_date_or_time": {
+              "correct": 29,
+              "omitted": 12,
+              "fabricated": 1,
+              "distorted_or_partially_correct": 8,
+              "normalization_only_mismatch": 0
+            },
+            "amount_inr": {
+              "correct": 46,
+              "omitted": 4,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "service_identifier": {
+              "correct": 19,
+              "omitted": 17,
+              "fabricated": 1,
+              "distorted_or_partially_correct": 13,
+              "normalization_only_mismatch": 0
+            }
+          },
+          "overall": {
+            "correct": 121,
+            "omitted": 42,
+            "fabricated": 2,
+            "distorted_or_partially_correct": 35,
+            "normalization_only_mismatch": 0
+          }
+        }
+      },
+      "qlora": {
+        "exact_factual_field_mismatches": {
+          "count": 46,
+          "predicted_non_null_count": 126,
+          "rate": 0.36507936507936506
+        },
+        "breakdown": {
+          "total_fields": 200,
+          "by_field": {
+            "location": {
+              "correct": 36,
+              "omitted": 3,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 11,
+              "normalization_only_mismatch": 0
+            },
+            "event_date_or_time": {
+              "correct": 33,
+              "omitted": 3,
+              "fabricated": 1,
+              "distorted_or_partially_correct": 13,
+              "normalization_only_mismatch": 0
+            },
+            "amount_inr": {
+              "correct": 48,
+              "omitted": 2,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "service_identifier": {
+              "correct": 23,
+              "omitted": 6,
+              "fabricated": 1,
+              "distorted_or_partially_correct": 20,
+              "normalization_only_mismatch": 0
+            }
+          },
+          "overall": {
+            "correct": 140,
+            "omitted": 14,
+            "fabricated": 2,
+            "distorted_or_partially_correct": 44,
+            "normalization_only_mismatch": 0
+          }
+        }
+      }
+    },
+    "external_transfer": {
+      "deterministic_rules": {
+        "exact_factual_field_mismatches": {
+          "count": 0,
+          "predicted_non_null_count": 0,
+          "rate": null
+        },
+        "breakdown": {
+          "total_fields": 80,
+          "by_field": {
+            "location": {
+              "correct": 0,
+              "omitted": 20,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "event_date_or_time": {
+              "correct": 14,
+              "omitted": 6,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "amount_inr": {
+              "correct": 20,
+              "omitted": 0,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "service_identifier": {
+              "correct": 20,
+              "omitted": 0,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            }
+          },
+          "overall": {
+            "correct": 54,
+            "omitted": 26,
+            "fabricated": 0,
+            "distorted_or_partially_correct": 0,
+            "normalization_only_mismatch": 0
+          }
+        }
+      },
+      "zero_shot": {
+        "exact_factual_field_mismatches": {
+          "count": 0,
+          "predicted_non_null_count": 0,
+          "rate": null
+        },
+        "breakdown": {
+          "total_fields": 80,
+          "by_field": {
+            "location": {
+              "correct": 0,
+              "omitted": 20,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "event_date_or_time": {
+              "correct": 14,
+              "omitted": 6,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "amount_inr": {
+              "correct": 20,
+              "omitted": 0,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "service_identifier": {
+              "correct": 20,
+              "omitted": 0,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            }
+          },
+          "overall": {
+            "correct": 54,
+            "omitted": 26,
+            "fabricated": 0,
+            "distorted_or_partially_correct": 0,
+            "normalization_only_mismatch": 0
+          }
+        }
+      },
+      "static_few_shot": {
+        "exact_factual_field_mismatches": {
+          "count": 54,
+          "predicted_non_null_count": 57,
+          "rate": 0.9473684210526315
+        },
+        "breakdown": {
+          "total_fields": 80,
+          "by_field": {
+            "location": {
+              "correct": 3,
+              "omitted": 1,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 16,
+              "normalization_only_mismatch": 0
+            },
+            "event_date_or_time": {
+              "correct": 0,
+              "omitted": 1,
+              "fabricated": 14,
+              "distorted_or_partially_correct": 5,
+              "normalization_only_mismatch": 0
+            },
+            "amount_inr": {
+              "correct": 20,
+              "omitted": 0,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "service_identifier": {
+              "correct": 1,
+              "omitted": 0,
+              "fabricated": 19,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            }
+          },
+          "overall": {
+            "correct": 24,
+            "omitted": 2,
+            "fabricated": 33,
+            "distorted_or_partially_correct": 21,
+            "normalization_only_mismatch": 0
+          }
+        }
+      },
+      "retrieved_few_shot": {
+        "exact_factual_field_mismatches": {
+          "count": 7,
+          "predicted_non_null_count": 28,
+          "rate": 0.25
+        },
+        "breakdown": {
+          "total_fields": 80,
+          "by_field": {
+            "location": {
+              "correct": 18,
+              "omitted": 1,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 1,
+              "normalization_only_mismatch": 0
+            },
+            "event_date_or_time": {
+              "correct": 14,
+              "omitted": 3,
+              "fabricated": 3,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "amount_inr": {
+              "correct": 20,
+              "omitted": 0,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "service_identifier": {
+              "correct": 17,
+              "omitted": 0,
+              "fabricated": 3,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            }
+          },
+          "overall": {
+            "correct": 69,
+            "omitted": 4,
+            "fabricated": 6,
+            "distorted_or_partially_correct": 1,
+            "normalization_only_mismatch": 0
+          }
+        }
+      },
+      "qlora": {
+        "exact_factual_field_mismatches": {
+          "count": 3,
+          "predicted_non_null_count": 24,
+          "rate": 0.125
+        },
+        "breakdown": {
+          "total_fields": 80,
+          "by_field": {
+            "location": {
+              "correct": 18,
+              "omitted": 0,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 2,
+              "normalization_only_mismatch": 0
+            },
+            "event_date_or_time": {
+              "correct": 17,
+              "omitted": 3,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "amount_inr": {
+              "correct": 20,
+              "omitted": 0,
+              "fabricated": 0,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            },
+            "service_identifier": {
+              "correct": 19,
+              "omitted": 0,
+              "fabricated": 1,
+              "distorted_or_partially_correct": 0,
+              "normalization_only_mismatch": 0
+            }
+          },
+          "overall": {
+            "correct": 74,
+            "omitted": 3,
+            "fabricated": 1,
+            "distorted_or_partially_correct": 2,
+            "normalization_only_mismatch": 0
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/abhigoyal/Documents/Acadss/Data%20Science/Projects/civic-grievance-structurer/data/reproducibility_results/mlruns/609316109253685232/3f59732704814a0f91b45a0fbd3a9770/artifacts
+end_time: 1786821103636
+entry_point_name: ''
+experiment_id: '609316109253685232'
+lifecycle_stage: active
+run_id: 3f59732704814a0f91b45a0fbd3a9770
+run_name: evaluation-v2-metadata-backfill
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1786821103591
+status: 3
+tags: []
+user_id: abhigoyal

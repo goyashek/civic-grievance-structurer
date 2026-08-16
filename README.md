@@ -419,14 +419,28 @@ The automatic evaluator and report scripts use the Python standard library.
 From the repository root:
 
 ```bash
+python3 -m pip install -r requirements.txt
 python3 -m unittest discover -s tests -v
 python3 -m src.report_validation
 python3 -m src.report_final
 ```
 
-The final report command opens the preserved Kaggle ZIP, recomputes all ten
-internal and external system runs from raw responses, checks them against the
-saved scores, and rebuilds `data/final_results/final_metrics.json`.
+The final report reads the checked raw internal and external result files,
+recomputes all ten system runs, checks them against the saved scores, and
+rebuilds `data/final_results/final_metrics.json`. It does not need the local
+adapter archive.
+
+For the CPU-only DVC and MLflow checks:
+
+```bash
+python3 -m pip install -r requirements-mlops.txt
+dvc repro
+MLFLOW_ALLOW_FILE_STORE=true mlflow ui --backend-store-uri data/reproducibility_results/mlruns
+```
+
+`dvc.lock` records the frozen report inputs. Those inputs stay in Git because
+they are small and a fresh clone needs them. The MLflow store contains a
+metadata backfill run that is labeled as reconstructed after the frozen run.
 
 Run the cheap data checks with:
 
@@ -464,11 +478,11 @@ civicstruct_final_external_validation.zip
 771d2859cad977677a55ef4367dad81e2cd6fdb482887dd7c6a058a3a054df36
 ```
 
-The two saved development MLflow stores can be opened with:
+The two saved development MLflow stores can also be opened with:
 
 ```bash
-mlflow ui --backend-store-uri data/model_selection_results/mlruns
-mlflow ui --backend-store-uri data/validation_results/mlruns
+MLFLOW_ALLOW_FILE_STORE=true mlflow ui --backend-store-uri data/model_selection_results/mlruns
+MLFLOW_ALLOW_FILE_STORE=true mlflow ui --backend-store-uri data/validation_results/mlruns
 ```
 
 ## Repository map
@@ -479,12 +493,14 @@ mlflow ui --backend-store-uri data/validation_results/mlruns
 | [`src/evaluate.py`](src/evaluate.py) | strict, conditional, repaired, field, and factuality metrics |
 | [`src/report_validation.py`](src/report_validation.py) | reproducible validation tables and failure categories |
 | [`src/report_final.py`](src/report_final.py) | final score verification and confidence intervals |
+| [`src/backfill_mlflow.py`](src/backfill_mlflow.py) | compact historical MLflow metadata record |
 | [`docs/annotation_guide.md`](docs/annotation_guide.md) | label definitions and annotation decisions |
 | [`docs/dataset_card.md`](docs/dataset_card.md) | data sources, privacy transformations, splits, and limits |
 | [`docs/evaluation_contract.md`](docs/evaluation_contract.md) | frozen metric definitions |
 | [`data/model_selection_results/`](data/model_selection_results/README.md) | six model-selection runs and MLflow records |
 | [`data/validation_results/`](data/validation_results/README.md) | baseline outputs, QLoRA run, failure audit, and MLflow records |
-| [`data/final_results/`](data/final_results/README.md) | frozen final run, adapter, raw outputs, intervals, and summary judgments |
+| [`data/final_results/`](data/final_results/README.md) | frozen raw outputs, manifests, intervals, and summary judgments |
+| [`data/reproducibility_results/`](data/reproducibility_results/mlruns/) | DVC check record and metadata-backfill MLflow store |
 | [`notebooks/`](notebooks/) | model smoke test, bake-off, validation training, and final Kaggle runs |
 
 ## Limitations
@@ -514,7 +530,8 @@ training and reload, one controlled revision, data-size ablation, untouched
 internal test, external transfer check, confidence intervals, summary rubric,
 raw predictions, notebooks, and MLflow records are preserved.
 
-The next work is engineering rather than another model experiment: a small
-local complaint-to-JSON demo, focused CPU checks for that inference path, and
+The next planned work is a constrained structured-generation baseline and
+model governance. It must remain separate from the frozen result story, and
+later local demo work must reuse the same frozen inference configuration.
 release verification. The evaluated adapter, prompts, decoding settings, and
 metrics remain frozen.

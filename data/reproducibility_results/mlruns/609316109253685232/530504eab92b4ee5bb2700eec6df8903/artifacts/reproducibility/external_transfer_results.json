@@ -1,0 +1,1174 @@
+{
+  "deterministic_rules": {
+    "method": "external-transfer-deterministic-rules",
+    "model_name": null,
+    "model_revision": null,
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 256
+    },
+    "mean_latency_seconds": 0.0,
+    "mean_prompt_tokens": 0.0,
+    "demonstration_count": 0,
+    "scores": {
+      "evaluation_version": "1.0",
+      "total_outputs": 20,
+      "strict": {
+        "json_parse_count": 20,
+        "invalid_json_count": 0,
+        "schema_invalid_count": 0,
+        "schema_valid_count": 20,
+        "schema_validity_rate": 1.0,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.693121693121693,
+          "issue_type_macro_f1": 0.43333333333333335,
+          "urgency_macro_f1": 0.5634920634920635,
+          "missing_information_macro_f1": 1.0,
+          "location_normalized_match": 0.0,
+          "event_date_or_time_normalized_match": 0.7,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 1.0
+        },
+        "hallucinated_non_null_fields": {
+          "count": 0,
+          "predicted_non_null_count": 0,
+          "rate": null
+        }
+      },
+      "conditional_valid": {
+        "denominator": 20,
+        "field_metrics": {
+          "service_domain_macro_f1": 0.693121693121693,
+          "issue_type_macro_f1": 0.43333333333333335,
+          "urgency_macro_f1": 0.5634920634920635,
+          "missing_information_macro_f1": 1.0,
+          "location_normalized_match": 0.0,
+          "event_date_or_time_normalized_match": 0.7,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 1.0
+        }
+      },
+      "repaired": {
+        "repairable_count": 0,
+        "repairable_json_rate": 0.0,
+        "schema_valid_count": 20,
+        "schema_validity_rate": 1.0,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.693121693121693,
+          "issue_type_macro_f1": 0.43333333333333335,
+          "urgency_macro_f1": 0.5634920634920635,
+          "missing_information_macro_f1": 1.0,
+          "location_normalized_match": 0.0,
+          "event_date_or_time_normalized_match": 0.7,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 1.0
+        },
+        "hallucinated_non_null_fields": {
+          "count": 0,
+          "predicted_non_null_count": 0,
+          "rate": null
+        }
+      }
+    },
+    "outputs": [
+      {
+        "surface_id": "external-sd-001",
+        "case_id": "external-sd-001",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Otay Mesa-Nestor, multiple streetlights are out. Residents report that the area is very dark and unsafe at night.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-002",
+        "case_id": "external-sd-002",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Kearny Mesa, a sidewalk needs to be paved.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-003",
+        "case_id": "external-sd-003",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Clairemont Mesa, parking lot lights are out in a park and a temporary path has no illumination.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-004",
+        "case_id": "external-sd-004",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"safety_or_health_hazard\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Southeastern San Diego, several park light towers are not turning on and create unsafe conditions during sports.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-005",
+        "case_id": "external-sd-005",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Uptown, a sidewalk is crumbling and raised.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-006",
+        "case_id": "external-sd-006",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Greater Golden Hill, a lifted sidewalk in the pedestrian right of way is a trip hazard, apparently due to a street tree.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-007",
+        "case_id": "external-sd-007",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Greater Golden Hill, a broken sidewalk in the pedestrian right of way is a trip hazard.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-008",
+        "case_id": "external-sd-008",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In La Jolla, tree roots have raised a sidewalk enough to create a hazard.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-009",
+        "case_id": "external-sd-009",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Torrey Hills, a sidewalk needs updated repair.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-010",
+        "case_id": "external-sd-010",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Scripps Miramar Ranch, a sidewalk crumbling over a storm drain is a trip hazard. A marker was placed there, but the damage has remained for years.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-011",
+        "case_id": "external-sd-011",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Mid-City Kensington-Talmadge, a raised sidewalk has been dangerous for more than six months.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-012",
+        "case_id": "external-sd-012",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Uptown, a damaged curb has caused improper drainage for decades.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-013",
+        "case_id": "external-sd-013",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Serra Mesa, a pipe about five inches tall is sticking up from the roadway.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-014",
+        "case_id": "external-sd-014",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Mid-City Eastern Area, a filing cabinet has been dumped on a sidewalk.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-015",
+        "case_id": "external-sd-015",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In University, a bus stop trash bin is full and waste is piled beside it. The bin is not being emptied weekly.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-016",
+        "case_id": "external-sd-016",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Southeastern San Diego, a green bin filled with regular garbage has been unattended for three weeks.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-017",
+        "case_id": "external-sd-017",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Mid-City City Heights, piles of trash have been dumped in a canyon.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-018",
+        "case_id": "external-sd-018",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"other\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Encanto Neighborhoods, someone dumped a microwave and trash in a shared community garden roundabout.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-019",
+        "case_id": "external-sd-019",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Mid-City Normal Heights, a road has large potholes and the full street needs to be repaved.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      },
+      {
+        "surface_id": "external-sd-020",
+        "case_id": "external-sd-020",
+        "response": "{\"service_domain\":\"water_supply\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":null,\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"In Pacific Beach, an entire alley is flooded because its drains are clogged and no water is draining.\"}",
+        "latency_seconds": 0.0,
+        "prompt_tokens": 0
+      }
+    ],
+    "mlflow_run_id": "734cce0be3ce45e0a79852fe01cb41a1"
+  },
+  "zero_shot": {
+    "method": "external-transfer-zero-shot",
+    "model_name": "HuggingFaceTB/SmolLM3-3B",
+    "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 256
+    },
+    "mean_latency_seconds": 2.596442947599917,
+    "mean_prompt_tokens": 321.9,
+    "demonstration_count": 0,
+    "scores": {
+      "evaluation_version": "1.0",
+      "total_outputs": 20,
+      "strict": {
+        "json_parse_count": 0,
+        "invalid_json_count": 20,
+        "schema_invalid_count": 0,
+        "schema_valid_count": 0,
+        "schema_validity_rate": 0.0,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.0,
+          "issue_type_macro_f1": 0.0,
+          "urgency_macro_f1": 0.0,
+          "missing_information_macro_f1": 0.0,
+          "location_normalized_match": 0.0,
+          "event_date_or_time_normalized_match": 0.0,
+          "amount_inr_exact_match": 0.0,
+          "service_identifier_exact_match": 0.0
+        },
+        "hallucinated_non_null_fields": {
+          "count": 0,
+          "predicted_non_null_count": 0,
+          "rate": null
+        }
+      },
+      "conditional_valid": {
+        "denominator": 0,
+        "field_metrics": null
+      },
+      "repaired": {
+        "repairable_count": 4,
+        "repairable_json_rate": 0.2,
+        "schema_valid_count": 4,
+        "schema_validity_rate": 0.2,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.0625,
+          "issue_type_macro_f1": 0.15,
+          "urgency_macro_f1": 0.12535612535612536,
+          "missing_information_macro_f1": 0.3333333333333333,
+          "location_normalized_match": 0.2,
+          "event_date_or_time_normalized_match": 0.05,
+          "amount_inr_exact_match": 0.15,
+          "service_identifier_exact_match": 0.15
+        },
+        "hallucinated_non_null_fields": {
+          "count": 3,
+          "predicted_non_null_count": 7,
+          "rate": 0.42857142857142855
+        }
+      }
+    },
+    "outputs": [
+      {
+        "surface_id": "external-sd-001",
+        "case_id": "external-sd-001",
+        "response": "```json\n{\n  \"service_domain\": \"roads_and_streetlights\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Otay Mesa-Nestor\",\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"Multiple streetlights are out in the Otay Mesa-Nestor area, causing darkness and safety concerns at night.\"\n}\n```",
+        "latency_seconds": 2.56309550449987,
+        "prompt_tokens": 329
+      },
+      {
+        "surface_id": "external-sd-002",
+        "case_id": "external-sd-002",
+        "response": "```json\n{\n  \"service_domain\": \"roads_and_streetlights\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Kearny Mesa\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not specified\",\n  \"service_identifier\": \"not specified\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"amount_inr\", \"service_identifier\"],\n  \"formal_summary\": \"A damaged sidewalk in Kearny Mesa requires paving.\"\n}\n```",
+        "latency_seconds": 2.56309550449987,
+        "prompt_tokens": 314
+      },
+      {
+        "surface_id": "external-sd-003",
+        "case_id": "external-sd-003",
+        "response": "```json\n{\n  \"service_domain\": \"roads_and_streetlights\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Clairemont Mesa\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not specified\",\n  \"service_identifier\": \"not specified\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"Parking lot lights are out in a park and a temporary path in Clairemont Mesa lacks illumination.\"\n}\n```",
+        "latency_seconds": 2.56309550449987,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "external-sd-004",
+        "case_id": "external-sd-004",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"safety_or_health_hazard\",\n  \"location\": \"Southeastern San Diego\",\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"safety_critical\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"Several park light towers in Southeastern San Diego are not functioning, posing a safety hazard during sports events.\"\n}\n```",
+        "latency_seconds": 2.56309550449987,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "external-sd-005",
+        "case_id": "external-sd-005",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Uptown\",\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"A sidewalk in Uptown is damaged and needs repair.\"\n}\n```",
+        "latency_seconds": 2.6379426697499184,
+        "prompt_tokens": 314
+      },
+      {
+        "surface_id": "external-sd-006",
+        "case_id": "external-sd-006",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Greater Golden Hill\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not specified\",\n  \"service_identifier\": \"not specified\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"A damaged sidewalk in the pedestrian right of way in Greater Golden Hill is causing a trip hazard, possibly due to a street tree.\"\n}\n```",
+        "latency_seconds": 2.6379426697499184,
+        "prompt_tokens": 328
+      },
+      {
+        "surface_id": "external-sd-007",
+        "case_id": "external-sd-007",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Greater Golden Hill\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not specified\",\n  \"service_identifier\": \"not specified\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"A broken sidewalk in the pedestrian right of way in Greater Golden Hill is a trip hazard.\"\n}\n```",
+        "latency_seconds": 2.6379426697499184,
+        "prompt_tokens": 321
+      },
+      {
+        "surface_id": "external-sd-008",
+        "case_id": "external-sd-008",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"La Jolla\",\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"Tree roots have raised a sidewalk in La Jolla, creating a hazard.\"\n}\n```",
+        "latency_seconds": 2.6379426697499184,
+        "prompt_tokens": 319
+      },
+      {
+        "surface_id": "external-sd-009",
+        "case_id": "external-sd-009",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Torrey Hills\",\n  \"event_date_or_time\": \"2023-04-15\",\n  \"amount_inr\": 0,\n  \"service_identifier\": \"Sidewalk Repair Request\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"A sidewalk in Torrey Hills requires repair.\"\n}\n```",
+        "latency_seconds": 2.5602888712498952,
+        "prompt_tokens": 313
+      },
+      {
+        "surface_id": "external-sd-010",
+        "case_id": "external-sd-010",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Scripps Miramar Ranch\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not specified\",\n  \"service_identifier\": \"not specified\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"amount_inr\", \"service_identifier\"],\n  \"formal_summary\": \"A damaged sidewalk near a storm drain in Scripps Miramar Ranch poses a trip hazard, despite a marker being placed there. The issue requires repair.\"\n}\n```",
+        "latency_seconds": 2.5602888712498952,
+        "prompt_tokens": 335
+      },
+      {
+        "surface_id": "external-sd-011",
+        "case_id": "external-sd-011",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Mid-City Kensington-Talmadge\",\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"A raised sidewalk in Mid-City Kensington-Talmadge has been in a dangerous condition for over six months.\"\n}\n```",
+        "latency_seconds": 2.5602888712498952,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "external-sd-012",
+        "case_id": "external-sd-012",
+        "response": "```json\n{\n  \"service_domain\": \"roads_and_streetlights\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Uptown\",\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"A damaged curb in Uptown has caused improper drainage for decades.\"\n}\n```",
+        "latency_seconds": 2.5602888712498952,
+        "prompt_tokens": 317
+      },
+      {
+        "surface_id": "external-sd-013",
+        "case_id": "external-sd-013",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Serra Mesa\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not specified\",\n  \"service_identifier\": \"not specified\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"A damaged pipe is protruding from the roadway in Serra Mesa.\"\n}\n```",
+        "latency_seconds": 2.640162684749839,
+        "prompt_tokens": 320
+      },
+      {
+        "surface_id": "external-sd-014",
+        "case_id": "external-sd-014",
+        "response": "```json\n{\n  \"service_domain\": \"welfare_or_document_service\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Mid-City Eastern Area\",\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"A filing cabinet has been dumped on a sidewalk in Mid-City Eastern Area.\"\n}\n```",
+        "latency_seconds": 2.640162684749839,
+        "prompt_tokens": 319
+      },
+      {
+        "surface_id": "external-sd-015",
+        "case_id": "external-sd-015",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"University bus stop\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not applicable\",\n  \"service_identifier\": \"not applicable\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"A trash bin at the University bus stop is full and waste is piled beside it, indicating a damaged infrastructure issue.\"\n}\n```",
+        "latency_seconds": 2.640162684749839,
+        "prompt_tokens": 327
+      },
+      {
+        "surface_id": "external-sd-016",
+        "case_id": "external-sd-016",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Southeastern San Diego\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not applicable\",\n  \"service_identifier\": \"not applicable\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"A green bin filled with regular garbage has been unattended for three weeks in Southeastern San Diego.\"\n}\n```",
+        "latency_seconds": 2.640162684749839,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "external-sd-017",
+        "case_id": "external-sd-017",
+        "response": "```json\n{\n  \"service_domain\": \"sanitation_and_waste\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Mid-City City Heights\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not specified\",\n  \"service_identifier\": \"not specified\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"amount_inr\", \"service_identifier\"],\n  \"formal_summary\": \"Piles of trash have been dumped in a canyon in Mid-City City Heights, indicating a damaged infrastructure issue.\"\n}\n```",
+        "latency_seconds": 2.580725007750061,
+        "prompt_tokens": 319
+      },
+      {
+        "surface_id": "external-sd-018",
+        "case_id": "external-sd-018",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Encanto Neighborhoods\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not specified\",\n  \"service_identifier\": \"not specified\",\n  \"urgency\": \"routine\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\"],\n  \"formal_summary\": \"A microwave and trash were dumped in a shared community garden roundabout in Encanto Neighborhoods, causing damage to the infrastructure.\"\n}\n```",
+        "latency_seconds": 2.580725007750061,
+        "prompt_tokens": 322
+      },
+      {
+        "surface_id": "external-sd-019",
+        "case_id": "external-sd-019",
+        "response": "```json\n{\n  \"service_domain\": \"roads_and_streetlights\",\n  \"issue_type\": \"damaged_infrastructure\",\n  \"location\": \"Mid-City Normal Heights\",\n  \"event_date_or_time\": null,\n  \"amount_inr\": null,\n  \"service_identifier\": null,\n  \"urgency\": null,\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"There are large potholes on the road in Mid-City Normal Heights that require full street repaving.\"\n}\n```",
+        "latency_seconds": 2.580725007750061,
+        "prompt_tokens": 326
+      },
+      {
+        "surface_id": "external-sd-020",
+        "case_id": "external-sd-020",
+        "response": "```json\n{\n  \"service_domain\": \"public_transport\",\n  \"issue_type\": \"service_outage_or_non_delivery\",\n  \"location\": \"Pacific Beach\",\n  \"event_date_or_time\": \"not specified\",\n  \"amount_inr\": \"not specified\",\n  \"service_identifier\": \"not specified\",\n  \"urgency\": \"safety_critical\",\n  \"missing_information\": [\"exact_location\", \"date_or_time\", \"service_identifier\", \"amount\", \"supporting_evidence\", \"affected_person_or_group\"],\n  \"formal_summary\": \"An entire alley in Pacific Beach is flooded due to clogged drains, causing a service outage.\"\n}\n```",
+        "latency_seconds": 2.580725007750061,
+        "prompt_tokens": 323
+      }
+    ],
+    "public_method": "zero_shot",
+    "mlflow_run_id": "7af0f70ec0d949a09a4ac3c3b160cdc2"
+  },
+  "static_few_shot": {
+    "method": "external-transfer-static-few-shot",
+    "model_name": "HuggingFaceTB/SmolLM3-3B",
+    "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 256
+    },
+    "mean_latency_seconds": 2.1881769527500183,
+    "mean_prompt_tokens": 639.9,
+    "demonstration_count": 3,
+    "scores": {
+      "evaluation_version": "1.0",
+      "total_outputs": 20,
+      "strict": {
+        "json_parse_count": 19,
+        "invalid_json_count": 1,
+        "schema_invalid_count": 0,
+        "schema_valid_count": 19,
+        "schema_validity_rate": 0.95,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.6505376344086021,
+          "issue_type_macro_f1": 0.24074074074074073,
+          "urgency_macro_f1": 0.2298850574712644,
+          "missing_information_macro_f1": 0.0,
+          "location_normalized_match": 0.15,
+          "event_date_or_time_normalized_match": 0.0,
+          "amount_inr_exact_match": 0.95,
+          "service_identifier_exact_match": 0.0
+        },
+        "hallucinated_non_null_fields": {
+          "count": 54,
+          "predicted_non_null_count": 57,
+          "rate": 0.9473684210526315
+        }
+      },
+      "conditional_valid": {
+        "denominator": 19,
+        "field_metrics": {
+          "service_domain_macro_f1": 0.6838709677419355,
+          "issue_type_macro_f1": 0.25,
+          "urgency_macro_f1": 0.2298850574712644,
+          "missing_information_macro_f1": 0.0,
+          "location_normalized_match": 0.15789473684210525,
+          "event_date_or_time_normalized_match": 0.0,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 0.0
+        }
+      },
+      "repaired": {
+        "repairable_count": 1,
+        "repairable_json_rate": 0.05,
+        "schema_valid_count": 20,
+        "schema_validity_rate": 1.0,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.6505376344086021,
+          "issue_type_macro_f1": 0.24074074074074073,
+          "urgency_macro_f1": 0.2222222222222222,
+          "missing_information_macro_f1": 0.0,
+          "location_normalized_match": 0.2,
+          "event_date_or_time_normalized_match": 0.0,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 0.0
+        },
+        "hallucinated_non_null_fields": {
+          "count": 56,
+          "predicted_non_null_count": 60,
+          "rate": 0.9333333333333333
+        }
+      }
+    },
+    "outputs": [
+      {
+        "surface_id": "external-sd-001",
+        "case_id": "external-sd-001",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Otay Mesa-Nestor\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"streetlights outage\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Otay Mesa-Nestor, multiple streetlights are out. Residents report that the area is very dark and unsafe at night.\"}",
+        "latency_seconds": 1.897341808999954,
+        "prompt_tokens": 647
+      },
+      {
+        "surface_id": "external-sd-002",
+        "case_id": "external-sd-002",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Kearny Mesa sidewalk\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"sidewalk paving\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Kearny Mesa, a sidewalk needs to be paved.\"}",
+        "latency_seconds": 1.897341808999954,
+        "prompt_tokens": 632
+      },
+      {
+        "surface_id": "external-sd-003",
+        "case_id": "external-sd-003",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Clairemont Mesa park parking lot\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"parking lot lights\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Clairemont Mesa, parking lot lights are out in a park and a temporary path has no illumination.\"}",
+        "latency_seconds": 1.897341808999954,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "external-sd-004",
+        "case_id": "external-sd-004",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Southeastern San Diego park light towers\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"park light towers\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Southeastern San Diego, several park light towers are not turning on and create unsafe conditions during sports.\"}",
+        "latency_seconds": 1.897341808999954,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "external-sd-005",
+        "case_id": "external-sd-005",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Uptown sidewalk\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"crumbling sidewalk\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Uptown, a sidewalk is crumbling and raised.\"}",
+        "latency_seconds": 1.8563737169999968,
+        "prompt_tokens": 632
+      },
+      {
+        "surface_id": "external-sd-006",
+        "case_id": "external-sd-006",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Greater Golden Hill pedestrian right of way\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"lifted sidewalk\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Greater Golden Hill, a lifted sidewalk in the pedestrian right of way is a trip hazard, apparently due to a street tree.\"}",
+        "latency_seconds": 1.8563737169999968,
+        "prompt_tokens": 646
+      },
+      {
+        "surface_id": "external-sd-007",
+        "case_id": "external-sd-007",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Greater Golden Hill pedestrian right of way\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"broken sidewalk\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Greater Golden Hill, a broken sidewalk in the pedestrian right of way is a trip hazard.\"}",
+        "latency_seconds": 1.8563737169999968,
+        "prompt_tokens": 639
+      },
+      {
+        "surface_id": "external-sd-008",
+        "case_id": "external-sd-008",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"La Jolla sidewalk\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"sidewalk damage\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In La Jolla, tree roots have raised a sidewalk enough to create a hazard.\"}",
+        "latency_seconds": 1.8563737169999968,
+        "prompt_tokens": 637
+      },
+      {
+        "surface_id": "external-sd-009",
+        "case_id": "external-sd-009",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Torrey Hills sidewalk\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"sidewalk repair\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Torrey Hills, a sidewalk needs updated repair.\"}",
+        "latency_seconds": 1.9217880812500425,
+        "prompt_tokens": 631
+      },
+      {
+        "surface_id": "external-sd-010",
+        "case_id": "external-sd-010",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Scripps Miramar Ranch\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"crumbling sidewalk\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Scripps Miramar Ranch, a crumbling sidewalk over a storm drain is a trip hazard, with a marker placed there but the damage remaining for years.\"}",
+        "latency_seconds": 1.9217880812500425,
+        "prompt_tokens": 653
+      },
+      {
+        "surface_id": "external-sd-011",
+        "case_id": "external-sd-011",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Mid-City Kensington-Talmadge raised sidewalk\",\"event_date_or_time\":\"more than six months\",\"amount_inr\":null,\"service_identifier\":\"raised sidewalk\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Mid-City Kensington-Talmadge, a raised sidewalk has been dangerous for more than six months.\"}",
+        "latency_seconds": 1.9217880812500425,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "external-sd-012",
+        "case_id": "external-sd-012",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Uptown, damaged curb\",\"event_date_or_time\":\"since decades\",\"amount_inr\":null,\"service_identifier\":\"damaged curb\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Uptown, a damaged curb has caused improper drainage for decades.\"}",
+        "latency_seconds": 1.9217880812500425,
+        "prompt_tokens": 635
+      },
+      {
+        "surface_id": "external-sd-013",
+        "case_id": "external-sd-013",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Serra Mesa roadway\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"pipe protruding from roadway\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Serra Mesa, a pipe about five inches tall is sticking up from the roadway.\"}",
+        "latency_seconds": 3.3804772380001396,
+        "prompt_tokens": 638
+      },
+      {
+        "surface_id": "external-sd-014",
+        "case_id": "external-sd-014",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Mid-City Eastern Area sidewalk\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"filing cabinet\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Mid-City Eastern Area, a filing cabinet has been dumped on a sidewalk.\"}",
+        "latency_seconds": 3.3804772380001396,
+        "prompt_tokens": 637
+      },
+      {
+        "surface_id": "external-sd-015",
+        "case_id": "external-sd-015",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"other\",\"location\":\"University bus stop trash bin\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"trash bin at University bus stop\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In University, a bus stop trash bin is full and waste is piled beside it. The bin is not being emptied weekly.\"}",
+        "latency_seconds": 3.3804772380001396,
+        "prompt_tokens": 645
+      },
+      {
+        "surface_id": "external-sd-016",
+        "case_id": "external-sd-016",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"record_or_document_error\",\"location\":\"Southeastern San Diego\",\"event_date_or_time\":\"since three weeks ago\",\"amount_inr\":null,\"service_identifier\":\"green bin\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Southeastern San Diego, a green bin filled with regular garbage has been unattended for three weeks.\"} \n\n*Note: The service_domain \"welfare_or_document_service\" might not be the most accurate for this issue. A more appropriate service_domain could be \"sanitation_and_waste\" or \"public_transport\" if the issue is related to transportation of waste. However, based on the given information, the above response is constructed accordingly. For a more accurate categorization, the issue might need to be rephrased or more context provided.*",
+        "latency_seconds": 3.3804772380001396,
+        "prompt_tokens": 641
+      },
+      {
+        "surface_id": "external-sd-017",
+        "case_id": "external-sd-017",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Mid-City City Heights canyon\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"trash dump\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Mid-City City Heights, piles of trash have been dumped in a canyon.\"}",
+        "latency_seconds": 1.8849039184999583,
+        "prompt_tokens": 637
+      },
+      {
+        "surface_id": "external-sd-018",
+        "case_id": "external-sd-018",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Encanto Neighborhoods shared community garden roundabout\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"microwave and trash in roundabout\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Encanto Neighborhoods, someone dumped a microwave and trash in a shared community garden roundabout.\"}",
+        "latency_seconds": 1.8849039184999583,
+        "prompt_tokens": 640
+      },
+      {
+        "surface_id": "external-sd-019",
+        "case_id": "external-sd-019",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Mid-City Normal Heights\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"road repair\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Mid-City Normal Heights, a road has large potholes and the full street needs to be repaved.\"}",
+        "latency_seconds": 1.8849039184999583,
+        "prompt_tokens": 644
+      },
+      {
+        "surface_id": "external-sd-020",
+        "case_id": "external-sd-020",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Pacific Beach alley\",\"event_date_or_time\":\"now\",\"amount_inr\":null,\"service_identifier\":\"drain clog\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Pacific Beach, an entire alley is flooded because its drains are clogged and no water is draining.\"}",
+        "latency_seconds": 1.8849039184999583,
+        "prompt_tokens": 641
+      }
+    ],
+    "public_method": "static_few_shot",
+    "mlflow_run_id": "09b4f55b4bb2483e864a08e743966838"
+  },
+  "retrieved_few_shot": {
+    "method": "external-transfer-retrieved-few-shot",
+    "model_name": "HuggingFaceTB/SmolLM3-3B",
+    "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 256
+    },
+    "mean_latency_seconds": 2.4092920767000123,
+    "mean_prompt_tokens": 660.75,
+    "demonstration_count": 3,
+    "scores": {
+      "evaluation_version": "1.0",
+      "total_outputs": 20,
+      "strict": {
+        "json_parse_count": 19,
+        "invalid_json_count": 1,
+        "schema_invalid_count": 0,
+        "schema_valid_count": 19,
+        "schema_validity_rate": 0.95,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.7684729064039408,
+          "issue_type_macro_f1": 0.3087719298245614,
+          "urgency_macro_f1": 0.41358024691358025,
+          "missing_information_macro_f1": 0.7096774193548387,
+          "location_normalized_match": 0.9,
+          "event_date_or_time_normalized_match": 0.7,
+          "amount_inr_exact_match": 0.95,
+          "service_identifier_exact_match": 0.8
+        },
+        "hallucinated_non_null_fields": {
+          "count": 7,
+          "predicted_non_null_count": 28,
+          "rate": 0.25
+        }
+      },
+      "conditional_valid": {
+        "denominator": 19,
+        "field_metrics": {
+          "service_domain_macro_f1": 0.7857142857142857,
+          "issue_type_macro_f1": 0.3087719298245614,
+          "urgency_macro_f1": 0.41358024691358025,
+          "missing_information_macro_f1": 0.7333333333333333,
+          "location_normalized_match": 0.9473684210526315,
+          "event_date_or_time_normalized_match": 0.7368421052631579,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 0.8421052631578947
+        }
+      },
+      "repaired": {
+        "repairable_count": 1,
+        "repairable_json_rate": 0.05,
+        "schema_valid_count": 20,
+        "schema_validity_rate": 1.0,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.7684729064039408,
+          "issue_type_macro_f1": 0.2966507177033493,
+          "urgency_macro_f1": 0.3802469135802469,
+          "missing_information_macro_f1": 0.75,
+          "location_normalized_match": 0.95,
+          "event_date_or_time_normalized_match": 0.7,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 0.85
+        },
+        "hallucinated_non_null_fields": {
+          "count": 7,
+          "predicted_non_null_count": 29,
+          "rate": 0.2413793103448276
+        }
+      }
+    },
+    "outputs": [
+      {
+        "surface_id": "external-sd-001",
+        "case_id": "external-sd-001",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Otay Mesa-Nestor\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports multiple streetlights out in Otay Mesa-Nestor, causing unsafe nighttime conditions.\"} \n\n*Note: The event_date_or_time field is left as null because the exact time of the outage is not specified in the query. The service_domain is set to \"public_transport\" because streetlights are typically associated with public transportation infrastructure, but this may vary depending on the specific context. If the streetlights are part of a public lighting system, this would be a more accurate classification. If they are part of a public transportation system, such as bus stops, then \"public_transport\" would be appropriate. However, if they are part of a separate public lighting system, then \"roads_and_streetlights\" would be more accurate. Given the context, \"roads_and_streetlights\" would be a more precise classification. \n\nCorrected JSON:\n\n{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Otay Mesa-N",
+        "latency_seconds": 4.862605759750068,
+        "prompt_tokens": 665
+      },
+      {
+        "surface_id": "external-sd-002",
+        "case_id": "external-sd-002",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Kearny Mesa\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a damaged sidewalk in Kearny Mesa.\"}",
+        "latency_seconds": 4.862605759750068,
+        "prompt_tokens": 681
+      },
+      {
+        "surface_id": "external-sd-003",
+        "case_id": "external-sd-003",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Clairemont Mesa, park and temporary path\",\"event_date_or_time\":\"for unspecified duration\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\",\"date_or_time\"],\"formal_summary\":\"Parking lot lights are out in a park and a temporary path in Clairemont Mesa.\"}",
+        "latency_seconds": 4.862605759750068,
+        "prompt_tokens": 679
+      },
+      {
+        "surface_id": "external-sd-004",
+        "case_id": "external-sd-004",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Southeastern San Diego\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports non-functional park light towers in Southeastern San Diego, causing unsafe conditions during sports.\"}",
+        "latency_seconds": 4.862605759750068,
+        "prompt_tokens": 671
+      },
+      {
+        "surface_id": "external-sd-005",
+        "case_id": "external-sd-005",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Uptown\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a crumbling and raised sidewalk in Uptown.\"}",
+        "latency_seconds": 1.8117473690001589,
+        "prompt_tokens": 674
+      },
+      {
+        "surface_id": "external-sd-006",
+        "case_id": "external-sd-006",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Greater Golden Hill\",\"event_date_or_time\":\"apparently due to a street tree\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a damaged sidewalk in the pedestrian right of way in Greater Golden Hill, causing a trip hazard.\"}",
+        "latency_seconds": 1.8117473690001589,
+        "prompt_tokens": 657
+      },
+      {
+        "surface_id": "external-sd-007",
+        "case_id": "external-sd-007",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Greater Golden Hill\",\"event_date_or_time\":\"right now\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A broken sidewalk in the pedestrian right of way in Greater Golden Hill is a trip hazard right now.\"}",
+        "latency_seconds": 1.8117473690001589,
+        "prompt_tokens": 635
+      },
+      {
+        "surface_id": "external-sd-008",
+        "case_id": "external-sd-008",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"La Jolla\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"Tree roots have raised a sidewalk in La Jolla, creating a hazard.\"}",
+        "latency_seconds": 1.8117473690001589,
+        "prompt_tokens": 651
+      },
+      {
+        "surface_id": "external-sd-009",
+        "case_id": "external-sd-009",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Torrey Hills\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a need for updated repair of a sidewalk in Torrey Hills.\"}",
+        "latency_seconds": 1.8866362172498157,
+        "prompt_tokens": 646
+      },
+      {
+        "surface_id": "external-sd-010",
+        "case_id": "external-sd-010",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Scripps Miramar Ranch\",\"event_date_or_time\":\"for years\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"In Scripps Miramar Ranch, a crumbling sidewalk over a storm drain is a trip hazard, with the damage remaining for years.\"}",
+        "latency_seconds": 1.8866362172498157,
+        "prompt_tokens": 665
+      },
+      {
+        "surface_id": "external-sd-011",
+        "case_id": "external-sd-011",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Mid-City Kensington-Talmadge\",\"event_date_or_time\":\"for more than six months\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a raised sidewalk that has been dangerous for over six months in Mid-City Kensington-Talmadge.\"}",
+        "latency_seconds": 1.8866362172498157,
+        "prompt_tokens": 688
+      },
+      {
+        "surface_id": "external-sd-012",
+        "case_id": "external-sd-012",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Uptown\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The complaint reports a damaged curb in Uptown causing improper drainage for decades.\"}",
+        "latency_seconds": 1.8866362172498157,
+        "prompt_tokens": 668
+      },
+      {
+        "surface_id": "external-sd-013",
+        "case_id": "external-sd-013",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Serra Mesa\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The complaint reports a damaged pipe sticking up from the roadway in Serra Mesa.\"}",
+        "latency_seconds": 1.7934828682500665,
+        "prompt_tokens": 667
+      },
+      {
+        "surface_id": "external-sd-014",
+        "case_id": "external-sd-014",
+        "response": "{\"service_domain\":\"welfare_or_document_service\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Mid-City Eastern Area\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"filing cabinet\",\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"A filing cabinet has been dumped on a sidewalk in Mid-City Eastern Area.\"}",
+        "latency_seconds": 1.7934828682500665,
+        "prompt_tokens": 623
+      },
+      {
+        "surface_id": "external-sd-015",
+        "case_id": "external-sd-015",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"University\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a full trash bin at a bus stop in University, not being emptied weekly.\"}",
+        "latency_seconds": 1.7934828682500665,
+        "prompt_tokens": 673
+      },
+      {
+        "surface_id": "external-sd-016",
+        "case_id": "external-sd-016",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Southeastern San Diego\",\"event_date_or_time\":\"for three weeks\",\"amount_inr\":null,\"service_identifier\":\"green_bin\",\"urgency\":\"time_sensitive\",\"missing_information\":[\"none\"],\"formal_summary\":\"A green bin filled with regular garbage has been unattended for three weeks in Southeastern San Diego.\"}",
+        "latency_seconds": 1.7934828682500665,
+        "prompt_tokens": 646
+      },
+      {
+        "surface_id": "external-sd-017",
+        "case_id": "external-sd-017",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Mid-City City Heights\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":\"trash piles\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"Piles of trash have been dumped in a canyon in Mid-City City Heights.\"}",
+        "latency_seconds": 1.691988169249953,
+        "prompt_tokens": 654
+      },
+      {
+        "surface_id": "external-sd-018",
+        "case_id": "external-sd-018",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"staff_conduct\",\"location\":\"Encanto Neighborhoods\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"none\"],\"formal_summary\":\"The complaint reports that a microwave and trash were dumped in a shared community garden roundabout in Encanto Neighborhoods.\"}",
+        "latency_seconds": 1.691988169249953,
+        "prompt_tokens": 646
+      },
+      {
+        "surface_id": "external-sd-019",
+        "case_id": "external-sd-019",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Mid-City Normal Heights\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports large potholes on the road in Mid-City Normal Heights.\"}",
+        "latency_seconds": 1.691988169249953,
+        "prompt_tokens": 671
+      },
+      {
+        "surface_id": "external-sd-020",
+        "case_id": "external-sd-020",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Pacific Beach\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a clogged drain causing a water overflow in an entire alley in Pacific Beach.\"}",
+        "latency_seconds": 1.691988169249953,
+        "prompt_tokens": 655
+      }
+    ],
+    "retrieved_case_ids": {
+      "external-sd-001": [
+        "public-train-017",
+        "public-train-003",
+        "public-train-002"
+      ],
+      "external-sd-002": [
+        "public-train-012",
+        "public-train-001",
+        "public-train-025"
+      ],
+      "external-sd-003": [
+        "canonical-042",
+        "public-train-015",
+        "canonical-070"
+      ],
+      "external-sd-004": [
+        "public-train-024",
+        "public-train-015",
+        "public-train-012"
+      ],
+      "external-sd-005": [
+        "public-train-026",
+        "public-train-022",
+        "public-train-036"
+      ],
+      "external-sd-006": [
+        "public-train-035",
+        "canonical-115",
+        "public-train-017"
+      ],
+      "external-sd-007": [
+        "canonical-115",
+        "public-train-035",
+        "canonical-004"
+      ],
+      "external-sd-008": [
+        "public-train-001",
+        "canonical-115",
+        "canonical-049"
+      ],
+      "external-sd-009": [
+        "canonical-040",
+        "public-train-012",
+        "public-train-025"
+      ],
+      "external-sd-010": [
+        "canonical-092",
+        "canonical-055",
+        "canonical-091"
+      ],
+      "external-sd-011": [
+        "public-train-005",
+        "public-train-023",
+        "public-train-018"
+      ],
+      "external-sd-012": [
+        "public-train-026",
+        "canonical-031",
+        "public-train-006"
+      ],
+      "external-sd-013": [
+        "public-train-037",
+        "public-train-033",
+        "canonical-018"
+      ],
+      "external-sd-014": [
+        "canonical-085",
+        "canonical-034",
+        "public-train-035"
+      ],
+      "external-sd-015": [
+        "public-train-027",
+        "canonical-087",
+        "public-train-022"
+      ],
+      "external-sd-016": [
+        "canonical-085",
+        "public-train-023",
+        "canonical-037"
+      ],
+      "external-sd-017": [
+        "canonical-034",
+        "canonical-037",
+        "public-train-001"
+      ],
+      "external-sd-018": [
+        "public-train-011",
+        "canonical-064",
+        "public-train-036"
+      ],
+      "external-sd-019": [
+        "public-train-012",
+        "public-train-025",
+        "public-train-017"
+      ],
+      "external-sd-020": [
+        "public-train-037",
+        "public-train-026",
+        "public-train-034"
+      ]
+    },
+    "mlflow_run_id": "afb8c9d6fdc74723ad49a210d734bec8"
+  },
+  "qlora": {
+    "method": "external-transfer-qlora",
+    "model_name": "HuggingFaceTB/SmolLM3-3B",
+    "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 256
+    },
+    "mean_latency_seconds": 2.9822241584000038,
+    "mean_prompt_tokens": 321.9,
+    "demonstration_count": 0,
+    "scores": {
+      "evaluation_version": "1.0",
+      "total_outputs": 20,
+      "strict": {
+        "json_parse_count": 20,
+        "invalid_json_count": 0,
+        "schema_invalid_count": 0,
+        "schema_valid_count": 20,
+        "schema_validity_rate": 1.0,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.8160919540229885,
+          "issue_type_macro_f1": 0.4166666666666667,
+          "urgency_macro_f1": 0.4382284382284382,
+          "missing_information_macro_f1": 1.0,
+          "location_normalized_match": 0.9,
+          "event_date_or_time_normalized_match": 0.85,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 0.95
+        },
+        "hallucinated_non_null_fields": {
+          "count": 3,
+          "predicted_non_null_count": 24,
+          "rate": 0.125
+        }
+      },
+      "conditional_valid": {
+        "denominator": 20,
+        "field_metrics": {
+          "service_domain_macro_f1": 0.8160919540229885,
+          "issue_type_macro_f1": 0.4166666666666667,
+          "urgency_macro_f1": 0.4382284382284382,
+          "missing_information_macro_f1": 1.0,
+          "location_normalized_match": 0.9,
+          "event_date_or_time_normalized_match": 0.85,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 0.95
+        }
+      },
+      "repaired": {
+        "repairable_count": 0,
+        "repairable_json_rate": 0.0,
+        "schema_valid_count": 20,
+        "schema_validity_rate": 1.0,
+        "end_to_end_field_metrics": {
+          "service_domain_macro_f1": 0.8160919540229885,
+          "issue_type_macro_f1": 0.4166666666666667,
+          "urgency_macro_f1": 0.4382284382284382,
+          "missing_information_macro_f1": 1.0,
+          "location_normalized_match": 0.9,
+          "event_date_or_time_normalized_match": 0.85,
+          "amount_inr_exact_match": 1.0,
+          "service_identifier_exact_match": 0.95
+        },
+        "hallucinated_non_null_fields": {
+          "count": 3,
+          "predicted_non_null_count": 24,
+          "rate": 0.125
+        }
+      }
+    },
+    "outputs": [
+      {
+        "surface_id": "external-sd-001",
+        "case_id": "external-sd-001",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Otay Mesa-Nestor\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"time_sensitive\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports multiple streetlights out in Otay Mesa-Nestor, causing a dark and unsafe area at night.\"}",
+        "latency_seconds": 3.0903108929999235,
+        "prompt_tokens": 329
+      },
+      {
+        "surface_id": "external-sd-002",
+        "case_id": "external-sd-002",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Kearny Mesa\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a sidewalk needing to be paved in Kearny Mesa.\"}",
+        "latency_seconds": 3.0903108929999235,
+        "prompt_tokens": 314
+      },
+      {
+        "surface_id": "external-sd-003",
+        "case_id": "external-sd-003",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"service_outage_or_non_delivery\",\"location\":\"Clairemont Mesa parking lot\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports out-of-service parking lot lights and a lack of illumination on a temporary path in Clairemont Mesa.\"}",
+        "latency_seconds": 3.0903108929999235,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "external-sd-004",
+        "case_id": "external-sd-004",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"Southeastern San Diego\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports malfunctioning park light towers causing unsafe conditions during sports in Southeastern San Diego.\"}",
+        "latency_seconds": 3.0903108929999235,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "external-sd-005",
+        "case_id": "external-sd-005",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Uptown\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a crumbling and raised sidewalk in Uptown.\"}",
+        "latency_seconds": 2.8679251045000456,
+        "prompt_tokens": 314
+      },
+      {
+        "surface_id": "external-sd-006",
+        "case_id": "external-sd-006",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"Greater Golden Hill\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a trip hazard from a lifted sidewalk and a street tree in Greater Golden Hill.\"}",
+        "latency_seconds": 2.8679251045000456,
+        "prompt_tokens": 328
+      },
+      {
+        "surface_id": "external-sd-007",
+        "case_id": "external-sd-007",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Greater Golden Hill\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a broken sidewalk in the pedestrian right of way in Greater Golden Hill.\"}",
+        "latency_seconds": 2.8679251045000456,
+        "prompt_tokens": 321
+      },
+      {
+        "surface_id": "external-sd-008",
+        "case_id": "external-sd-008",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"La Jolla\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a sidewalk hazard caused by raised tree roots in La Jolla.\"}",
+        "latency_seconds": 2.8679251045000456,
+        "prompt_tokens": 319
+      },
+      {
+        "surface_id": "external-sd-009",
+        "case_id": "external-sd-009",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Torrey Hills\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a damaged sidewalk in Torrey Hills.\"}",
+        "latency_seconds": 3.0179007267499856,
+        "prompt_tokens": 313
+      },
+      {
+        "surface_id": "external-sd-010",
+        "case_id": "external-sd-010",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Scripps Miramar Ranch\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a crumbling sidewalk over a storm drain and a missing marker in Scripps Miramar Ranch.\"}",
+        "latency_seconds": 3.0179007267499856,
+        "prompt_tokens": 335
+      },
+      {
+        "surface_id": "external-sd-011",
+        "case_id": "external-sd-011",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"safety_or_health_hazard\",\"location\":\"Mid-City Kensington-Talmadge\",\"event_date_or_time\":\"for more than six months\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"safety_critical\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a dangerous raised sidewalk in Mid-City Kensington-Talmadge.\"}",
+        "latency_seconds": 3.0179007267499856,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "external-sd-012",
+        "case_id": "external-sd-012",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Uptown\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a damaged curb causing improper drainage in Uptown.\"}",
+        "latency_seconds": 3.0179007267499856,
+        "prompt_tokens": 317
+      },
+      {
+        "surface_id": "external-sd-013",
+        "case_id": "external-sd-013",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Serra Mesa\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a five-inch pipe protruding from the roadway in Serra Mesa.\"}",
+        "latency_seconds": 3.0488491542500924,
+        "prompt_tokens": 320
+      },
+      {
+        "surface_id": "external-sd-014",
+        "case_id": "external-sd-014",
+        "response": "{\"service_domain\":\"other\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Mid-City Eastern Area\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a dumped filing cabinet on a sidewalk in Mid-City Eastern Area.\"}",
+        "latency_seconds": 3.0488491542500924,
+        "prompt_tokens": 319
+      },
+      {
+        "surface_id": "external-sd-015",
+        "case_id": "external-sd-015",
+        "response": "{\"service_domain\":\"public_transport\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"University bus stop\",\"event_date_or_time\":\"weekly\",\"amount_inr\":null,\"service_identifier\":\"trash bin\",\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a full trash bin and weekly non-emptying at the University bus stop.\"}",
+        "latency_seconds": 3.0488491542500924,
+        "prompt_tokens": 327
+      },
+      {
+        "surface_id": "external-sd-016",
+        "case_id": "external-sd-016",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Southeastern San Diego\",\"event_date_or_time\":\"for three weeks\",\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a green bin filled with regular garbage that has been unattended for three weeks in Southeastern San Diego.\"}",
+        "latency_seconds": 3.0488491542500924,
+        "prompt_tokens": 323
+      },
+      {
+        "surface_id": "external-sd-017",
+        "case_id": "external-sd-017",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Mid-City City Heights\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports piles of trash dumped in a canyon in Mid-City City Heights.\"}",
+        "latency_seconds": 2.8861349134999728,
+        "prompt_tokens": 319
+      },
+      {
+        "surface_id": "external-sd-018",
+        "case_id": "external-sd-018",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Encanto Neighborhoods\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a microwave and trash dumped in a community garden roundabout in Encanto Neighborhoods.\"}",
+        "latency_seconds": 2.8861349134999728,
+        "prompt_tokens": 322
+      },
+      {
+        "surface_id": "external-sd-019",
+        "case_id": "external-sd-019",
+        "response": "{\"service_domain\":\"roads_and_streetlights\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Mid-City Normal Heights\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports large potholes and a full street needing repaving in Mid-City Normal Heights.\"}",
+        "latency_seconds": 2.8861349134999728,
+        "prompt_tokens": 326
+      },
+      {
+        "surface_id": "external-sd-020",
+        "case_id": "external-sd-020",
+        "response": "{\"service_domain\":\"sanitation_and_waste\",\"issue_type\":\"damaged_infrastructure\",\"location\":\"Pacific Beach\",\"event_date_or_time\":null,\"amount_inr\":null,\"service_identifier\":null,\"urgency\":\"routine\",\"missing_information\":[\"exact_location\"],\"formal_summary\":\"The complaint reports a flooded alley due to clogged drains in Pacific Beach.\"}",
+        "latency_seconds": 2.8861349134999728,
+        "prompt_tokens": 323
+      }
+    ],
+    "adapter_epochs": 2,
+    "adapter_path": "/kaggle/working/civicstruct_final_output/final_adapter",
+    "mlflow_run_id": "222326eb6a6c43b482f7d6bf89d29a36"
+  }
+}

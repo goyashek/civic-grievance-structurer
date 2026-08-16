@@ -1,0 +1,77 @@
+{
+  "evaluation_version": "2.0",
+  "metadata_provenance": "reconstructed from saved artifacts after the frozen run",
+  "source_commits": {
+    "frozen_run_inputs": "3e91316",
+    "evaluation_v2": "b99fbc28814f2f3dec02446257c1f10bd54c4b63",
+    "metadata_backfill": "b99fbc28814f2f3dec02446257c1f10bd54c4b63"
+  },
+  "model": {
+    "name": "HuggingFaceTB/SmolLM3-3B",
+    "revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+    "adapter_uri": "local civicstruct_final_results.zip#final_adapter/adapter_model.safetensors",
+    "adapter_sha256": "63934999afe7905ba1441f334b45ec31dd26e44fab5a03fa3c8ff82d611618a5",
+    "adapter_note": "The adapter is not required to regenerate frozen metrics."
+  },
+  "dataset": {
+    "version": "frozen_full_v2",
+    "schema_version": "1.0",
+    "evaluation_contract_version": "2.0"
+  },
+  "configuration": {
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 256
+    },
+    "retrieval": "TF-IDF over training rows only",
+    "lora": {
+      "rank": 16,
+      "alpha": 32,
+      "dropout": 0.05
+    },
+    "training": {
+      "epochs": 2,
+      "learning_rate": 0.0002,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "seed": 42,
+      "max_sequence_length": 768,
+      "quantization": "4-bit NF4, float16 compute"
+    }
+  },
+  "historical_mlflow_run_ids": {
+    "training": "9a8c145e9a7d48b5b94fdb1c0eb0894c",
+    "frozen_predictions": {
+      "internal_test": {
+        "deterministic_rules": "c70677beecdf4c5e89904201aecddc1d",
+        "zero_shot": "9ea1a69bc18d4ee4acdc62f260d64b6e",
+        "static_few_shot": "1dbc85bcadae495a9a51e06836f9b5a2",
+        "retrieved_few_shot": "091fb8321d984de88b8937653573fbd0",
+        "qlora": "b553985289dd4f59a3dc14fd41880da5"
+      },
+      "external_transfer": {
+        "deterministic_rules": "734cce0be3ce45e0a79852fe01cb41a1",
+        "zero_shot": "7af0f70ec0d949a09a4ac3c3b160cdc2",
+        "static_few_shot": "09b4f55b4bb2483e864a08e743966838",
+        "retrieved_few_shot": "afb8c9d6fdc74723ad49a210d734bec8",
+        "qlora": "222326eb6a6c43b482f7d6bf89d29a36"
+      }
+    }
+  },
+  "files": {
+    "data/dataset_manifest.json": "0847ee9d3b0ac34a978442abe088683d028e2cd982c38635a76a518ff2894d49",
+    "data/test_cases.jsonl": "2ef7c0585a7ac1607e1dfd6dcc3d66937ec353025d8325c52329e50003797229",
+    "data/external_civic_eval.jsonl": "b726f980720989edeafdccbf8a4aabd8742f14a1be5a66cff419e7b6a6e2bf0a",
+    "data/final_results/frozen_system_manifest.json": "f43b7b121563ff21c451e663b2f74cd7c6bdd6b1121e4f6796ed45f02368b28c",
+    "data/final_results/revision_training_metadata.json": "273edbfcc010404577e21e39afea1b79658bd1021c72d99c5a4bc1a1d2ba902c",
+    "data/final_results/ablation_results.json": "e13feaea8d85da487d3b0b19b916059ccd4612db8b8867fd4b4195d91cb7fde4",
+    "data/final_results/final_metrics.json": "0126aaa3c6869bc53279b313bb327374ed7084cd6e0ddaa5d79d55c130a05cee",
+    "data/final_results/pairwise_comparisons.json": "9533642a698b27f6c1d1e6b08d666bdfeaad103744e0aba3bd4f04fa76955bfd",
+    "data/final_results/factuality_breakdown.json": "28bd7ba3ebe4b4bf5a9b5c4eb1750dfed87180b91de531b2792c6ad3b999c8e5",
+    "data/final_results/summary_review.json": "f89ac059dac0ac8d29ec59ed9a101a8869162f672217c288ae9b99e0d780a42a",
+    "data/final_results/environment.json": "91700f653a012ac503515ec80278ffff2631eb3cac740ef0e9fc1a584424041b",
+    "data/final_results/internal_test_results.json": "322b7ac2445783907fda9ff4ff060e9e9c15b4463f710b84974d59738ff972a8",
+    "data/final_results/external_transfer_results.json": "54fc61223a3e39aa06ac38e167f85f589a6b6618751b40728f27d5af0e661832"
+  },
+  "dvc_lock_sha256": "a9ddf0f1c5792d9418420f1eb6afff25eb45ce5c386f73d0e5aabdf74df5784d"
+}

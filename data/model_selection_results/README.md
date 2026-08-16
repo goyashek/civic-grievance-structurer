@@ -13,4 +13,4 @@ and summary-review records are in
 record of the earlier model choice, so its scores should not be read as final
 quality estimates.
 
-From the repository root, open the saved experiment with `mlflow ui --backend-store-uri data/model_selection_results/mlruns`.
+From the repository root, open the saved experiment with `MLFLOW_ALLOW_FILE_STORE=true mlflow ui --backend-store-uri data/model_selection_results/mlruns`.

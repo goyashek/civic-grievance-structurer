@@ -1,0 +1,58 @@
+schema: '2.0'
+stages:
+  verify_frozen_evaluation:
+    cmd: python -m src.check_reproducibility
+    deps:
+    - path: data/dataset_manifest.json
+      hash: md5
+      md5: b3acb0fb0b732842e95cc231ce9d4e19
+      size: 1332
+    - path: data/external_civic_eval.jsonl
+      hash: md5
+      md5: dceb14adcd9e9a321a26c771c489cd7f
+      size: 14414
+    - path: data/final_results/external_transfer_results.json
+      hash: md5
+      md5: 03c4e7184e09db4c2af736417d1f3f3e
+      size: 77424
+    - path: data/final_results/frozen_system_manifest.json
+      hash: md5
+      md5: 8801d91e55c2f24da126606e6b3307ac
+      size: 947
+    - path: data/final_results/internal_test_results.json
+      hash: md5
+      md5: 4f9c484537df78f1e12e142ad3ba653f
+      size: 180907
+    - path: data/final_results/summary_review.json
+      hash: md5
+      md5: 89a98bdc0236f97773b84dc2baea8b4a
+      size: 8571
+    - path: data/test_cases.jsonl
+      hash: md5
+      md5: 880daa33f52e233163cb31309fe26960
+      size: 33098
+    - path: src/check_reproducibility.py
+      hash: md5
+      md5: 40c16448904cb15c64b99740e9093d7c
+      size: 732
+    - path: src/evaluate.py
+      hash: md5
+      md5: ddeb10fff56e8a7edc11330db280bf6f
+      size: 10264
+    - path: src/report_final.py
+      hash: md5
+      md5: 8db55435a12b5c5b9c5393a5e2e196c9
+      size: 13151
+    - path: src/report_validation.py
+      hash: md5
+      md5: 48ff43442b5c432c94c58bedcd702ba0
+      size: 8429
+    - path: src/schema.py
+      hash: md5
+      md5: b2d806c346e57b8e6bbbe17128ec64b9
+      size: 3567
+    outs:
+    - path: data/reproducibility_results/dvc_report_check.json
+      hash: md5
+      md5: 42955f93c0017d40c14673881d018f2e
+      size: 412

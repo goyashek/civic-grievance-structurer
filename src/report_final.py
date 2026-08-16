@@ -2,7 +2,6 @@
 
 import json
 import random
-import zipfile
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
@@ -13,7 +12,10 @@ from .report_validation import wilson_interval
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS_DIR = ROOT / "data/final_results"
-ARCHIVE = RESULTS_DIR / "civicstruct_final_results.zip"
+RUN_PATHS = {
+    "internal_test": RESULTS_DIR / "internal_test_results.json",
+    "external_transfer": RESULTS_DIR / "external_transfer_results.json",
+}
 REVIEW_PATH = RESULTS_DIR / "summary_review.json"
 METRICS_PATH = RESULTS_DIR / "final_metrics.json"
 V1_METRICS_PATH = RESULTS_DIR / "evaluation_v1_metrics.json"
@@ -40,6 +42,12 @@ PAIRWISE_METRICS = (
 )
 BOOTSTRAP_ITERATIONS = 2_000
 BOOTSTRAP_SEED = 42
+INTERVAL_METRICS = (
+    "service_domain_macro_f1",
+    "issue_type_macro_f1",
+    "missing_information_macro_f1",
+    "exact_factual_field_mismatch_rate",
+)
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -107,7 +115,7 @@ def confidence_intervals(rows: list[dict], runs: dict[str, dict]) -> dict[str, d
                 "method": "95 percent Wilson interval",
             }
         }
-        for metric in point.keys() - {"schema_validity_rate"}:
+        for metric in INTERVAL_METRICS:
             values = samples[name][metric]
             report[name][metric] = {
                 "point": point[metric],
@@ -215,11 +223,10 @@ def review_metrics(review: dict) -> dict:
 
 
 def load_and_verify() -> tuple[dict[str, dict], dict[str, list[dict]]]:
-    with zipfile.ZipFile(ARCHIVE) as archive:
-        runs = {
-            "internal_test": json.loads(archive.read("internal_test_results.json")),
-            "external_transfer": json.loads(archive.read("external_transfer_results.json")),
-        }
+    runs = {
+        split: json.loads(path.read_text(encoding="utf-8"))
+        for split, path in RUN_PATHS.items()
+    }
     rows = {
         "internal_test": load_jsonl(ROOT / "data/test_cases.jsonl"),
         "external_transfer": load_jsonl(ROOT / "data/external_civic_eval.jsonl"),

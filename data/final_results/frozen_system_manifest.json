@@ -1,0 +1,25 @@
+{
+  "model_name": "HuggingFaceTB/SmolLM3-3B",
+  "model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+  "dataset_version": "frozen_full_v2",
+  "training_rows": 160,
+  "validation_rows": 50,
+  "test_rows": 50,
+  "external_rows": 20,
+  "epochs": 2,
+  "seed": 42,
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 256
+  },
+  "demo_count": 3,
+  "retrieval": "TF-IDF over training rows only",
+  "data_hashes": {
+    "data/surface_variants.jsonl": "17cd64671be4af5d1b5c52a5927996fa2f793151e7483824c955f1983fccccda",
+    "data/public_training_examples.jsonl": "c86cfbca59d33f76e99b665008524282e56aa062c2ece15bbbfee3d042f3471a",
+    "data/test_cases.jsonl": "2ef7c0585a7ac1607e1dfd6dcc3d66937ec353025d8325c52329e50003797229",
+    "data/external_civic_eval.jsonl": "b726f980720989edeafdccbf8a4aabd8742f14a1be5a66cff419e7b6a6e2bf0a"
+  },
+  "adapter_path": "/kaggle/working/civicstruct_final_output/final_adapter",
+  "test_loaded": true
+}

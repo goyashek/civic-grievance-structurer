@@ -7,12 +7,17 @@ v2 files correct the macro-F1 taxonomy, recompute uncertainty, and add paired
 comparisons and a deterministic factuality breakdown without changing any
 saved prediction.
 
-Recompute all ten system evaluations from the raw responses and rebuild the
-interval report from the repository root with:
+Recompute all ten system evaluations from the checked raw responses and rebuild
+the interval report from the repository root with:
 
 ```bash
 python3 -m src.report_final
 ```
+
+The two raw result files, frozen-system manifest, training metadata, ablation,
+environment record, and Evaluation v2 manifest are small enough to stay in
+Git. The local Kaggle ZIP still holds the adapter and is not needed for this
+report command.
 
 Schema validity and rubric pass rates use 95 percent Wilson intervals. The
 field metrics and paired system differences use percentile bootstrap intervals

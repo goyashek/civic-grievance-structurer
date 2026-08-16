@@ -1,0 +1,18 @@
+stages:
+  verify_frozen_evaluation:
+    cmd: python -m src.check_reproducibility
+    deps:
+      - src/evaluate.py
+      - src/check_reproducibility.py
+      - src/report_final.py
+      - src/report_validation.py
+      - src/schema.py
+      - data/dataset_manifest.json
+      - data/test_cases.jsonl
+      - data/external_civic_eval.jsonl
+      - data/final_results/frozen_system_manifest.json
+      - data/final_results/internal_test_results.json
+      - data/final_results/external_transfer_results.json
+      - data/final_results/summary_review.json
+    outs:
+      - data/reproducibility_results/dvc_report_check.json

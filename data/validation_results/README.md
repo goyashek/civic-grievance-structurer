@@ -146,7 +146,7 @@ reload comparison. `validation_failures.json` has the per-row failure records.
 
 `mlruns/` is the MLflow file store for the six retained runs: four baselines, the
 training run, and the adapter validation run. Open it with
-`mlflow ui --backend-store-uri data/validation_results/mlruns`. The Kaggle session
+`MLFLOW_ALLOW_FILE_STORE=true mlflow ui --backend-store-uri data/validation_results/mlruns`. The Kaggle session
 logged the baseline cell three times while I was fixing later cells, so I kept the
 pass that the saved JSON files reference and dropped the two identical earlier
 passes and one aborted training run. Scores were not touched.

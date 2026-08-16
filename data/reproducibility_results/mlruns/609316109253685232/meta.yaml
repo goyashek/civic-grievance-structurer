@@ -1,0 +1,9 @@
+artifact_location: file:///Users/abhigoyal/Documents/Acadss/Data%20Science/Projects/civic-grievance-structurer/data/reproducibility_results/mlruns/609316109253685232
+creation_time: 1786821102818
+effective_trace_archival_retention: null
+experiment_id: '609316109253685232'
+last_update_time: 1786821102818
+lifecycle_stage: active
+name: civicstruct-metadata-backfill
+trace_location: null
+workspace: default

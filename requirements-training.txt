@@ -1,0 +1,12 @@
+# Frozen Kaggle run: Python 3.12.13 on a Tesla T4.
+torch==2.10.0+cu128
+transformers==5.10.1
+peft==0.20.0
+trl==0.29.0
+bitsandbytes==0.50.0
+datasets==5.0.0
+mlflow==3.15.1
+
+# These verification pins were not captured in the frozen Kaggle metadata.
+accelerate==1.14.0
+scikit-learn==1.7.2

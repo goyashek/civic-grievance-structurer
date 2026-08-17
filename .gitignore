@@ -36,3 +36,7 @@ notebooks/.local/
 data/final_results/civicstruct_final_results.zip
 data/final_results/civicstruct_final_results_kaggle.zip
 data/final_results/civicstruct_final_external_validation.zip
+
+# local model registry state and adapter
+data/model_registry/artifacts/
+data/model_registry/mlruns/

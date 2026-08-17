@@ -1,0 +1,52 @@
+{
+  "registered_model": "civicstruct-qlora",
+  "version": "1",
+  "alias": "champion",
+  "status": "champion",
+  "source": "data/model_registry/artifacts/qlora_final_adapter",
+  "registration_run_id": "6b22f6ae2599460c8888b4b20b4c3972",
+  "frozen_training_run_id": "9a8c145e9a7d48b5b94fdb1c0eb0894c",
+  "adapter_sha256": "63934999afe7905ba1441f334b45ec31dd26e44fab5a03fa3c8ff82d611618a5",
+  "git_sha": "6c1c733fcbac86851d3f51ff2fdb4be50a97dd64",
+  "dvc_lock_sha256": "a9ddf0f1c5792d9418420f1eb6afff25eb45ce5c386f73d0e5aabdf74df5784d",
+  "dataset_version": "frozen_full_v2",
+  "schema_version": "1.0",
+  "evaluator_version": "2.0",
+  "base_model": "HuggingFaceTB/SmolLM3-3B",
+  "base_model_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+  "quality_gates": {
+    "overall_passed": true,
+    "checks": {
+      "schema_validity": {
+        "value": 0.94,
+        "operator": ">=",
+        "threshold": 0.9,
+        "passed": true
+      },
+      "issue_type_macro_f1": {
+        "value": 0.7445512820512821,
+        "operator": ">=",
+        "threshold": 0.7,
+        "passed": true
+      },
+      "missing_information_macro_f1": {
+        "value": 0.669675925925926,
+        "operator": ">=",
+        "threshold": 0.6,
+        "passed": true
+      },
+      "exact_factual_mismatch": {
+        "value": 0.36507936507936506,
+        "operator": "<=",
+        "threshold": 0.4,
+        "passed": true
+      },
+      "fabrication_rate": {
+        "value": 0.01,
+        "operator": "<=",
+        "threshold": 0.05,
+        "passed": true
+      }
+    }
+  }
+}

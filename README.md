@@ -6,7 +6,7 @@ JSON, and does QLoRA fine-tuning earn its complexity over rules and prompting?
 
 The answer is mixed in a useful way. The final QLoRA model is the strongest
 learned system on the controlled test set, with 0.94 strict schema validity and
-0.765 missing-information F1. Simple rules still beat it on service-domain F1,
+0.670 missing-information F1. Simple rules still beat it on service-domain F1,
 and the adapter still gets too many stated fact values wrong. That tension is
 the project. I wanted an evaluation where a model could not hide weak factual
 extraction behind a valid-looking JSON object.
@@ -408,7 +408,7 @@ cases are not interchangeable.
 ### Held-out evaluation changed the tone of the result
 
 The selected two-epoch adapter reached 0.977 missing-information F1 on
-validation and 0.765 on the internal test. That gap is the reason the README
+validation and 0.670 on the internal test. That gap is the reason the README
 leads with final test results and keeps validation in the experiment record.
 The model improved, but the 50-row development split was still optimistic for
 some fields.

@@ -17,10 +17,10 @@ extraction behind a valid-looking JSON object.
 | base model | `HuggingFaceTB/SmolLM3-3B` |
 | adaptation | 4-bit QLoRA, 30.2M trainable parameters |
 | training data | 120 controlled and 40 licensed public complaints |
-| evaluation | 50 validation, 50 frozen internal test, 20 San Diego transfer rows, 60-row Baton Rouge source-aligned diagnostic |
+| evaluation | 50 validation, 50 frozen internal test, 20 San Diego transfer rows, 240-row San Diego stress test, 60-row Baton Rouge source-aligned diagnostic |
 | comparison | rules, zero-shot, static few-shot, retrieved few-shot, QLoRA |
 | experiment runtime | Kaggle Tesla T4 |
-| current state | experiment and metric closeout complete; local demo and release checks remain |
+| current state | experiment and metric closeout complete; hosted demo is live; release checklist complete |
 
 ## What the model produces
 
@@ -166,6 +166,7 @@ prompt, data, threshold, or model change.
 | validation | 50 | formal and informal surfaces from 25 canonical cases | model and prompt choices |
 | internal test | 50 | independently written fictional complaints | one final controlled evaluation |
 | external transfer | 20 | deidentified San Diego Get It Done rows | separate transfer check |
+| supplemental San Diego benchmark | 240 | fresh deidentified Get It Done rows | source-aligned stress test, not full gold evaluation |
 
 The split unit is the canonical `case_id`, not the surface sentence. All
 wording variants from one case stay in one split. Retrieval indexes training
@@ -312,6 +313,20 @@ QLoRA transfers best among the learned systems on this slice, especially for
 fact fields. The 1.00 missing-information score needs context: every external
 row has generalized location and the same `exact_location` omission. It does
 not show broad missing-information reasoning across all eight labels.
+
+## Supplemental 240-row San Diego stress test
+
+I later evaluated 240 fresh, deidentified San Diego descriptions: 60 each from
+street-light, sidewalk, pavement, and illegal-dumping categories. The source
+provides a service category but not full CivicStruct gold labels, so this is a
+source-aligned stress test rather than another full Evaluation v2 comparison.
+
+| system | strict schema valid | mapped service-domain agreement, end to end | agreement among valid outputs |
+|---|---:|---:|---:|
+| QLoRA | 0.950 | 0.804 | 0.846 |
+
+This benchmark is supplemental and does not change the frozen 20-row San Diego
+transfer results above.
 
 ## Cross-city source-aligned diagnostic
 
@@ -504,7 +519,11 @@ failure instead of hiding it. The architecture figure is
 
 The same UI is hosted publicly on Hugging Face Spaces:
 [`open the hosted CivicStruct demo`](https://goyashek-civicstruct-grievance-demo.hf.space/).
-It uses the frozen adapter on ZeroGPU, so it may take a moment to wake up.
+It uses the frozen adapter on free ZeroGPU. Model generation took about 4.51
+seconds in one checked request, while end-to-end calls took 7.02 and 16.07
+seconds because the 3B weights may reload between requests.
+
+![CivicStruct hosted Gradio demo](https://github.com/user-attachments/assets/481ecf3d-4ce1-492a-b308-c8484174318a)
 
 ## Repository map
 
@@ -526,6 +545,7 @@ It uses the frozen adapter on ZeroGPU, so it may take a moment to wake up.
 | [`data/reproducibility_results/`](data/reproducibility_results/mlruns/) | DVC check record and metadata-backfill MLflow store |
 | [`notebooks/`](notebooks/) | model smoke test, bake-off, validation training, and final Kaggle runs |
 | [`docs/architecture.svg`](docs/architecture.svg) | implemented MLOps and serving architecture figure |
+| [`docs/release_checklist.md`](docs/release_checklist.md) | claim lineage, release checks, and the two-minute explanation |
 
 ## Limitations
 
@@ -554,5 +574,6 @@ training and reload, one controlled revision, data-size ablation, untouched
 internal test, external transfer check, confidence intervals, summary rubric,
 raw predictions, notebooks, and MLflow records are preserved.
 
-The next planned work is release verification. The evaluated adapter, prompts,
-decoding settings, and metrics remain frozen.
+Release verification is documented in
+[`docs/release_checklist.md`](docs/release_checklist.md). The evaluated adapter,
+prompts, decoding settings, and metrics remain frozen.

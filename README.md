@@ -20,7 +20,7 @@ extraction behind a valid-looking JSON object.
 | evaluation | 50 validation, 50 frozen internal test, 20 San Diego transfer rows, 60-row Baton Rouge source-aligned diagnostic |
 | comparison | rules, zero-shot, static few-shot, retrieved few-shot, QLoRA |
 | experiment runtime | Kaggle Tesla T4 |
-| current state | experiment and metric closeout complete; local demo still pending |
+| current state | experiment and metric closeout complete; local demo and release checks remain |
 
 ## What the model produces
 
@@ -485,6 +485,24 @@ MLFLOW_ALLOW_FILE_STORE=true mlflow ui --backend-store-uri data/model_selection_
 MLFLOW_ALLOW_FILE_STORE=true mlflow ui --backend-store-uri data/validation_results/mlruns
 ```
 
+## Local review demo
+
+The local Gradio app reuses the same frozen inference module as the CLI and
+FastAPI service. Install the training stack, the demo dependency, and run it
+from the repository root:
+
+```bash
+python3 -m pip install -r requirements-training.txt
+python3 -m pip install -r requirements-demo.txt
+python3 -m src.demo
+```
+
+Use fictional text while reviewing the interface. The adapter must be
+available locally for a real generation; otherwise the app shows the load
+failure instead of hiding it. The architecture figure is
+[`docs/architecture.svg`](docs/architecture.svg); a checked UI screenshot will
+be added after the local Gradio launch.
+
 ## Repository map
 
 | path | contents |
@@ -493,6 +511,8 @@ MLFLOW_ALLOW_FILE_STORE=true mlflow ui --backend-store-uri data/validation_resul
 | [`src/evaluate.py`](src/evaluate.py) | strict, conditional, repaired, field, and factuality metrics |
 | [`src/report_validation.py`](src/report_validation.py) | reproducible validation tables and failure categories |
 | [`src/report_final.py`](src/report_final.py) | final score verification and confidence intervals |
+| [`src/inference.py`](src/inference.py) | shared frozen prompt, model load, and strict response validation |
+| [`src/demo.py`](src/demo.py) | local Gradio review app using shared inference |
 | [`src/backfill_mlflow.py`](src/backfill_mlflow.py) | compact historical MLflow metadata record |
 | [`docs/annotation_guide.md`](docs/annotation_guide.md) | label definitions and annotation decisions |
 | [`docs/dataset_card.md`](docs/dataset_card.md) | data sources, privacy transformations, splits, and limits |
@@ -502,6 +522,7 @@ MLFLOW_ALLOW_FILE_STORE=true mlflow ui --backend-store-uri data/validation_resul
 | [`data/final_results/`](data/final_results/README.md) | frozen raw outputs, manifests, intervals, and summary judgments |
 | [`data/reproducibility_results/`](data/reproducibility_results/mlruns/) | DVC check record and metadata-backfill MLflow store |
 | [`notebooks/`](notebooks/) | model smoke test, bake-off, validation training, and final Kaggle runs |
+| [`docs/architecture.svg`](docs/architecture.svg) | implemented MLOps and serving architecture figure |
 
 ## Limitations
 
@@ -530,8 +551,5 @@ training and reload, one controlled revision, data-size ablation, untouched
 internal test, external transfer check, confidence intervals, summary rubric,
 raw predictions, notebooks, and MLflow records are preserved.
 
-The next planned work is a constrained structured-generation baseline and
-model governance. It must remain separate from the frozen result story, and
-later local demo work must reuse the same frozen inference configuration.
-release verification. The evaluated adapter, prompts, decoding settings, and
-metrics remain frozen.
+The next planned work is release verification. The evaluated adapter, prompts,
+decoding settings, and metrics remain frozen.

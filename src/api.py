@@ -11,11 +11,10 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field, field_validator
 
-from .inference import CivicStructInference, InferenceResult
+from .inference import CivicStructInference, InferenceResult, MAX_COMPLAINT_CHARS
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MAX_COMPLAINT_CHARS = 4000
 REGISTRY_RECORD = json.loads(
     (ROOT / "data/model_registry/registry_record.json").read_text(encoding="utf-8")
 )

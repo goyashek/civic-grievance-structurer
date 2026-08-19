@@ -18,6 +18,7 @@ FROZEN_MANIFEST = json.loads(
 MODEL_NAME = FROZEN_MANIFEST["model_name"]
 MODEL_REVISION = FROZEN_MANIFEST["model_revision"]
 MAX_NEW_TOKENS = FROZEN_MANIFEST["decoding"]["max_new_tokens"]
+MAX_COMPLAINT_CHARS = 4000
 ADAPTER_DIR = ROOT / "data/model_registry/artifacts/qlora_final_adapter"
 SYSTEM_PROMPT = (
     "Structure one public-service complaint as exactly one JSON object. Use these fields in this order: "

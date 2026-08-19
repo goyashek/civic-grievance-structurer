@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 from functools import partial
 from threading import Lock
-from typing import Any
+from typing import Any, Callable
 
 from .inference import CivicStructInference, InferenceResult, MAX_COMPLAINT_CHARS
 
@@ -85,12 +85,15 @@ def review_complaint(
     )
 
 
-def build_demo(inference: CivicStructInference | None = None):
+def build_demo(
+    inference: CivicStructInference | None = None,
+    handler: Callable[[str], tuple[dict[str, Any] | None, str, str, str]] | None = None,
+):
     """Build the Gradio UI without loading the model."""
 
     import gradio as gr
 
-    handler = (
+    handler = handler or (
         review_complaint
         if inference is None
         else partial(review_complaint, inference=inference)

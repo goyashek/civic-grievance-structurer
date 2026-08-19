@@ -485,7 +485,7 @@ MLFLOW_ALLOW_FILE_STORE=true mlflow ui --backend-store-uri data/model_selection_
 MLFLOW_ALLOW_FILE_STORE=true mlflow ui --backend-store-uri data/validation_results/mlruns
 ```
 
-## Local review demo
+## Local and hosted review demo
 
 The local Gradio app reuses the same frozen inference module as the CLI and
 FastAPI service. Install the training stack, the demo dependency, and run it
@@ -500,8 +500,11 @@ python3 -m src.demo
 Use fictional text while reviewing the interface. The adapter must be
 available locally for a real generation; otherwise the app shows the load
 failure instead of hiding it. The architecture figure is
-[`docs/architecture.svg`](docs/architecture.svg); a checked UI screenshot will
-be added after the local Gradio launch.
+[`docs/architecture.svg`](docs/architecture.svg).
+
+The same UI is hosted publicly on Hugging Face Spaces:
+[`open the hosted CivicStruct demo`](https://goyashek-civicstruct-grievance-demo.hf.space/).
+It uses the frozen adapter on ZeroGPU, so it may take a moment to wake up.
 
 ## Repository map
 

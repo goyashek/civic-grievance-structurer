@@ -600,6 +600,8 @@ The GPU workflow stays visible in notebooks rather than behind a training CLI. [
 
 The cross-city handoff is [`final_kaggle_external_validation.ipynb`](notebooks/final_kaggle_external_validation.ipynb), with its executed copy in [`final_kaggle_external_validation_executed.ipynb`](notebooks/final_kaggle_external_validation_executed.ipynb). It reruns the frozen final recipe and then performs the separate Baton Rouge source-aligned diagnostic with Kaggle Internet enabled.
 
+The larger real-world handoff is [`real_world_evaluation_kaggle.ipynb`](notebooks/real_world_evaluation_kaggle.ipynb), with the untouched [`executed notebook`](notebooks/real_world_evaluation_kaggle_executed.ipynb) and an [`accepted-row result bundle`](data/supplemental_results/civicstruct_real_world_first_pass_results.zip). The bundle keeps the 100 first-pass reviewed rows, raw system outputs, metrics, and run metadata. Deferred complaint text is not committed. These results are provisional and do not change Evaluation v2.
+
 The full Kaggle ZIPs contain the roughly 121 MB adapter and remain ignored by Git because of GitHub's 100 MB file limit. Their SHA-256 hashes are:
 
 ```text

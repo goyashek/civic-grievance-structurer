@@ -476,25 +476,25 @@ The source rows do not provide full gold labels, so this is not a full Evaluatio
 
 ## Data-size ablation
 
-The ablation keeps the two-epoch recipe fixed and changes only the number of training rows. Subsets are selected by canonical case group.
+The corrected ablation keeps the two-epoch recipe fixed and changes only the number of training rows. For each seed, the 40-row subset is contained in the 80-row subset, which is contained in the full 160-row set. The table reports the mean and sample standard deviation across seeds 42, 43, and 44.
 
-| Training Rows | Validation Schema | Domain F1 | Issue F1 | Missing-Info F1 | Training Loss | Training Seconds |
-|---:|---:|---:|---:|---:|---:|---:|
-| **40** | 0.980 | 0.659 | 0.856 | 0.531 | 0.269 | 85.9s |
-| **80** | 0.980 | 0.692 | 0.843 | 0.936 | 0.186 | 171.2s |
-| **160** | **1.000** | **0.964** | **0.908** | **0.977** | **0.139** | **327.3s** |
+| Training Rows | Validation Schema | Domain F1 | Issue F1 | Urgency F1 | Missing-Info F1 |
+|---:|---:|---:|---:|---:|---:|
+| **40** | 0.980 ± 0.020 | 0.703 ± 0.009 | 0.675 ± 0.089 | 0.605 ± 0.152 | 0.673 ± 0.209 |
+| **80** | 0.973 ± 0.012 | 0.796 ± 0.026 | 0.697 ± 0.022 | 0.761 ± 0.053 | 0.843 ± 0.137 |
+| **160** | **0.987 ± 0.012** | **0.904 ± 0.021** | **0.808 ± 0.051** | **0.826 ± 0.039** | **0.933 ± 0.058** |
 
 <details>
 <summary><b>What improved with more data</b></summary>
 
-Missing-information F1 benefits most from additional examples. Schema validity also reaches 1.000 at 160 training rows.
+Domain, urgency, and missing-information scores rise as the nested training set grows. The missing-information score also becomes less variable at 160 rows.
 
 </details>
 
 <details>
 <summary><b>How to read this ablation</b></summary>
 
-Issue F1 is not monotonic between 40 and 80 rows. This is one run per size, not a repeated learning-curve study, so the results show a trend rather than a stable estimate of data scaling.
+This is a validation-only supplemental experiment. It never loaded the internal test or external transfer files. The [`raw result record`](data/ablation/ablation_results.json), compact [`summary`](data/ablation/run_summary.json), and runnable [`Kaggle notebook`](notebooks/nested_data_size_ablation_kaggle.ipynb) preserve the nine runs. The executed notebook was not retained, so the saved JSON record is the evidence for this result.
 
 </details>
 
@@ -644,7 +644,7 @@ flowchart LR
     inference --> cli["CLI\n(src/cli.py)"]
     inference --> api["FastAPI Service\n(src/api.py)"]
     inference --> gradio["Gradio Review Demo\n(src/demo.py)"]
-    api --> docker["Docker Container\n(Dockerfile)"]
+    api --> docker["GPU Docker Container\n(Dockerfile)"]
 ```
 
 <details>
@@ -663,6 +663,32 @@ Use fictional text while reviewing. The app shows a visible load failure when th
 </details>
 
 <details>
+<summary><b>GPU API container</b></summary>
+
+The container uses the pinned PyTorch 2.10/CUDA 12.8 runtime and downloads the
+pinned public base-model revision into a reusable Docker volume on first use.
+It needs a Linux x86-64 host with an NVIDIA GPU and the NVIDIA Container
+Toolkit. The ignored adapter stays on the host and is mounted read-only.
+
+```bash
+docker build -t civicstruct .
+docker run --rm --gpus all -p 8000:8000 \
+  --mount "type=bind,source=$PWD/data/model_registry/artifacts/qlora_final_adapter,target=/app/data/model_registry/artifacts/qlora_final_adapter,readonly" \
+  --mount type=volume,source=civicstruct-hf-cache,target=/models/huggingface \
+  civicstruct
+```
+
+After startup, check a real request from another shell:
+
+```bash
+curl -sS http://localhost:8000/structure \
+  -H 'content-type: application/json' \
+  -d '{"complaint":"The streetlight near the bus stop has been off since Monday night."}'
+```
+
+</details>
+
+<details>
 <summary><b>Hosted latency</b></summary>
 
 Model generation took about 4.51 seconds in one checked request. End-to-end calls took 7.02 and 16.07 seconds because the 3B weights may reload between requests.
@@ -677,6 +703,7 @@ Model generation took about 4.51 seconds in one checked request. End-to-end call
 data and contracts
 ├── data/
 │   ├── canonical_cases.jsonl
+│   ├── ablation/
 │   ├── dataset_manifest.json
 │   ├── model_selection_results/
 │   ├── validation_results/
@@ -692,6 +719,7 @@ experiments
     ├── model_basics.ipynb
     ├── model_bakeoff.ipynb
     ├── validation_qlora.ipynb
+    ├── nested_data_size_ablation_kaggle.ipynb
     ├── final_kaggle_run.ipynb
     └── final_kaggle_external_validation.ipynb
 
@@ -709,14 +737,15 @@ serving and delivery
 │   ├── cli.py
 │   ├── api.py
 │   └── demo.py
-├── Dockerfile
 ├── deploy/huggingface_space/
+├── Dockerfile
 └── requirements-*.txt
 ```
 
 ### Main saved experiment artifacts
 
 - [`data/final_results/`](data/final_results/README.md) - Evaluation v2 metrics, bootstrap CIs, and pairwise comparisons
+- [`data/ablation/`](data/ablation/run_summary.json) - Three-seed nested learning-curve results and raw validation outputs
 - [`data/validation_results/`](data/validation_results/README.md) - Validation benchmark and failure category diagnostics
 - [`data/model_selection_results/`](data/model_selection_results/README.md) - SmolLM3 vs Qwen vs Phi bake-off records
 - [`docs/release_checklist.md`](docs/release_checklist.md) - Artifact verification checklist

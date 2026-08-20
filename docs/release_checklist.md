@@ -1,6 +1,6 @@
 # Release checklist
 
-Checked on 2026-08-19. Evaluation v2, the adapter, prompts, data, decoding
+Checked on 2026-08-20. Evaluation v2, the adapter, prompts, data, decoding
 settings, and saved predictions remain unchanged.
 
 ## Claim lineage
@@ -10,29 +10,32 @@ settings, and saved predictions remain unchanged.
 | Internal and 20-row San Diego Evaluation v2 metrics | `data/final_results/final_metrics.json`, raw result JSON, and `data/final_results/README.md` |
 | Paired comparisons and factuality breakdown | `data/final_results/pairwise_comparisons.json` and `data/final_results/factuality_breakdown.json` |
 | Validation results and failure categories | `data/validation_results/README.md`, saved predictions, and `src/report_validation.py` |
-| Training-size ablation | `data/final_results/ablation_results.json` and the final-results report |
+| Three-seed training-size ablation | `data/ablation/ablation_results.json`, `data/ablation/run_summary.json`, and the runnable ablation notebook |
 | 240-row San Diego stress test | `data/supplemental_results/civicstruct_san_diego_external_benchmark.zip` |
 | Registered champion model | `data/model_registry/registry_record.json` and the saved MLflow metadata |
 | Hosted serving path | `deploy/huggingface_space/`, the public Space, and the README screenshot |
 
 ## Checks
 
-- [x] 32 focused unit tests pass.
+- [x] 33 focused unit tests pass.
 - [x] Validation and final reports rebuild from saved responses and evaluator v2.
 - [x] Canonical, surface, public-data, test-case, and dataset-freeze checks pass.
 - [x] All notebook JSON and executable code cells parse after removing Kaggle
   install and shell magic lines.
 - [x] Source compilation, CLI help, and demo help pass.
 - [x] API failure-path and fake-model HTTP checks pass through the focused tests.
+- [x] All nine nested ablation runs rescore from their saved validation responses.
 - [x] The hosted Space returns HTTP 200 and the README contains its checked
   screenshot.
-- [x] Gradio construction and the inference container were checked earlier in
-  the serving pass.
+- [x] Gradio construction was checked in the serving pass.
+- [x] The Dockerfile now includes the pinned CUDA inference stack and keeps the
+  adapter as a read-only runtime mount.
+- [ ] Run the documented `/structure` check on a Linux x86-64 NVIDIA host.
 
-The current shell does not have the Docker daemon running, and its Python
-environment does not expose the pinned DVC and Gradio commands. Those checks
-are recorded from the earlier serving and demo passes rather than presented as
-fresh local runs here. The public hosted Space is the release demo path.
+The public hosted Space remains the checked deployment path. The Dockerfile
+build check passes without warnings, but this arm64 host has no NVIDIA GPU, so
+the heavy container request remains a manual release check rather than a
+claimed local result.
 
 ## Two-minute explanation
 

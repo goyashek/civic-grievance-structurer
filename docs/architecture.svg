@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
   <title id="title">CivicStruct architecture</title>
-  <desc id="desc">Versioned data flows through notebook experiments, MLflow, Evaluation v2, model registry gates, and shared inference. The shared inference serves the CLI, FastAPI, and Gradio demo, while FastAPI is containerized.</desc>
+  <desc id="desc">Versioned data flows through notebook experiments, MLflow, Evaluation v2, model registry gates, and shared inference. The shared inference serves the CLI, FastAPI, and Gradio demo, while FastAPI runs in a GPU container.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
       <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
@@ -56,7 +56,7 @@
   <text class="detail" x="930" y="687">src/demo.py</text>
 
   <rect class="box" x="820" y="390" width="220" height="78"/>
-  <text class="title" x="930" y="422">Container</text>
+  <text class="title" x="930" y="422">GPU container</text>
   <text class="detail" x="930" y="447">Dockerfile</text>
 
   <path class="arrow" d="M400 669 H260"/>

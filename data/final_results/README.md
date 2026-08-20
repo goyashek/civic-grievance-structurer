@@ -71,22 +71,24 @@ Positive values favor the first system in the comparison.
 The paired comparisons are stored in `pairwise_comparisons.json`. The full
 fact-field counts are in `factuality_breakdown.json`.
 
-## training revision and ablation
+## training revision and corrected ablation
 
 The final adapter uses two epochs over all 160 training rows. Its training
 loss was 0.139, training took 327.3 seconds on a Kaggle T4, and peak allocated
 GPU memory was about 1,586 MB. It trained 30,228,480 parameters, or 1.78
 percent of the loaded model, and the saved adapter is about 121 MB.
 
-| training rows | validation schema | domain F1 | issue F1 | missing-info F1 | training loss | seconds |
-|---:|---:|---:|---:|---:|---:|---:|
-| 40 | 0.980 | 0.659 | 0.856 | 0.531 | 0.269 | 85.9 |
-| 80 | 0.980 | 0.692 | 0.843 | 0.936 | 0.186 | 171.2 |
-| 160 | 1.000 | 0.964 | 0.908 | 0.977 | 0.139 | 327.3 |
+| training rows | validation schema | domain F1 | issue F1 | urgency F1 | missing-info F1 |
+|---:|---:|---:|---:|---:|---:|
+| 40 | 0.980 ± 0.020 | 0.703 ± 0.009 | 0.675 ± 0.089 | 0.605 ± 0.152 | 0.673 ± 0.209 |
+| 80 | 0.973 ± 0.012 | 0.796 ± 0.026 | 0.697 ± 0.022 | 0.761 ± 0.053 | 0.843 ± 0.137 |
+| 160 | 0.987 ± 0.012 | 0.904 ± 0.021 | 0.808 ± 0.051 | 0.826 ± 0.039 | 0.933 ± 0.058 |
 
-The ablation is a controlled training-size comparison, not a repeated trial.
-It shows that missing-information F1 benefited most from additional examples;
-the issue score was not monotonic between 40 and 80 rows.
+These are mean and sample standard deviation values across seeds 42, 43, and
+44. Each seed uses nested 40, 80, and 160-row subsets, and the experiment never
+loads held-out test data. The raw nine-run record and compact summary are in
+`data/ablation/`. The original single-seed `ablation_results.json` remains here
+because its hash belongs to the frozen final-run lineage.
 
 ## blinded summary rubric pass
 

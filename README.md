@@ -1,6 +1,6 @@
-# CivicStruct
+# CivicStruct — QLoRA for Structured Civic Complaint Extraction
 
-**Turning informal civic complaints into validated structured JSON using fine-tuned small language models.**
+**ine-tuning a 3B language model to convert informal civic complaints into schema-validated structured records, with rigorous baseline, factuality, transfer, and ablation evaluation.**
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Base Model SmolLM3-3B](https://img.shields.io/badge/base_model-SmolLM3--3B-FFD21E.svg?logo=huggingface&logoColor=black)](https://huggingface.co/HuggingFaceTB/SmolLM3-3B)

@@ -32,6 +32,17 @@ comparison as their field scores; amount and service identifier use exact
 match. Its denominator is the number of predicted non-null values across those
 fields. The rate is `null` when that denominator is zero.
 
+A separate post-hoc extraction report uses the same strict parsing and field
+matching rules. It does not revise Evaluation v2. Fact precision divides
+correct extracted non-null values by all predicted non-null values. Fact
+recall divides the same correct count by all gold non-null values. Coverage
+divides predictions on gold-present fields by all gold non-null values, so it
+stays between zero and one even when a system fabricates values. Fact F1 is
+`2 * correct / (predicted non-null + gold non-null)`. Precision is `null` when
+the system predicts no facts. Recall and coverage are `null` only when the gold
+set contains no facts; otherwise a system that predicts none receives zero
+recall, coverage, and F1.
+
 The deterministic factuality breakdown scores every fact field in every row.
 It separates correct, omitted, fabricated, distorted or partly correct, and
 normalization-only mismatches. It does not use a model-based judge. A mismatch

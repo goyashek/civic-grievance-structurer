@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from .evaluate import CATEGORICAL_LABELS, FACT_FIELDS, evaluate_outputs
+from .fact_extraction import fact_extraction_metrics
 from .report_validation import wilson_interval
 
 
@@ -21,6 +22,7 @@ METRICS_PATH = RESULTS_DIR / "final_metrics.json"
 V1_METRICS_PATH = RESULTS_DIR / "evaluation_v1_metrics.json"
 PAIRWISE_PATH = RESULTS_DIR / "pairwise_comparisons.json"
 FACTUALITY_PATH = RESULTS_DIR / "factuality_breakdown.json"
+FACT_EXTRACTION_PATH = RESULTS_DIR / "fact_extraction_metrics.json"
 SYSTEM_ORDER = (
     "deterministic_rules",
     "zero_shot",
@@ -195,6 +197,19 @@ def factuality_reports(rows: list[dict], runs: dict[str, dict]) -> dict[str, dic
     return report
 
 
+def fact_extraction_reports(rows: list[dict], runs: dict[str, dict]) -> dict[str, dict]:
+    """Build supplemental extraction metrics from preserved responses."""
+
+    golds = [row["gold"] for row in rows]
+    report = {}
+    for name in SYSTEM_ORDER:
+        outputs = {output["case_id"]: output["response"] for output in runs[name]["outputs"]}
+        report[name] = fact_extraction_metrics(
+            golds, [outputs[row["case_id"]] for row in rows]
+        )
+    return report
+
+
 def review_metrics(review: dict) -> dict:
     grouped: dict[str, list[dict]] = defaultdict(list)
     for judgment in review["judgments"]:
@@ -285,6 +300,10 @@ if __name__ == "__main__":
         split: factuality_reports(split_rows[split], final_runs[split])
         for split in final_runs
     }
+    fact_extraction = {
+        split: fact_extraction_reports(split_rows[split], final_runs[split])
+        for split in final_runs
+    }
     PAIRWISE_PATH.write_text(
         json.dumps(
             {
@@ -319,6 +338,28 @@ if __name__ == "__main__":
         + "\n",
         encoding="utf-8",
     )
+    FACT_EXTRACTION_PATH.write_text(
+        json.dumps(
+            {
+                "metric_version": "fact_extraction_1.0",
+                "evaluator_version": "2.0",
+                "status": "post_hoc_supplemental",
+                "evaluation_v2_changed": False,
+                "comparison_view": "strict end-to-end",
+                "fact_fields": FACT_FIELDS,
+                "definitions": {
+                    "precision": "correct extracted facts / predicted non-null facts",
+                    "recall": "correct extracted facts / gold non-null facts",
+                    "coverage": "predicted non-null facts on gold-present fields / gold non-null facts",
+                    "f1": "2 * correct facts / (predicted non-null facts + gold non-null facts)",
+                },
+                "splits": fact_extraction,
+            },
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
     report = {
         "evaluation_version": "2.0",
         "confidence_level": 0.95,
@@ -338,3 +379,4 @@ if __name__ == "__main__":
     print_table("internal test, point estimate and 95 percent interval", report["automatic"]["internal_test"])
     print_table("external transfer, point estimate and 95 percent interval", report["automatic"]["external_transfer"])
     print(f"\nwrote {METRICS_PATH.relative_to(ROOT)}")
+    print(f"wrote {FACT_EXTRACTION_PATH.relative_to(ROOT)}")

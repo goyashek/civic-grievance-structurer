@@ -41,8 +41,8 @@ stages:
       size: 10264
     - path: src/report_final.py
       hash: md5
-      md5: e7c2f1f46d6d8e9953f461bc3920d9a8
-      size: 13286
+      md5: e0c9b03f81ca1fcfcead7d28cceb6a7f
+      size: 15022
     - path: src/report_validation.py
       hash: md5
       md5: 48ff43442b5c432c94c58bedcd702ba0

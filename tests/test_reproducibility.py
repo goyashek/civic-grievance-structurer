@@ -4,7 +4,7 @@ from pathlib import Path
 
 from src.backfill_mlflow import build_manifest
 from src.evaluate import evaluate_outputs
-from src.report_final import load_and_verify
+from src.report_final import fact_extraction_reports, load_and_verify
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,6 +27,22 @@ class FinalResultsReproducibilityTest(unittest.TestCase):
             "external_transfer",
         })
         self.assertTrue(manifest["dvc_lock_sha256"])
+
+    def test_saved_fact_extraction_metrics_reproduce(self):
+        artifact = json.loads(
+            (ROOT / "data/final_results/fact_extraction_metrics.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        runs, rows = load_and_verify()
+        self.assertFalse(artifact["evaluation_v2_changed"])
+        self.assertEqual(
+            artifact["splits"],
+            {
+                split: fact_extraction_reports(rows[split], runs[split])
+                for split in runs
+            },
+        )
 
     def test_nested_ablation_reproduces_all_nine_validation_runs(self):
         artifact = json.loads(

@@ -71,6 +71,30 @@ Positive values favor the first system in the comparison.
 The paired comparisons are stored in `pairwise_comparisons.json`. The full
 fact-field counts are in `factuality_breakdown.json`.
 
+## supplemental fact extraction
+
+These point estimates use the frozen strict parser and saved responses. Fact
+precision divides correct extracted values by all predicted non-null values.
+Recall divides them by gold non-null values. Coverage counts non-null
+predictions only on fields where gold is present. This keeps coverage bounded
+and stops fabricated values from increasing it. The view is post-hoc and does
+not change Evaluation v2.
+
+| split | system | precision | recall | coverage | F1 |
+|---|---|---:|---:|---:|---:|
+| internal | deterministic rules | n/a | 0.000 | 0.000 | 0.000 |
+| internal | zero-shot | n/a | 0.000 | 0.000 | 0.000 |
+| internal | static few-shot | 0.430 | 0.312 | 0.652 | 0.361 |
+| internal | retrieved few-shot | 0.622 | 0.442 | 0.696 | 0.517 |
+| internal | QLoRA | 0.635 | 0.580 | 0.899 | 0.606 |
+| external | deterministic rules | n/a | 0.000 | 0.000 | 0.000 |
+| external | zero-shot | n/a | 0.000 | 0.000 | 0.000 |
+| external | static few-shot | 0.053 | 0.115 | 0.923 | 0.072 |
+| external | retrieved few-shot | 0.750 | 0.808 | 0.846 | 0.778 |
+| external | QLoRA | 0.875 | 0.808 | 0.885 | 0.840 |
+
+Exact counts and denominators are stored in `fact_extraction_metrics.json`.
+
 ## training revision and corrected ablation
 
 The final adapter uses two epochs over all 160 training rows. Its training
@@ -118,4 +142,6 @@ only ten complaints and should be read as a small qualitative audit.
 - `final_metrics.json`: Evaluation v2 point estimates and confidence intervals;
 - `pairwise_comparisons.json`: paired bootstrap system differences;
 - `factuality_breakdown.json`: deterministic fact-field error categories;
+- `fact_extraction_metrics.json`: supplemental fact precision, recall,
+  coverage, and F1;
 - `summary_review.json`: sampled cases, rubric, and all 50 judgments.

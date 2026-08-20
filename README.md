@@ -299,6 +299,18 @@ The exact factual field mismatch rate checks location, time, amount, and service
 
 The factuality breakdown records correct, omitted, fabricated, distorted or partly correct, and normalization-only cases by field.
 
+The post-hoc extraction view also reports precision, recall, coverage, and F1. Coverage counts predictions only where the gold field is present, so fabricated values cannot inflate it. This uses the frozen strict parser and saved responses but does not change Evaluation v2.
+
+| System | Fact Precision | Fact Recall | Fact Coverage | Fact F1 |
+|:---|---:|---:|---:|---:|
+| **Deterministic rules** | *n/a* | 0.000 | 0.000 | 0.000 |
+| **Zero-shot** | *n/a* | 0.000 | 0.000 | 0.000 |
+| **Static few-shot** | 0.430 | 0.312 | 0.652 | 0.361 |
+| **Retrieved few-shot** | 0.622 | 0.442 | 0.696 | 0.517 |
+| **QLoRA** | **0.635** | **0.580** | **0.899** | **0.606** |
+
+The full counts for both frozen splits are in [`fact_extraction_metrics.json`](data/final_results/fact_extraction_metrics.json).
+
 </details>
 
 <details>
@@ -570,7 +582,7 @@ python3 -m src.report_validation
 python3 -m src.report_final
 ```
 
-The final report recomputes all ten saved system runs, checks them against the stored scores, and rebuilds `data/final_results/final_metrics.json`.
+The final report recomputes all ten saved system runs, checks them against the stored scores, and rebuilds `data/final_results/final_metrics.json` plus the supplemental fact-extraction report.
 
 <details>
 <summary><b>Integrity and MLOps checks</b></summary>
